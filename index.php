@@ -6,7 +6,9 @@ require_once 'arrays.php';
 	<div class="container">
 		<?php if(isset($_GET['download'])) : ?>
 			<div class="row">
-				<h5 class="center"><a href="/download/<?= $_GET['download'] ?>.scs" class="btn blue-grey darken-3 large card-title">Скачать мод</a></h5>
+				<h5 class="center">
+					<a href="/download/<?= $_GET['download'] ?>.scs" class="btn blue-grey darken-3 large card-title waves-effect waves-light">Скачать мод</a>
+				</h5>
 			</div>
 		<?php endif ?>
 		<div class="card grey darken-3">
