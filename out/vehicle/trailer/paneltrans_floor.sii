@@ -1,0 +1,37 @@
+trailer : trailer.panel_trans.floor
+{
+	accessories[]: .panel_trans.floor.tchassis
+	accessories[]: .panel_trans.floor.trwheel0
+	accessories[]: .panel_trans.floor.trwheel1
+	accessories[]: .panel_trans.floor.trwheel2
+	accessories[]: .panel_trans.floor.paint_job
+}
+
+vehicle_accessory: .panel_trans.floor.tchassis
+{
+
+		data_path: "/def/vehicle/trailer/schw_reefer/chassis.dlc_schwarzmuller.sii"
+}
+
+vehicle_wheel_accessory: .panel_trans.floor.trwheel0
+{
+	offset: 0
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_wheel_accessory: .panel_trans.floor.trwheel1
+{
+	offset: 2
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_wheel_accessory: .panel_trans.floor.trwheel2
+{
+	offset: 4
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_paint_job_accessory: .panel_trans.floor.paint_job
+{
+		data_path: "/def/vehicle/trailer/schw_reefer/custom_paint_job/schw_logo.sii"
+}

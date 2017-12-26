@@ -1,0 +1,37 @@
+trailer : trailer.gooseneck.toxic.cistern.cyanide
+{
+	accessories[]: .gooseneck.toxic.cistern.cyanide.tchassis
+	accessories[]: .gooseneck.toxic.cistern.cyanide.trwheel0
+	accessories[]: .gooseneck.toxic.cistern.cyanide.trwheel1
+	accessories[]: .gooseneck.toxic.cistern.cyanide.trwheel2
+	accessories[]: .gooseneck.toxic.cistern.cyanide.paint_job
+}
+
+vehicle_accessory: .gooseneck.toxic.cistern.cyanide.tchassis
+{
+
+		data_path: "/def/vehicle/trailer/schw_reefer/chassis.dlc_schwarzmuller.sii"
+}
+
+vehicle_wheel_accessory: .gooseneck.toxic.cistern.cyanide.trwheel0
+{
+	offset: 0
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_wheel_accessory: .gooseneck.toxic.cistern.cyanide.trwheel1
+{
+	offset: 2
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_wheel_accessory: .gooseneck.toxic.cistern.cyanide.trwheel2
+{
+	offset: 4
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_paint_job_accessory: .gooseneck.toxic.cistern.cyanide.paint_job
+{
+		data_path: "/def/vehicle/trailer/schw_reefer/custom_paint_job/schw_logo.sii"
+}

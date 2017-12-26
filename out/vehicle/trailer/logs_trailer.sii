@@ -1,0 +1,37 @@
+trailer : trailer.logs
+{
+	accessories[]: .logs.tchassis
+	accessories[]: .logs.trwheel0
+	accessories[]: .logs.trwheel1
+	accessories[]: .logs.trwheel2
+	accessories[]: .logs.paint_job
+}
+
+vehicle_accessory: .logs.tchassis
+{
+
+		data_path: "/def/vehicle/trailer/schw_reefer/chassis.dlc_schwarzmuller.sii"
+}
+
+vehicle_wheel_accessory: .logs.trwheel0
+{
+	offset: 0
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_wheel_accessory: .logs.trwheel1
+{
+	offset: 2
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_wheel_accessory: .logs.trwheel2
+{
+	offset: 4
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_paint_job_accessory: .logs.paint_job
+{
+		data_path: "/def/vehicle/trailer/schw_reefer/custom_paint_job/schw_logo.sii"
+}

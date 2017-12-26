@@ -1,0 +1,37 @@
+trailer : trailer.schmitz.universal
+{
+	accessories[]: .schmitz.universal.tchassis
+	accessories[]: .schmitz.universal.trwheel0
+	accessories[]: .schmitz.universal.trwheel1
+	accessories[]: .schmitz.universal.trwheel2
+	accessories[]: .schmitz.universal.paint_job
+}
+
+vehicle_accessory: .schmitz.universal.tchassis
+{
+
+		data_path: "/def/vehicle/trailer/schw_reefer/chassis.dlc_schwarzmuller.sii"
+}
+
+vehicle_wheel_accessory: .schmitz.universal.trwheel0
+{
+	offset: 0
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_wheel_accessory: .schmitz.universal.trwheel1
+{
+	offset: 2
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_wheel_accessory: .schmitz.universal.trwheel2
+{
+	offset: 4
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_paint_job_accessory: .schmitz.universal.paint_job
+{
+		data_path: "/def/vehicle/trailer/schw_reefer/custom_paint_job/schw_logo.sii"
+}

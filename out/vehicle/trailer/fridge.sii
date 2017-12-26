@@ -1,0 +1,37 @@
+trailer : trailer.fridge
+{
+	accessories[]: .fridge.tchassis
+	accessories[]: .fridge.trwheel0
+	accessories[]: .fridge.trwheel1
+	accessories[]: .fridge.trwheel2
+	accessories[]: .fridge.paint_job
+}
+
+vehicle_accessory: .fridge.tchassis
+{
+
+		data_path: "/def/vehicle/trailer/schw_reefer/chassis.dlc_schwarzmuller.sii"
+}
+
+vehicle_wheel_accessory: .fridge.trwheel0
+{
+	offset: 0
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_wheel_accessory: .fridge.trwheel1
+{
+	offset: 2
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_wheel_accessory: .fridge.trwheel2
+{
+	offset: 4
+		data_path: "/def/vehicle/t_wheel/single.sii"
+}
+
+vehicle_paint_job_accessory: .fridge.paint_job
+{
+		data_path: "/def/vehicle/trailer/schw_reefer/custom_paint_job/schw_logo.sii"
+}
