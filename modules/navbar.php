@@ -1,9 +1,9 @@
-<nav class="teal">
+<nav class="blue-grey darken-3">
 	<div class="nav-wrapper">
-		<a href="#" class="brand-logo right light">SCS Mod files renamer tool</a>
+		<a href="/" class="brand-logo right light">TRAILER MOD GENERATOR</a>
 		<ul id="nav-mobile" class="left">
-			<li><a href="/">ETS2</a></li>
-			<li><a href="/ats.php">ATS</a></li>
+			<li class="active"><a href="/">ETS2</a></li>
+			<li class="disabled"><a class="grey-text">ATS</a></li>
 		</ul>
 	</div>
 </nav>

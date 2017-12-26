@@ -41,4 +41,6 @@
 		replaceCompanyFiles('out/company', $trailer_look);
 	}
 
-	header('Location: http://renamer.local/');
+	$filename = zip_files($_POST['title']);
+
+	header('Location: http://renamer.local/?download='.$filename);

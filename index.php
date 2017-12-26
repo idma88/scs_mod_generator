@@ -4,12 +4,22 @@ require_once 'arrays.php';
 ?>
 
 	<div class="container">
-
-		<div class="card">
+		<?php if(isset($_GET['download'])) : ?>
+			<div class="row">
+				<h5 class="center"><a href="/download/<?= $_GET['download'] ?>.scs" class="btn blue-grey darken-3 large card-title">Скачать мод</a></h5>
+			</div>
+		<?php endif ?>
+		<div class="card grey darken-3">
 			<form action="renamer.php" method="post">
 				<div class="card-content">
 					<div class="row">
-						<div class="col m6 s12">
+						<div class="input-field col s12">
+							<input type="text" name="title" placeholder="<chassis> - <accessory/paint>" required>
+							<label>Mod title</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s12">
 							<label>Pick chassis from list below</label>
 							<select class="browser-default" name="chassis" required>
 								<option selected value="">Choose chassis</option>
@@ -17,10 +27,6 @@ require_once 'arrays.php';
 										<option value="<?= $name ?>"><?= $name ?></option>
 									<?php endforeach; ?>
 							</select>
-						</div>
-						<div class="input-field col m6 s12">
-							<input type="text" placeholder="/def/vehicle/trailer/..../chassis.sii">
-							<label>Or type chassis def here (overwrites select)</label>
 						</div>
 					</div>
 					<div class="row">
@@ -49,7 +55,7 @@ require_once 'arrays.php';
 					</div>
 				</div>
 				<div class="card-action">
-					<button class="btn-flat teal-text" type="submit" onclick="return confirm('Are you sure?')">proceed</button>
+					<button class="btn-flat blue-grey-text" type="submit" onclick="return confirm('Are you sure?')">proceed</button>
 				</div>
 				<input type="hidden" name="target" value="ets2">
 			</form>
