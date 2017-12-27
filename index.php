@@ -35,7 +35,7 @@ require_once 'functions.php';
 					<div class="row">
 						<div class="col s12">
 							<label><?= t('pick_accessory') ?></label>
-							<select class="browser-default" name="accessory">
+							<select class="browser-default grey darken-3" name="accessory">
 								<option value="" selected><?= t('choose_accessory') ?></option>
 								<?php $accessories = file('def/accessories.txt', FILE_IGNORE_NEW_LINES);
 									foreach($accessories as $accessory): ?>
@@ -47,7 +47,7 @@ require_once 'functions.php';
 					<div class="row">
 						<div class="col s12">
 							<label><?= t('pick_paint') ?></label>
-							<select class="browser-default" name="paint_job">
+							<select class="browser-default grey darken-3" name="paint_job">
 								<option selected value="all"><?= t('all_companies') ?></option>
 								<?php $paints = file('def/paints.txt', FILE_IGNORE_NEW_LINES);
 									foreach($paints as $paint): ?>
