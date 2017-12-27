@@ -1,4 +1,24 @@
-<?php require_once 'arrays.php';
+<?php
+require_once 'arrays.php';
+require_once 'strings.php';
+
+function t($name){
+	GLOBAL $strings_en, $strings_ru;
+	$lang = getUserLanguage();
+	return ${'strings_'.$lang}[$name];
+}
+
+function getUserLanguage(){
+	if(!isset($_COOKIE['lang'])){
+		$lang = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE'])[0];
+		$lang = explode('-', $lang)[0];
+		$ru = ['ru', 'uk', 'be', 'kk', 'mo'];
+		$lang = in_array($lang, $ru) ? 'ru' : 'en';
+	}else{
+		$lang = $_COOKIE['lang'];
+	}
+	return $lang;
+}
 
 function getChassis($chassis){
 	GLOBAL $chassis_list;
@@ -97,11 +117,11 @@ function getTrailerLook($paint_job){
 }
 
 function replaceTrailerFiles($dirname, $data){
+	if(!is_dir($dirname)) mkdir($dirname);
 	$dir = opendir($dirname);
 	while (($file = readdir($dir)) !== false){
 		if($file != "." && $file != ".."){
 			if(is_file($dirname."/".$file)){
-//				$content = file_get_contents($dirname."/".$file);
 				$rows = file($dirname."/".$file, FILE_IGNORE_NEW_LINES);
 				$trailer_name = trim(preg_split('/trailer\./', $rows[0])[1]);
 				$content = generateTrailerContent($trailer_name, $data);

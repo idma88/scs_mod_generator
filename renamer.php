@@ -43,4 +43,4 @@
 
 	$filename = zip_files($_POST['title']);
 
-	header('Location: http://renamer.local/?download='.$filename);
+	header('Location: http://'.$_SERVER['HTTP_HOST'].'/?download='.$filename);
