@@ -16,7 +16,7 @@ require_once 'arrays.php';
 				<div class="card-content">
 					<div class="row">
 						<div class="input-field col s12">
-							<input type="text" name="title" placeholder="<chassis> - <accessory/paint>" required>
+							<input type="text" name="title" placeholder="<chassis> - <accessory/paint>">
 							<label>Mod title</label>
 						</div>
 					</div>

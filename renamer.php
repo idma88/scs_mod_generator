@@ -29,8 +29,8 @@
 		'axles' => $axles
 	];
 
-	rrmdir('out/company');
-	rrmdir('out/vehicle');
+	!is_dir('out/company') ? : rrmdir('out/company');
+    !is_dir('out/vehicle') ? : rrmdir('out/vehicle');
 
 	copyTrailerFiles($dlc_list);
 	replaceTrailerFiles('out/vehicle/trailer', $trailer_data);
