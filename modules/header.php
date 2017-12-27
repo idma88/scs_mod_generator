@@ -8,6 +8,7 @@
 	<link type="text/css" rel="stylesheet" href="assets/materialize/css/materialize.min.css"  media="screen,projection"/>
 	<link type="text/css" rel="stylesheet" href="assets/select2/select2.min.css"  media="screen,projection"/>
 	<link type="text/css" rel="stylesheet" href="assets/select2/select2-custom.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="assets/css/style.css"  media="screen,projection"/>
 	<title>SCS Mod files renamer tool</title>
 </head>
 <body class="grey darken-4" style="min-height: 98vh">

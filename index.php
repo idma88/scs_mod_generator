@@ -24,7 +24,7 @@ require_once 'functions.php';
 					<div class="row">
 						<div class="col s12">
 							<label><?= t('pick_chassis') ?></label>
-							<select class="browser-default" name="chassis" required>
+							<select class="browser-default grey darken-3" name="chassis" required>
 								<option selected value=""><?= t('choose_chassis') ?></option>
 								<?php foreach($chassis_list as $name => $chassis): ?>
 										<option value="<?= $name ?>"><?= t($name) ?></option>
