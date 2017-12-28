@@ -192,6 +192,138 @@
 		'van_transporter' => 'italy'
 	];
 
+	$accesories = [
+		'car_transporter' => [
+			'/def/vehicle/trailer/car_transporter/cargo_cars_it.sii' => 'cargo_cars_it',
+			'/def/vehicle/trailer/car_transporter/cargo_france_cars.dlc_fr.sii' => 'cargo_france_cars',
+			'/def/vehicle/trailer/car_transporter/cargo_volvo.dlc_north.sii' => 'cargo_volvo',
+			'/def/vehicle/trailer/car_transporter/cargo_octavia.sii' => 'cargo_octavia',
+			'/def/vehicle/trailer/car_transporter/cargo_octavia_2.sii' => 'cargo_octavia_2',
+			'/def/vehicle/trailer/car_transporter/cargo_octavia_3.sii' => 'cargo_octavia_3'
+		],
+		'cement_mixer' => [
+			'/def/vehicle/trailer/cement_mixer/mixer.sii' => 'mixer',
+		],
+		'flat_bed' => [
+			'/def/vehicle/trailer/flat_bed/empty_tank.sii' => 'empty_tank',
+			'/def/vehicle/trailer/flat_bed/hi_pressure_tank.sii' => 'hi_pressure_tank',
+			'/def/vehicle/trailer/flat_bed/marble_blocks.sii' => 'marble_blocks',
+			'/def/vehicle/trailer/flat_bed/marble_blocks_2.sii' => 'marble_blocks_2',
+			'/def/vehicle/trailer/flat_bed/marble_slabs.sii' => 'marble_slabs',
+			'/def/vehicle/trailer/flat_bed/metal_coil.sii' => 'metal_coil',
+			'/def/vehicle/trailer/flat_bed/metal_pipes.sii' => 'metal_pipes',
+			'/def/vehicle/trailer/flat_bed/over_cargo.sii' => 'over_cargo',
+			'/def/vehicle/trailer/flat_bed/square_tubing.sii' => 'square_tubing',
+			'/def/vehicle/trailer/flat_bed/tubes.sii' => 'tubes',
+			'/def/vehicle/trailer/flat_bed/ventilator.sii' => 'ventilator',
+		],
+		'gooseneck' => [
+			'/def/vehicle/trailer/gooseneck/cargo20.sii' => 'cargo20',
+			'/def/vehicle/trailer/gooseneck/cargo20b.sii' => 'cargo20b',
+			'/def/vehicle/trailer/gooseneck/cargo30.sii' => 'cargo30',
+			'/def/vehicle/trailer/gooseneck/cargo40.sii' => 'cargo40',
+			'/def/vehicle/trailer/gooseneck/cistern.sii' => 'cistern',
+			'/def/vehicle/trailer/gooseneck/cistern_alualk.sii' => 'cistern_alualk',
+			'/def/vehicle/trailer/gooseneck/cistern_calcium.sii' => 'cistern_calcium',
+			'/def/vehicle/trailer/gooseneck/cistern_magnesium.sii' => 'cistern_magnesium',
+			'/def/vehicle/trailer/gooseneck/cistern_nitrocel.sii' => 'cistern_nitrocel',
+			'/def/vehicle/trailer/gooseneck/cistern_phosphor.sii' => 'cistern_phosphor',
+			'/def/vehicle/trailer/gooseneck/cistern_potassium.sii' => 'cistern_potassium',
+			'/def/vehicle/trailer/gooseneck/cistern_sodium.sii' => 'cistern_sodium',
+			'/def/vehicle/trailer/gooseneck/nonflam_cistern_acetylene.sii' => 'nonflam_cistern_acetylene',
+			'/def/vehicle/trailer/gooseneck/nonflam_cistern_chlorine.sii' => 'nonflam_cistern_chlorine',
+			'/def/vehicle/trailer/gooseneck/nonflam_cistern_fluorine.sii' => 'nonflam_cistern_fluorine',
+			'/def/vehicle/trailer/gooseneck/nonflam_cistern_neon.sii' => 'nonflam_cistern_neon',
+			'/def/vehicle/trailer/gooseneck/nonflam_cistern_nitrogen.sii' => 'nonflam_cistern_nitrogen',
+			'/def/vehicle/trailer/gooseneck/toxic_cistern_arsenic.sii' => 'toxic_cistern_arsenic',
+			'/def/vehicle/trailer/gooseneck/toxic_cistern_contamin.sii' => 'toxic_cistern_contamin',
+			'/def/vehicle/trailer/gooseneck/toxic_cistern_cyanide.sii' => 'toxic_cistern_cyanide',
+			'/def/vehicle/trailer/gooseneck/toxic_cistern_hmetal.sii' => 'toxic_cistern_hmetal',
+			'/def/vehicle/trailer/gooseneck/toxic_cistern_hwaste.sii' => 'toxic_cistern_hwaste',
+			'/def/vehicle/trailer/gooseneck/toxic_cistern_lead.sii' => 'toxic_cistern_lead',
+			'/def/vehicle/trailer/gooseneck/toxic_cistern_mercuric.sii' => 'toxic_cistern_mercuric',
+			'/def/vehicle/trailer/gooseneck/toxic_cistern_pesticide.sii' => 'toxic_cistern_pesticide',
+			'/def/vehicle/trailer/gooseneck/empty.sii' => 'empty',
+		],
+		'livestock' => [
+			'/def/vehicle/trailer/livestock/cows.sii' => 'cows',
+		],
+		'log_trailer' => [
+			'/def/vehicle/trailer/log_trailer/logs.sii' => 'logs',
+			'/def/vehicle/trailer/log_trailer/lumber.sii' => 'lumber',
+			'/def/vehicle/trailer/log_trailer/pipes.sii' => 'pipes',
+		],
+		'overweight' => [
+			'/def/vehicle/trailer/overweight/aircond.dlc_trailers.sii' => 'aircond',
+			'/def/vehicle/trailer/overweight/boat.sii' => 'boat',
+			'/def/vehicle/trailer/overweight/cat422.sii' => 'cat422',
+			'/def/vehicle/trailer/overweight/catg.sii' => 'catg',
+			'/def/vehicle/trailer/overweight/driller.dlc_trailers.sii' => 'driller',
+			'/def/vehicle/trailer/overweight/excavator.sii' => 'excavator',
+			'/def/vehicle/trailer/overweight/forklifts.sii' => 'forklifts',
+			'/def/vehicle/trailer/overweight/helicopter.dlc_trailers.sii' => 'helicopter',
+			'/def/vehicle/trailer/overweight/roller.dlc_trailers.sii' => 'roller',
+			'/def/vehicle/trailer/overweight/tracks.dlc_trailers.sii' => 'tracks',
+			'/def/vehicle/trailer/overweight/tractor.dlc_trailers.sii' => 'tractor',
+			'/def/vehicle/trailer/overweight/tractors.sii' => 'tractors',
+			'/def/vehicle/trailer/overweight/tube.dlc_north.sii' => 'wind_tube',
+			'/def/vehicle/trailer/overweight/tube.dlc_trailers.sii' => 'tube',
+			'/def/vehicle/trailer/overweight/twocats.sii' => 'twocats',
+			'/def/vehicle/trailer/overweight/windplant.dlc_north.sii' => 'windplant',
+			'/def/vehicle/trailer/overweight/yacht.dlc_trailers.sii' => 'yacht',
+		],
+		's_ki_solid' => [
+			'/def/vehicle/trailer/s_ki_solid/coal.sii' => 'coal',
+			'/def/vehicle/trailer/s_ki_solid/cover.sii' => 'cover',
+			'/def/vehicle/trailer/s_ki_solid/gravel.sii' => 'gravel',
+			'/def/vehicle/trailer/s_ki_solid/ore.sii' => 'ore',
+			'/def/vehicle/trailer/s_ki_solid/sand.sii' => 'sand',
+		],
+		'Schw Overweight' => [
+			'/def/vehicle/trailer/overweight/aircond_schw.dlc_trailers.sii' => 'aircond_schw',
+			'/def/vehicle/trailer/overweight/driller_schw.dlc_trailers.sii' => 'driller_schw',
+			'/def/vehicle/trailer/overweight/helicopter_schw.dlc_trailers.sii' => 'helicopter_schw',
+			'/def/vehicle/trailer/overweight/roller_schw.dlc_trailers.sii' => 'roller_schw',
+			'/def/vehicle/trailer/overweight/tracks_schw.dlc_trailers.sii' => 'tracks_schw',
+			'/def/vehicle/trailer/overweight/tractor_schw.dlc_trailers.sii' => 'tractor_schw',
+			'/def/vehicle/trailer/overweight/tube_schw.dlc_trailers.sii' => 'tube_schw',
+			'/def/vehicle/trailer/overweight/yacht_schw.dlc_trailers.sii' => 'yacht_schw',
+			'/def/vehicle/trailer/schw_overweight/boat.dlc_schwarzmuller.sii' => 'boat_schw',
+			'/def/vehicle/trailer/schw_overweight/cat422.dlc_schwarzmuller.sii' => 'cat422_schw',
+			'/def/vehicle/trailer/schw_overweight/catg.dlc_schwarzmuller.sii' => 'catg_schw',
+			'/def/vehicle/trailer/schw_overweight/excavator.dlc_schwarzmuller.sii' => 'excavator_schw',
+			'/def/vehicle/trailer/schw_overweight/forklifts.dlc_schwarzmuller.sii' => 'forklifts_schw',
+			'/def/vehicle/trailer/schw_overweight/tractors.dlc_schwarzmuller.sii' => 'tractors_schw',
+			'/def/vehicle/trailer/schw_overweight/twocats.dlc_schwarzmuller.sii' => 'twocats_schw',
+		],
+		'schw_slidep' => [
+			'/def/vehicle/trailer/schw_slidepost/logs.dlc_schwarzmuller.sii' => 'logs_schw',
+		],
+		'truck_tranporter' => [
+			'/def/vehicle/trailer/truck_transporter/scaniacargo.sii' => 'scaniacargo',
+			'/def/vehicle/trailer/truck_transporter/volvocargo.sii' => 'volvocargo',
+		],
+		'goldhofer_mpa' => [
+			'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/komatsu_d155ax_5.sii' => 'komatsu_d155ax_5',
+			'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/terex_challenger_3160.sii' => 'terex_challenger_3160',
+			'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/vossloh_g6.sii' => 'vossloh_g6',
+			'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/wirtgen_w250i.sii' => 'wirtgen_w250i',
+		],
+		'goldhofer_stz' => [
+			'/def/vehicle/trailer/goldhofer_stz_vl/coil.sii' => 'coil',
+			'/def/vehicle/trailer/goldhofer_stz_vl/concrete_beam.sii' => 'concrete_beam',
+			'/def/vehicle/trailer/goldhofer_stz_vl/metal_centering.sii' => 'metal_centering',
+			'/def/vehicle/trailer/goldhofer_stz_vl/transformer.sii' => 'transformer',
+		],
+		'van_transporter' => [
+			'/def/vehicle/trailer/van_transporter/iveco_daily.sii' => 'iveco_daily'
+		],
+	];
+
+	$paints = [
+
+	];
+
 	$dlc_accessories = [
 		'/def/vehicle/trailer/car_transporter/cargo_cars_it.sii' => 'italy',
 		'/def/vehicle/trailer/car_transporter/cargo_france_cars.dlc_fr.sii' => 'france',

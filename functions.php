@@ -2,9 +2,9 @@
 require_once 'arrays.php';
 require_once 'strings.php';
 
-function t($name){
+function t($name, $lang = null){
 	GLOBAL $strings_en, $strings_ru;
-	$lang = getUserLanguage();
+	$lang ? : $lang = getUserLanguage();
 	return ${'strings_'.$lang}[$name];
 }
 
@@ -257,4 +257,46 @@ function transliterate($str){
 
 	return strtr($str, $ru);
 
+}
+
+function getAccessoriesByChassis($lang, $chassis = null){
+	GLOBAL $with_accessory, $accesories;
+	$list = array();
+	if(!$chassis){
+		foreach($accesories as $chassis => $accesory){
+			$list[] = $accesory;
+		}
+		return $list;
+	}
+	if(in_array($chassis, $with_accessory)){
+		$chassis = str_replace(['_default', '_black', '_yellow', '_red', '_blue'], '', $chassis);
+		$list = '<div class="row" id="accessory">'.
+					'<div class="col s12">'.
+						'<label>'. t('pick_accessory', $lang) .'</label>'.
+						'<select class="browser-default grey darken-3" name="accessory">'.
+							'<option value="" selected>'. t('choose_accessory', $lang) .'</option>';
+		foreach($accesories[$chassis] as $def => $name){
+			$list .= '<option value="'.$def.'">'.t($name, $lang).'</option>';
+		}
+		$list .= '</select></div></div>';
+		return $list;
+	}else{
+		return false;
+	}
+}
+
+function getPaintByChassis($lang, $chassis = null){
+	GLOBAL $with_paint_job, $paints;
+	if(!$chassis){
+		$list = array();
+		foreach($paints as $chassis => $paint){
+			$list[] = $paint;
+		}
+		return $list;
+	}
+	if(in_array($chassis, $with_paint_job)){
+		return $paints[$chassis];
+	}else{
+		return false;
+	}
 }
