@@ -4,21 +4,38 @@ require_once 'functions.php';
 
 if(isset($_POST['ajax']) && $chassis = $_POST['chassis']){
 	$lang = $_POST['lang'] ?? null;
-	if(isset($_POST['all'])) $chassis = null;
+	if(isset($_POST['all']) && $_POST['all'] == 'true'){
+		if($_POST['target'] == 'accessory'){
+			$chassis = null;
+			echo json_encode(['result' => getAccessoriesByChassis($lang), 'first' => t('choose_accessory',
+				$lang), 'status' => 'OK']);
+			die();
+		}
+		if($_POST['target'] == 'paint'){
+			$chassis = null;
+			echo json_encode(['result' => getPaintByChassis($lang), 'first' => t('all_companies',
+				$lang), 'status' => 'OK']);
+			die();
+		}
+	}
 	GLOBAL $with_accessory, $with_paint_job;
 	$echo = false;
+	$target = null;
 	if(in_array($_POST['chassis'], $with_accessory)){
 		$echo = getAccessoriesByChassis($lang, $chassis);
+		$first = t('choose_accessory', $lang);
+		$target = 'accessory';
 	}
-	if(in_array($_POST['chassis'], $with_paint_job)){
+	if(key_exists($_POST['chassis'], $with_paint_job)){
 		$echo = getPaintByChassis($lang, $chassis);
+		$first = t('all_companies', $lang);
+		$target = 'paint';
 	}
-	echo json_encode(['result' => $echo, 'status' => 'OK']);
+	echo json_encode(['target' => $target, 'result' => $echo, 'first' => $first, 'status' => 'OK']);
 	die();
 }
 
-require_once 'modules/header.php';
-?>
+require_once 'modules/header.php'; ?>
 
 	<div class="container">
 		<?php if(isset($_GET['download'])) : ?>
@@ -48,33 +65,39 @@ require_once 'modules/header.php';
 							</select>
 						</div>
 					</div>
-<!--					<div class="row" id="accessory">-->
-<!--						<div class="col s12">-->
-<!--							<label>--><?//= t('pick_accessory') ?><!--</label>-->
-<!--							<select class="browser-default grey darken-3" name="accessory">-->
-<!--								<option value="" selected>--><?//= t('choose_accessory') ?><!--</option>-->
-<!--								--><?php //$accessories = file('def/accessories.txt', FILE_IGNORE_NEW_LINES);
-//									foreach($accessories as $accessory): ?>
-<!--										<option value="--><?//= $accessory ?><!--">--><?//= $accessory ?><!--</option>-->
-<!--									--><?php //endforeach; ?>
-<!--							</select>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--					<div class="row" id="paint">-->
-<!--						<div class="col s12">-->
-<!--							<label>--><?//= t('pick_paint') ?><!--</label>-->
-<!--							<select class="browser-default grey darken-3" name="paint_job">-->
-<!--								<option selected value="all">--><?//= t('all_companies') ?><!--</option>-->
-<!--								--><?php //$paints = file('def/paints.txt', FILE_IGNORE_NEW_LINES);
-//									foreach($paints as $paint): ?>
-<!--										<option value="--><?//= $paint ?><!--">--><?//= $paint ?><!--</option>-->
-<!--									--><?php //endforeach; ?>
-<!--							</select>-->
-<!--						</div>-->
-<!--					</div>-->
+					<div class="row" id="accessory" style="display: none">
+						<div class="col s12">
+							<label><?= t('pick_accessory') ?></label>
+							<select class="browser-default grey darken-3" name="accessory">
+								<option value="" selected><?= t('choose_accessory') ?></option>
+							</select>
+						</div>
+						<h5 class="col s12">
+							<label>
+								<input type="checkbox" id="all_accessories" data-target="accessory">
+								<span><?= t('show_all_accessories') ?></span>
+							</label>
+						</h5>
+					</div>
+					<div class="row" id="paint" style="display: none">
+						<div class="col s12">
+							<label><?= t('pick_paint') ?></label>
+							<select class="browser-default grey darken-3" name="paint">
+								<option selected value="all"><?= t('all_companies') ?></option>
+							</select>
+						</div>
+						<h5 class="col s12">
+							<label>
+								<input type="checkbox" id="all_paints" data-target="paint">
+								<span><?= t('show_all_paints') ?></span>
+							</label>
+						</h5>
+					</div>
 				</div>
-				<div class="card-action">
-					<button class="btn blue-grey waves-effect" type="submit" onclick="return confirm('<?= t('are_you_sure') ?>')"><?= t('proceed') ?></button>
+				<div class="card-action row">
+					<div class="col s12">
+						<button class="btn blue-grey waves-effect" type="submit" onclick="return confirm('<?= t('are_you_sure') ?>')"><?= t('proceed') ?></button>
+					</div>
 				</div>
 				<input type="hidden" name="target" value="ets2">
 			</form>

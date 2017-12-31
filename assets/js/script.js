@@ -7,6 +7,8 @@ $(document).ready(function(){
 	});
 
 	$('select[name=chassis]').change(function(){
+		$('#accessory').hide();
+		$('#paint').hide();
 		if($(this).val() !== ''){
 			$.ajax({
 				cache: false,
@@ -17,17 +19,58 @@ $(document).ready(function(){
 					'chassis' : $(this).val(),
 					'lang' : getCookie('lang')
 				},
+				beforeSend : function(){
+					$('#chassis').after(getPreloaderHtml('small'));
+				},
 				success : function(response){
 					if(response.status === 'OK'){
-						$('#chassis').after(response.result);
-						$('select').select2();
+						if(response.status === 'OK'){
+							$('#'+response.target).show();
+							$('select[name='+response.target+']').find('option').remove();
+							$('select[name='+response.target+']').append('<option value="">'+response.first+'</option>');
+							$.each(response.result, function(def, name){
+								$('select[name='+response.target+']').append('<option value="'+def+'">'+name+'</option>');
+							});
+							$('select').select2();
+						}
 					}
+				},
+				complete : function(){
+					$('.preloader-wrapper').remove();
 				}
 			});
-		}else{
-			$('#accessory').remove();
-			$('#paint').remove();
 		}
+	});
+
+	$('#all_accessories, #all_paints').change(function(){
+		var target = $(this).data('target');
+		$.ajax({
+			cache: false,
+			dataType : 'json',
+			type : 'POST',
+			data : {
+				'ajax' : true,
+				'all' : $(this)[0].checked,
+				'target' : target,
+				'chassis' : $('select[name=chassis]').val(),
+				'lang' : getCookie('lang')
+			},
+			beforeSend : function(){
+				$('#'+$(this).data('target')+' h5').append(getPreloaderHtml('tiny'));
+			},
+			success : function(response){
+				if(response.status === 'OK'){
+					$('select[name='+target+']').find('option').remove();
+					$('select[name='+target+']').append('<option value="">'+response.first+'</option>');
+					$.each(response.result, function(def, name){
+						$('select[name='+target+']').append('<option value="'+def+'">'+name+'</option>');
+					})
+				}
+			},
+			complete : function(){
+				$('.preloader-wrapper').remove();
+			}
+		});
 	});
 	
 });
@@ -37,4 +80,22 @@ function getCookie(name) {
 		"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
 	));
 	return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+function getPreloaderHtml(preloaderClass, color){
+	if(preloaderClass === undefined) preloaderClass = '';
+	if(color === undefined) color = 'spinner-red-only';
+	return '<div class="preloader-wrapper active '+preloaderClass+'">'+
+		'<div class="spinner-layer '+color+'">'+
+		'<div class="circle-clipper left">'+
+		'<div class="circle"></div>'+
+		'</div>' +
+		'<div class="gap-patch">'+
+		'<div class="circle"></div>'+
+		'</div>' +
+		'<div class="circle-clipper right">'+
+		'<div class="circle"></div>'+
+		'</div>'+
+		'</div>'+
+		'</div>';
 }
