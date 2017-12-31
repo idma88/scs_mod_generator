@@ -9,6 +9,7 @@ $(document).ready(function(){
 	$('select[name=chassis]').change(function(){
 		$('#accessory').hide();
 		$('#paint').hide();
+		$('#all_accessories, #all_paints').attr('checked',false);
 		if($(this).val() !== ''){
 			$.ajax({
 				cache: false,
@@ -25,11 +26,13 @@ $(document).ready(function(){
 				success : function(response){
 					if(response.status === 'OK'){
 						if(response.status === 'OK'){
-							$('#'+response.target).show();
-							$('select[name='+response.target+']').find('option').remove();
-							$('select[name='+response.target+']').append('<option value="">'+response.first+'</option>');
-							$.each(response.result, function(def, name){
-								$('select[name='+response.target+']').append('<option value="'+def+'">'+name+'</option>');
+							$.each(response.result, function(target, data){
+								$('#'+target).show();
+								$('select[name='+target+']').find('option').remove();
+								$('select[name='+target+']').append('<option value="">'+data.first+'</option>');
+								$.each(data.echo, function(def, name){
+									$('select[name='+target+']').append('<option value="'+def+'">'+name+'</option>');
+								});
 							});
 							$('select').select2();
 						}
@@ -60,11 +63,14 @@ $(document).ready(function(){
 			},
 			success : function(response){
 				if(response.status === 'OK'){
-					$('select[name='+target+']').find('option').remove();
-					$('select[name='+target+']').append('<option value="">'+response.first+'</option>');
-					$.each(response.result, function(def, name){
-						$('select[name='+target+']').append('<option value="'+def+'">'+name+'</option>');
-					})
+					$.each(response.result, function(target, data){
+						$('select[name=' + target + ']').find('option').remove();
+						$('select[name=' + target + ']').append('<option value="">' + data.first + '</option>');
+						$.each(data.echo, function(def, name){
+							$('select[name=' + target + ']').append('<option value="' + def + '">' + name + '</option>');
+						});
+					});
+
 				}
 			},
 			complete : function(){

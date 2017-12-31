@@ -7,31 +7,37 @@ if(isset($_POST['ajax']) && $chassis = $_POST['chassis']){
 	if(isset($_POST['all']) && $_POST['all'] == 'true'){
 		if($_POST['target'] == 'accessory'){
 			$chassis = null;
-			echo json_encode(['result' => getAccessoriesByChassis($lang), 'first' => t('choose_accessory',
-				$lang), 'status' => 'OK']);
-			die();
+			$data['accessory'] = [
+				'echo' => getAccessoriesByChassis($lang),
+				'first' => t('choose_accessory')
+			];
 		}
 		if($_POST['target'] == 'paint'){
 			$chassis = null;
-			echo json_encode(['result' => getPaintByChassis($lang), 'first' => t('all_companies',
-				$lang), 'status' => 'OK']);
-			die();
+			$data['paint'] = [
+				'echo' => getPaintByChassis($lang),
+				'first' => t('all_companies')
+			];
 		}
+		echo json_encode(['result' => $data, 'status' => 'OK']);
+		die();
 	}
 	GLOBAL $with_accessory, $with_paint_job;
 	$echo = false;
 	$target = null;
 	if(in_array($_POST['chassis'], $with_accessory)){
-		$echo = getAccessoriesByChassis($lang, $chassis);
-		$first = t('choose_accessory', $lang);
-		$target = 'accessory';
+		$data['accessory'] = [
+			'echo' => getAccessoriesByChassis($lang, $chassis),
+			'first' => t('choose_accessory', $lang)
+		];
 	}
 	if(key_exists($_POST['chassis'], $with_paint_job)){
-		$echo = getPaintByChassis($lang, $chassis);
-		$first = t('all_companies', $lang);
-		$target = 'paint';
+		$data['paint'] = [
+			'echo' => getPaintByChassis($lang, $chassis),
+			'first' => t('all_companies', $lang)
+		];
 	}
-	echo json_encode(['target' => $target, 'result' => $echo, 'first' => $first, 'status' => 'OK']);
+	echo json_encode(['result' => $data, 'status' => 'OK']);
 	die();
 }
 
