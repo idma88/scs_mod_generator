@@ -14,3 +14,15 @@ select{
 	width: 24px;
 	vertical-align: middle;
 }
+
+@media (max-width: 730px){
+	nav .brand-logo.left{
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 610px){
+	nav .brand-logo.left{
+		display: none;
+	}
+}

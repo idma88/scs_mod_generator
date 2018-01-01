@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-	$('select').select2();
+	$('select').select2({
+        minimumResultsForSearch : 15
+    });
 
 	$('#lang-btn').click(function(){
 		document.cookie = 'lang=' + $(this).data('lang');
@@ -34,7 +36,9 @@ $(document).ready(function(){
 									$('select[name='+target+']').append('<option value="'+def+'">'+name+'</option>');
 								});
 							});
-							$('select').select2();
+							$('select').select2({
+                                minimumResultsForSearch : 15
+                            });
 						}
 					}
 				},
