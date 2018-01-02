@@ -51,6 +51,12 @@ $(document).ready(function(){
 		}
 	});
 
+	$('form').submit(function(){
+		if($('input[name=title]').val() === ''){
+			$('input[name=title]').val($('select[name=chassis] option:selected').text().replace(/(\(.+|-.+)/, ''));
+		}
+	});
+
 	$('#all_accessories, #all_paints').change(function(){
 		$('.colors').hide();
 		var target = $(this).data('target');
