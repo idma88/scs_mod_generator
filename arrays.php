@@ -306,12 +306,12 @@
 	];
 
 	$paints = [
-		'aero_dynamic' => [
-			'/def/vehicle/trailer/aero_dynamic/company_paint_job/default.sii'
-		],
+//		'aero_dynamic' => [
+//			'/def/vehicle/trailer/aero_dynamic/company_paint_job/default.sii'
+//		],
 		'cement_cistern' => [
-			'/def/vehicle/trailer/cement/company_paint_job/bcp.sii',
 			'/def/vehicle/trailer/cement/company_paint_job/default.sii',
+			'/def/vehicle/trailer/cement/company_paint_job/bcp.sii',
 			'/def/vehicle/trailer/cement/company_paint_job/drekkar.sii',
 			'/def/vehicle/trailer/cement/company_paint_job/fcp.sii',
 			'/def/vehicle/trailer/cement/company_paint_job/gnt.sii',
@@ -336,10 +336,10 @@
 			'/def/vehicle/trailer/cement/company_paint_job/wgcc.sii'
 		],
 		'chemical_cistern' => [
+			'/def/vehicle/trailer/chemical_cistern/company_paint_job/default.sii',
 			'/def/vehicle/trailer/chemical_cistern/company_paint_job/bhb_raffin.sii',
 			'/def/vehicle/trailer/chemical_cistern/company_paint_job/chimi.sii',
 			'/def/vehicle/trailer/chemical_cistern/company_paint_job/cnp.sii',
-			'/def/vehicle/trailer/chemical_cistern/company_paint_job/default.sii',
 			'/def/vehicle/trailer/chemical_cistern/company_paint_job/drekkar.sii',
 			'/def/vehicle/trailer/chemical_cistern/company_paint_job/exomar.sii',
 			'/def/vehicle/trailer/chemical_cistern/company_paint_job/fattoria_f.sii',
@@ -359,10 +359,10 @@
 			'/def/vehicle/trailer/chemical_cistern/company_paint_job/wilnet_trans.sii',
 		],
 		'food_cistern' => [
+			'/def/vehicle/trailer/food_cistern/company_paint_job/default.sii',
 			'/def/vehicle/trailer/food_cistern/company_paint_job/aria_food.sii',
 			'/def/vehicle/trailer/food_cistern/company_paint_job/bcp.sii',
 			'/def/vehicle/trailer/food_cistern/company_paint_job/cnp.sii',
-			'/def/vehicle/trailer/food_cistern/company_paint_job/default.sii',
 			'/def/vehicle/trailer/food_cistern/company_paint_job/drekkar.sii',
 			'/def/vehicle/trailer/food_cistern/company_paint_job/euroacres.sii',
 			'/def/vehicle/trailer/food_cistern/company_paint_job/eurogoodies.sii',
@@ -396,10 +396,10 @@
 			'/def/vehicle/trailer/food_cistern/company_paint_job/wilnet_trans.sii',
 		],
 		'fuel_cistern' => [
+			'/def/vehicle/trailer/fuel_cistern/company_paint_job/default.sii',
 			'/def/vehicle/trailer/fuel_cistern/company_paint_job/bcp.sii',
 			'/def/vehicle/trailer/fuel_cistern/company_paint_job/bhb_raffin.sii',
 			'/def/vehicle/trailer/fuel_cistern/company_paint_job/cnp.sii',
-			'/def/vehicle/trailer/fuel_cistern/company_paint_job/default.sii',
 			'/def/vehicle/trailer/fuel_cistern/company_paint_job/exomar.sii',
 			'/def/vehicle/trailer/fuel_cistern/company_paint_job/fattoria_f.sii',
 			'/def/vehicle/trailer/fuel_cistern/company_paint_job/fcp.sii',
@@ -420,6 +420,7 @@
 			'/def/vehicle/trailer/fuel_cistern/company_paint_job/wilnet_trans.sii',
 		],
 		'coolliner' => [
+			'/def/vehicle/trailer/krone/coolliner/company_paint_job/default.sii',
 			'/def/vehicle/trailer/krone/coolliner/company_paint_job/acc.sii',
 			'/def/vehicle/trailer/krone/coolliner/company_paint_job/aci.sii',
 			'/def/vehicle/trailer/krone/coolliner/company_paint_job/agronord.sii',
@@ -434,7 +435,6 @@
 			'/def/vehicle/trailer/krone/coolliner/company_paint_job/costruzi.sii',
 			'/def/vehicle/trailer/krone/coolliner/company_paint_job/costruzi_2.sii',
 			'/def/vehicle/trailer/krone/coolliner/company_paint_job/dans_jardin.sii',
-			'/def/vehicle/trailer/krone/coolliner/company_paint_job/default.sii',
 			'/def/vehicle/trailer/krone/coolliner/company_paint_job/drekkar.sii',
 			'/def/vehicle/trailer/krone/coolliner/company_paint_job/eolo_lines.sii',
 			'/def/vehicle/trailer/krone/coolliner/company_paint_job/euroacres.sii',
@@ -482,6 +482,7 @@
 			'/def/vehicle/trailer/krone/coolliner/company_paint_job/wilnet_trans.sii',
 		],
 		'fridge' => [
+			'/def/vehicle/trailer/krone/fridge/company_paint_job/default.sii',
 			'/def/vehicle/trailer/krone/fridge/company_paint_job/acc.sii',
 			'/def/vehicle/trailer/krone/fridge/company_paint_job/aci.sii',
 			'/def/vehicle/trailer/krone/fridge/company_paint_job/agronord.sii',
@@ -496,7 +497,6 @@
 			'/def/vehicle/trailer/krone/fridge/company_paint_job/costruzi.sii',
 			'/def/vehicle/trailer/krone/fridge/company_paint_job/costruzi_2.sii',
 			'/def/vehicle/trailer/krone/fridge/company_paint_job/dans_jardin.sii',
-			'/def/vehicle/trailer/krone/fridge/company_paint_job/default.sii',
 			'/def/vehicle/trailer/krone/fridge/company_paint_job/drekkar.sii',
 			'/def/vehicle/trailer/krone/fridge/company_paint_job/eolo_lines.sii',
 			'/def/vehicle/trailer/krone/fridge/company_paint_job/euroacres.sii',
@@ -544,6 +544,7 @@
 			'/def/vehicle/trailer/krone/fridge/company_paint_job/wilnet_trans.sii',
 		],
 		'profiliner' => [
+			'/def/vehicle/trailer/krone/profiliner/company_paint_job/default.sii',
 			'/def/vehicle/trailer/krone/profiliner/company_paint_job/acc.sii',
 			'/def/vehicle/trailer/krone/profiliner/company_paint_job/aci.sii',
 			'/def/vehicle/trailer/krone/profiliner/company_paint_job/agronord.sii',
@@ -562,7 +563,6 @@
 			'/def/vehicle/trailer/krone/profiliner/company_paint_job/costruzi.sii',
 			'/def/vehicle/trailer/krone/profiliner/company_paint_job/costruzi_2.sii',
 			'/def/vehicle/trailer/krone/profiliner/company_paint_job/dans_jardin.sii',
-			'/def/vehicle/trailer/krone/profiliner/company_paint_job/default.sii',
 			'/def/vehicle/trailer/krone/profiliner/company_paint_job/drekkar.sii',
 			'/def/vehicle/trailer/krone/profiliner/company_paint_job/eolo_lines.sii',
 			'/def/vehicle/trailer/krone/profiliner/company_paint_job/euroacres.sii',
@@ -621,11 +621,12 @@
 			'/def/vehicle/trailer/krone/profiliner/company_paint_job/wilnet_trans.sii',
 		],
 		'livestock' => [
-			'/def/vehicle/trailer/livestock/company_paint_job/aria_food.sii',
 			'/def/vehicle/trailer/livestock/company_paint_job/default.sii',
+			'/def/vehicle/trailer/livestock/company_paint_job/aria_food.sii',
 			'/def/vehicle/trailer/livestock/company_paint_job/nos_pat.sii',
 		],
 		'schmitz_universal' => [
+			'/def/vehicle/trailer/schmitz/universal/company_paint_job/default.sii',
 			'/def/vehicle/trailer/schmitz/universal/company_paint_job/acc.sii',
 			'/def/vehicle/trailer/schmitz/universal/company_paint_job/aci.sii',
 			'/def/vehicle/trailer/schmitz/universal/company_paint_job/agronord.sii',
@@ -644,7 +645,6 @@
 			'/def/vehicle/trailer/schmitz/universal/company_paint_job/costruzi.sii',
 			'/def/vehicle/trailer/schmitz/universal/company_paint_job/costruzi_2.sii',
 			'/def/vehicle/trailer/schmitz/universal/company_paint_job/dans_jardin.sii',
-			'/def/vehicle/trailer/schmitz/universal/company_paint_job/default.sii',
 			'/def/vehicle/trailer/schmitz/universal/company_paint_job/drekkar.sii',
 			'/def/vehicle/trailer/schmitz/universal/company_paint_job/eolo_lines.sii',
 			'/def/vehicle/trailer/schmitz/universal/company_paint_job/euroacres.sii',
@@ -702,11 +702,11 @@
 			'/def/vehicle/trailer/schmitz/universal/company_paint_job/wilnet_trans.sii',
 		],
 		'schw_food_cistern' => [
+			'/def/vehicle/trailer/schw_cistern_food/company_paint_job/default.sii',
 			'/def/vehicle/trailer/schw_cistern_food/company_paint_job/aria_food.sii',
 			'/def/vehicle/trailer/schw_cistern_food/company_paint_job/bcp.sii',
 			'/def/vehicle/trailer/schw_cistern_food/company_paint_job/bhb_raffin.sii',
 			'/def/vehicle/trailer/schw_cistern_food/company_paint_job/cnp.sii',
-			'/def/vehicle/trailer/schw_cistern_food/company_paint_job/default.sii',
 			'/def/vehicle/trailer/schw_cistern_food/company_paint_job/drekkar.sii',
 			'/def/vehicle/trailer/schw_cistern_food/company_paint_job/euroacres.sii',
 			'/def/vehicle/trailer/schw_cistern_food/company_paint_job/eurogoodies.sii',
@@ -744,6 +744,7 @@
 			'/def/vehicle/trailer/schw_cistern_food/company_paint_job/wilnet_trans.sii',
 		],
 		'schw_curtain' => [
+			'/def/vehicle/trailer/schw_curtain/company_paint_job/default.sii',
 			'/def/vehicle/trailer/schw_curtain/company_paint_job/acc.sii',
 			'/def/vehicle/trailer/schw_curtain/company_paint_job/aci.sii',
 			'/def/vehicle/trailer/schw_curtain/company_paint_job/agronord.sii',
@@ -762,7 +763,6 @@
 			'/def/vehicle/trailer/schw_curtain/company_paint_job/costruzi.sii',
 			'/def/vehicle/trailer/schw_curtain/company_paint_job/costruzi_2.sii',
 			'/def/vehicle/trailer/schw_curtain/company_paint_job/dans_jardin.sii',
-			'/def/vehicle/trailer/schw_curtain/company_paint_job/default.sii',
 			'/def/vehicle/trailer/schw_curtain/company_paint_job/drekkar.sii',
 			'/def/vehicle/trailer/schw_curtain/company_paint_job/eolo_lines.sii',
 			'/def/vehicle/trailer/schw_curtain/company_paint_job/euroacres.sii',
@@ -821,6 +821,7 @@
 			'/def/vehicle/trailer/schw_curtain/company_paint_job/wilnet_trans.sii',
 		],
 		'schw_reefer' => [
+			'/def/vehicle/trailer/schw_reefer/company_paint_job/default.sii',
 			'/def/vehicle/trailer/schw_reefer/company_paint_job/acc.sii',
 			'/def/vehicle/trailer/schw_reefer/company_paint_job/aci.sii',
 			'/def/vehicle/trailer/schw_reefer/company_paint_job/aria_food.sii',
@@ -834,7 +835,6 @@
 			'/def/vehicle/trailer/schw_reefer/company_paint_job/costruzi.sii',
 			'/def/vehicle/trailer/schw_reefer/company_paint_job/costruzi_2.sii',
 			'/def/vehicle/trailer/schw_reefer/company_paint_job/dans_jardin.sii',
-			'/def/vehicle/trailer/schw_reefer/company_paint_job/default.sii',
 			'/def/vehicle/trailer/schw_reefer/company_paint_job/drekkar.sii',
 			'/def/vehicle/trailer/schw_reefer/company_paint_job/eolo_lines.sii',
 			'/def/vehicle/trailer/schw_reefer/company_paint_job/euroacres.sii',
@@ -873,10 +873,10 @@
 			'/def/vehicle/trailer/schw_reefer/company_paint_job/wilnet_trans.sii',
 		],
 		'willig_cistern' => [
+			'/def/vehicle/trailer/willig/fuel_cistern/company_paint_job/default.sii',
 			'/def/vehicle/trailer/willig/fuel_cistern/company_paint_job/bcp.sii',
 			'/def/vehicle/trailer/willig/fuel_cistern/company_paint_job/bhb_raffin.sii',
 			'/def/vehicle/trailer/willig/fuel_cistern/company_paint_job/cnp.sii',
-			'/def/vehicle/trailer/willig/fuel_cistern/company_paint_job/default.sii',
 			'/def/vehicle/trailer/willig/fuel_cistern/company_paint_job/exomar.sii',
 			'/def/vehicle/trailer/willig/fuel_cistern/company_paint_job/fattoria_f.sii',
 			'/def/vehicle/trailer/willig/fuel_cistern/company_paint_job/fcp.sii',
