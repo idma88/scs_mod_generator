@@ -161,7 +161,7 @@
 	];
 
 	$with_paint_job = [
-		'aero_dynamic' => '/def/vehicle/trailer/aero_dynamic/company_paint_job/default.sii',
+//		'aero_dynamic' => '/def/vehicle/trailer/aero_dynamic/company_paint_job/default.sii',
 		'cement_cistern' => '/def/vehicle/trailer/cement/company_paint_job/default.sii',
 		'chemical_cistern' => '/def/vehicle/trailer/chemical_cistern/company_paint_job/default.sii',
 		'food_cistern' => '/def/vehicle/trailer/food_cistern/company_paint_job/default.sii',

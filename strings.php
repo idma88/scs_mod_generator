@@ -19,6 +19,10 @@
 		'not_supported' => 'Not supported yet',
 		'show_all_accessories' => 'Show all accessories (for advanced)',
 		'show_all_paints' => 'Show all paint jobs (for advanced)',
+		'pick_color' => 'Pick a color from palette',
+		'type_color_hex' => 'HEX color value (6 chars, ex. #E1A1F3)',
+		'type_color_rgb' => 'RGB color (values from 0 to 255)',
+		'type_color_scs' => 'SCS color (values from 0 to 1)',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Aero dynamic',
@@ -164,7 +168,7 @@
 		'iveco_daily' => 'Vans - DLC Italia - !NOT SUPPORTED BY MP!',
 
 		/* ets2 companies/paints */
-		'default' => 'Default (White)',
+		'default' => 'Colored',
 		'bcp' => 'BCP',
 		'drekkar' => 'Drekkar Trans - DLC Scandinavia',
 		'fcp' => 'FCP',
@@ -261,6 +265,10 @@
 		'not_supported' => 'Не поддерживается',
 		'show_all_accessories' => 'Показать все аксессуары (для опытных)',
 		'show_all_paints' => 'Показать все скины (для опытных)',
+		'pick_color' => 'Выберите цвет из палитры',
+		'type_color_scs' => 'SCS цвет (значения от 0 до 1)',
+		'type_color_hex' => 'HEX цвет (6 символов, пример: #E1A1F3)',
+		'type_color_rgb' => 'RGB цвет (значения от 0 до 255)',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Аэродинамический рефрижератор',
@@ -407,7 +415,7 @@
 
 
 		/* ets2 companies/paints */
-		'default' => 'Стандартный (Белый)',
+		'default' => 'Цветной',
 		'bcp' => 'BCP',
 		'drekkar' => 'Drekkar Trans - DLC Scandinavia',
 		'fcp' => 'FCP',

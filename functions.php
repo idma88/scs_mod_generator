@@ -137,6 +137,7 @@ function generateTrailerContent($name, $data){
 	$chassis = $data['chassis'];
 	$accessory = $data['accessory'];
 	$paint_job = $data['paint_job'];
+	$color = $data['color'];
 	$axles = $data['axles'];
 	$wheels = $data['wheels'];
 
@@ -169,7 +170,11 @@ function generateTrailerContent($name, $data){
 			$output_string .= "\nvehicle_accessory: .".$name.".cargo\n{\n\t\tdata_path: \"".$accessory."\"\n}";
 		}
 		if($paint_job){
-			$output_string .= "\nvehicle_paint_job_accessory: .".$name.".paint_job\n{\n\t\tdata_path: \"".$paint_job."\"\n}";
+			$output_string .= "\nvehicle_paint_job_accessory: .".$name.".paint_job\n{\n";
+			if(stripos($paint_job ,'default.sii')){
+				$output_string .= "\tbase_color: (".$color.")\n";
+			}
+			$output_string .= "\t\tdata_path: \"".$paint_job."\"\n}";
 		}
 	}
 	return $output_string;

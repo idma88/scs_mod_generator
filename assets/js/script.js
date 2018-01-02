@@ -11,6 +11,7 @@ $(document).ready(function(){
 	$('select[name=chassis]').change(function(){
 		$('#accessory').hide();
 		$('#paint').hide();
+		$('.colors').hide();
 		$('#all_accessories, #all_paints').attr('checked',false);
 		if($(this).val() !== ''){
 			$.ajax({
@@ -31,7 +32,8 @@ $(document).ready(function(){
 							$.each(response.result, function(target, data){
 								$('#'+target).show();
 								$('select[name='+target+']').find('option').remove();
-								$('select[name='+target+']').append('<option value="">'+data.first+'</option>');
+								var value = target === 'accessory' ? '' : 'all';
+								$('select[name='+target+']').append('<option value="'+value+'">'+data.first+'</option>');
 								$.each(data.echo, function(def, name){
 									$('select[name='+target+']').append('<option value="'+def+'">'+name+'</option>');
 								});
@@ -50,6 +52,7 @@ $(document).ready(function(){
 	});
 
 	$('#all_accessories, #all_paints').change(function(){
+		$('.colors').hide();
 		var target = $(this).data('target');
 		$.ajax({
 			cache: false,
@@ -74,7 +77,6 @@ $(document).ready(function(){
 							$('select[name=' + target + ']').append('<option value="' + def + '">' + name + '</option>');
 						});
 					});
-
 				}
 			},
 			complete : function(){
@@ -82,8 +84,122 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	$('select[name=paint]').change(function(){
+		var val = $(this).val();
+		val = val.split('/');
+		if(val[val.length - 1] === 'default.sii'){
+			$('.colors').show();
+		}else{
+			$('.colors').hide();
+		}
+	});
+
+	$('.colors input[type=color]').change(function(){
+		var rgb = hexToRgb($(this).val());
+		var scs = rgbToScs(rgb.r, rgb.g, rgb.b);
+		setColors($(this).val(), rgb, scs);
+	});
+
+	$('#color_hex').keyup(function(){
+		var val = $(this).val();
+		if(val !== ''){
+			var regexp = new RegExp('^#?[A-Fa-f0-9]{6}$');
+			if(regexp.test(val)){
+				var hex = val.replace('#', '');
+				var rgb = hexToRgb(hex);
+				var scs = rgbToScs(rgb.r, rgb.g, rgb.b);
+				setColors('#'+hex, rgb, scs);
+			}
+		}
+	});
+
+	$('#color_rgb_b, #color_rgb_g, #color_rgb_r').keyup(function(){
+		var val = parseInt($(this).val());
+		console.log(val);
+		if(!isNaN(val)){
+			if(val > 255){
+				$(this).val(255);
+				$(this).trigger('keyup');
+			}else{
+				var rgb = {
+					r : parseInt($('#color_rgb_r').val()),
+					g : parseInt($('#color_rgb_g').val()),
+					b : parseInt($('#color_rgb_b').val())
+				};
+				console.log(rgb);
+				var hex = rgbToHex(rgb.r, rgb.g, rgb.b);
+				var scs = rgbToScs(rgb.r, rgb.g, rgb.b);
+				setColors(hex, rgb, scs);
+			}
+		}
+	});
+
+	$('#color_scs_b, #color_scs_g, #color_scs_r').keyup(function(){
+		var val = parseFloat($(this).val());
+		if(!isNaN(val)){
+			if(val > 1){
+				$(this).val(1);
+				$(this).trigger('keyup');
+			}else{
+				var scs = {
+					r: parseFloat($('#color_scs_r').val()),
+					g: parseFloat($('#color_scs_g').val()),
+					b: parseFloat($('#color_scs_b').val())
+				};
+				var rgb = {
+					r: Math.round(scs.r * 255),
+					g: Math.round(scs.g * 255),
+					b: Math.round(scs.b * 255)
+				};
+				var hex = rgbToHex(rgb.r, rgb.g, rgb.b);
+				$('#color_palette').val(hex);
+				$('#color_hex').val(hex);
+				$('#color_rgb_r').val(rgb.r);
+				$('#color_rgb_g').val(rgb.g);
+				$('#color_rgb_b').val(rgb.b);
+			}
+		}
+	});
 	
 });
+
+function setColors(hex, rgb, scs){
+	$('#color_palette').val(hex);
+	$('#color_hex').val(hex);
+	$('#color_rgb_r').val(rgb.r);
+	$('#color_rgb_g').val(rgb.g);
+	$('#color_rgb_b').val(rgb.b);
+	$('#color_scs_r').val(parseFloat(scs.r.toFixed(3)));
+	$('#color_scs_g').val(parseFloat(scs.g.toFixed(1)));
+	$('#color_scs_b').val(parseFloat(scs.b.toFixed(1)));
+}
+
+function rgbToHex(r, g, b) {
+	return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+function componentToHex(c) {
+	var hex = c.toString(16);
+	return hex.length == 1 ? "0" + hex : hex;
+}
+
+function hexToRgb(hex) {
+	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	return result ? {
+		r: parseInt(result[1], 16),
+		g: parseInt(result[2], 16),
+		b: parseInt(result[3], 16)
+	} : null;
+}
+
+function rgbToScs(r, g, b){
+	return {
+		r : r / 255,
+		g : g / 255,
+		b : b / 255
+	};
+}
 
 function getCookie(name) {
 	var matches = document.cookie.match(new RegExp(
@@ -109,3 +225,9 @@ function getPreloaderHtml(preloaderClass, color){
 		'</div>'+
 		'</div>';
 }
+
+$(window).resize(function() {
+	$('select').select2({
+		minimumResultsForSearch : 15
+	});
+});

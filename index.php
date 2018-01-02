@@ -43,7 +43,7 @@ if(isset($_POST['ajax']) && $chassis = $_POST['chassis']){
 
 require_once 'modules/header.php'; ?>
 
-	<div class="container">
+	<div class="container grey-text">
 		<?php if(isset($_GET['download'])) : ?>
 			<div class="row">
 				<h5 class="center">
@@ -91,6 +91,51 @@ require_once 'modules/header.php'; ?>
 							<select class="browser-default grey darken-3" name="paint">
 								<option selected value="all"><?= t('all_companies') ?></option>
 							</select>
+						</div>
+						<div class="colors" style="display: none;">
+							<div class="col s12 palette">
+								<div class="input-field inline" style="height: 26px;">
+									<input type="color" name="color" value="#ffffff" style="cursor: pointer;" id="color_palette">
+								</div>
+								<span class="offset-m3"><?= t('pick_color') ?></span>
+							</div>
+							<div class="col s12 hex">
+								<div class="input-field inline" style="max-width: 170px;">
+									<input id="color_hex" type="text" name="color[hex]" value="#ffffff" maxlength="7" style="text-transform: uppercase;">
+									<label for="color[color_hex]">HEX</label>
+								</div>
+								<span><?= t('type_color_hex') ?></span>
+							</div>
+							<div class="col s12 rgb">
+								<div class="input-field inline">
+									<input id="color_rgb_r" type="text" name="color[rgb][r]" min="0" max="255" value="255" maxlength="3">
+									<label for="color_rgb_r">R</label>
+								</div>
+								<div class="input-field inline">
+									<input id="color_rgb_g" type="text" name="color[rgb][g]" min="0" max="255" value="255" maxlength="3">
+									<label for="color_rgb_g">G</label>
+								</div>
+								<div class="input-field inline">
+									<input id="color_rgb_b" type="text" name="color[rgb][b]" min="0" max="255" value="255" maxlength="3">
+									<label for="color_rgb_b">B</label>
+								</div>
+								<span class="offset-m3"><?= t('type_color_rgb') ?></span>
+							</div>
+							<div class="col s12 scs">
+								<div class="input-field inline">
+									<input id="color_scs_r" type="text" name="color[scs][r]" min="0" max="1" value="1">
+									<label for="color_scs_r">R</label>
+								</div>
+								<div class="input-field inline">
+									<input id="color_scs_g" type="text" name="color[scs][g]" min="0" max="1" value="1">
+									<label for="color_scs_g">G</label>
+								</div>
+								<div class="input-field inline">
+									<input id="color_scs_b" type="text" name="color[scs][b]" min="0" max="1" value="1">
+									<label for="color_scs_b">B</label>
+								</div>
+								<span class="offset-m3"><?= t('type_color_scs') ?></span>
+							</div>
 						</div>
 						<h5 class="col s12">
 							<label>

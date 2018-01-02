@@ -14,6 +14,12 @@ select{
 	width: 24px;
 	vertical-align: middle;
 }
+input{
+	color: #eee;
+}
+.input-field.inline{
+	max-width: 50px;
+}
 
 @media (max-width: 730px){
 	nav .brand-logo.left{
