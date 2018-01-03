@@ -6,7 +6,7 @@
 
 	GLOBAL $with_accessory, $with_paint_job, $dlc_accessories, $dlc_chassis_list, $dlc_paints;
 
-	$chassis = getChassis($_POST['chassis']);
+	$chassis = getChassis($_POST['chassis'], $_POST['target']);
 	$wheels  = getWheels($_POST['chassis']);
 	$axles  = getAxles($_POST['chassis']);
 	$accessory = null;
@@ -49,4 +49,6 @@
 
 	$filename = zip_files($_POST['title']);
 
-	header('Location: http://'.$_SERVER['HTTP_HOST'].'/?download='.$filename);
+	$add = $_POST['target'] == 'ats' ? 'game=ats&' : '';
+
+	header('Location: http://'.$_SERVER['HTTP_HOST'].'/?'.$add.'download='.$filename);

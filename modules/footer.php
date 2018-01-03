@@ -6,7 +6,7 @@
 			<p class=""><?= t('supported_ets_version') ?></p>
 		</div>
 		<div class="col m6 s12 center">
-			<h4 class="light"><?= t('not_supported') ?></h4>
+			<h4 class="light">1.29.*</h4>
 			<p class=""><?= t('supported_ats_version') ?></p>
 		</div>
 	</div>

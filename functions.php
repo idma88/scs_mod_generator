@@ -20,9 +20,9 @@ function getUserLanguage(){
 	return $lang;
 }
 
-function getChassis($chassis){
+function getChassis($chassis, $game){
 	GLOBAL $chassis_list;
-	return $chassis_list[$chassis];
+	return $chassis_list[$game][$chassis];
 }
 
 function getWheels($chassis){
@@ -124,7 +124,8 @@ function replaceTrailerFiles($dirname, $data){
 			if(is_file($dirname."/".$file)){
 				$rows = file($dirname."/".$file, FILE_IGNORE_NEW_LINES);
 				$trailer_name = trim(preg_split('/trailer\./', $rows[0])[1]);
-				$content = generateTrailerContent($trailer_name, $data);
+				$accessories_name = trim(preg_replace('/\.[a-z0-9]+$/', '', explode(':', $rows[2])[1]));
+				$content = generateTrailerContent($trailer_name, $accessories_name, $data);
 				file_put_contents($dirname."/".$file, $content);
 			}
 		}
@@ -132,7 +133,7 @@ function replaceTrailerFiles($dirname, $data){
 	closedir($dir);
 }
 
-function generateTrailerContent($name, $data){
+function generateTrailerContent($name, $a_name, $data){
 
 	$chassis = $data['chassis'];
 	$accessory = $data['accessory'];
@@ -141,24 +142,26 @@ function generateTrailerContent($name, $data){
 	$axles = $data['axles'];
 	$wheels = $data['wheels'];
 
-	$output_string = "trailer : trailer.".$name."\n{\n\taccessories[]: .".$name.".tchassis";
+	$output_string = "trailer : trailer.".$name."\n{\n\taccessories[]: ".$a_name.".tchassis";
 	for($i = 0; $i < $axles; $i++){
-		$output_string .= "\n\taccessories[]: .".$name.".trwheel".$i;
+		$output_string .= "\n\taccessories[]: ".$a_name.".trwheel".$i;
 	}
 	if($accessory || $paint_job){
 		if($accessory){
-			$output_string .= "\n\taccessories[]: .".$name.".cargo";
+			$output_string .= "\n\taccessories[]: ".$a_name.".cargo";
 		}
 		if($paint_job){
-			$output_string .= "\n\taccessories[]: .".$name.".paint_job";
+			$output_string .= "\n\taccessories[]: ".$a_name.".paint_job";
 		}
 	}
-	$output_string .= "\n}\n\nvehicle_accessory: .".$name.".tchassis\n{\n
+	$output_string .= "\n}\n\nvehicle_accessory: ".$a_name.".tchassis\n{
 		data_path: \"".$chassis."\"\n}\n";
 	for($i = 0; $i < $axles; $i++){
-		$output_string .= "\nvehicle_wheel_accessory: .".$name.".trwheel".$i."\n{";
+		$output_string .= "\nvehicle_wheel_accessory: " . $a_name . ".trwheel" . $i . "\n{";
 		if($_POST['chassis'] == 'Schw Overweight' && $i == 2){
 			$output_string .= "\n\toffset: 0\n\t\tdata_path: \"/def/vehicle/t_wheel/overweight_f.sii\"";
+		}elseif($_POST['chassis'] == 'chemical_long' && $i == 0){
+			$output_string .= "\n\toffset: 0\n\t\tdata_path: \"/def/vehicle/t_wheel/front.sii\"";
 		}else{
 			$output_string .= "\n\toffset: ".($i*2)."\n\t\tdata_path: \"".$wheels."\"";
 		}
@@ -167,10 +170,10 @@ function generateTrailerContent($name, $data){
 	}
 	if($accessory || $paint_job){
 		if($accessory){
-			$output_string .= "\nvehicle_accessory: .".$name.".cargo\n{\n\t\tdata_path: \"".$accessory."\"\n}";
+			$output_string .= "\nvehicle_accessory: ".$a_name.".cargo\n{\n\t\tdata_path: \"".$accessory."\"\n}";
 		}
 		if($paint_job){
-			$output_string .= "\nvehicle_paint_job_accessory: .".$name.".paint_job\n{\n";
+			$output_string .= "\nvehicle_paint_job_accessory: ".$a_name.".paint_job\n{\n";
 			if(stripos($paint_job ,'default.sii')){
 				$output_string .= "\tbase_color: (".$color.")\n";
 			}
@@ -264,11 +267,11 @@ function transliterate($str){
 
 }
 
-function getAccessoriesByChassis($lang, $chassis = null){
-	GLOBAL $with_accessory, $accesories;
+function getAccessoriesByChassis($lang, $game, $chassis = null){
+	GLOBAL $with_accessory, $accessories;
 	$list = array();
 	if(!$chassis){
-		foreach($accesories as $chassis => $item){
+		foreach($accessories[$game] as $chassis => $item){
 			foreach($item as $def => $name){
 				$list[$def] = $def;
 			}
@@ -276,8 +279,8 @@ function getAccessoriesByChassis($lang, $chassis = null){
 		return $list;
 	}
 	if(in_array($chassis, $with_accessory)){
-		$chassis = str_replace(['_default', '_black', '_yellow', '_red', '_blue'], '', $chassis);
-		foreach($accesories[$chassis] as $def => $name){
+		$chassis = str_replace(['_default', '_black', '_yellow', '_red', '_blue', '_grey'], '', $chassis);
+		foreach($accessories[$game][$chassis] as $def => $name){
 			$list[$def] = t($name, $lang);
 		}
 		return $list;
@@ -286,11 +289,11 @@ function getAccessoriesByChassis($lang, $chassis = null){
 	}
 }
 
-function getPaintByChassis($lang, $chassis = null){
+function getPaintByChassis($lang, $game, $chassis = null){
 	GLOBAL $with_paint_job, $paints;
 	if(!$chassis){
 		$list = array();
-		foreach($paints as $chassis => $item){
+		foreach($paints[$game] as $chassis => $item){
 			foreach($item as $def){
 				$list[$def] = $def;
 			}
@@ -298,8 +301,8 @@ function getPaintByChassis($lang, $chassis = null){
 		return $list;
 	}
 	if(key_exists($chassis, $with_paint_job)){
-		$chassis = str_replace(['_default', '_black', '_yellow', '_red', '_blue'], '', $chassis);
-		foreach($paints[$chassis] as $def){
+		$chassis = str_replace(['_1', '_1_4', '_4', '_4_3',], '', $chassis);
+		foreach($paints[$game][$chassis] as $def){
 			$list[$def] = t(getTrailerLook($def), $lang);
 		}
 		return $list;

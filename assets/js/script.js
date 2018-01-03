@@ -20,6 +20,7 @@ $(document).ready(function(){
 				type : 'POST',
 				data : {
 					'ajax' : true,
+					'game' : $('input[name=target]').val(),
 					'chassis' : $(this).val(),
 					'lang' : getCookie('lang')
 				},
@@ -66,6 +67,7 @@ $(document).ready(function(){
 			type : 'POST',
 			data : {
 				'ajax' : true,
+				'game' : $('input[name=target]').val(),
 				'all' : $(this)[0].checked,
 				'target' : target,
 				'chassis' : $('select[name=chassis]').val(),
