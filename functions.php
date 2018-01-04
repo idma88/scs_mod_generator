@@ -116,7 +116,24 @@ function getTrailerLook($paint_job){
 	return str_replace('.sii', '', $array[count($array) - 1]);
 }
 
+function replaceCompanyFiles($dirname, $look){
+	$pattern = '/trailer_look: [a-z.-_0-9]*/'; // паттерн на компанию
+	$retext = 'trailer_look: '.$look; // Строка замены
+	$dir = opendir($dirname);
+	while (($file = readdir($dir)) !== false){
+		if($file != "." && $file != ".."){
+			if(is_file($dirname."/".$file)){
+				$content = file_get_contents($dirname."/".$file);
+				$content = preg_replace($pattern, $retext, $content);
+				file_put_contents($dirname."/".$file, $content);
+			}
+		}
+	}
+	closedir($dir);
+}
+
 function replaceTrailerFiles($dirname, $data){
+	GLOBAL $coupled_trailers;
 	if(!is_dir($dirname)) mkdir($dirname);
 	$dir = opendir($dirname);
 	while (($file = readdir($dir)) !== false){
@@ -125,12 +142,37 @@ function replaceTrailerFiles($dirname, $data){
 				$rows = file($dirname."/".$file, FILE_IGNORE_NEW_LINES);
 				$trailer_name = trim(preg_split('/trailer\./', $rows[0])[1]);
 				$accessories_name = trim(preg_replace('/\.[a-z0-9]+$/', '', explode(':', $rows[2])[1]));
-				$content = generateTrailerContent($trailer_name, $accessories_name, $data);
+				in_array($_POST['chassis'], $coupled_trailers) ?
+					$content = generateCoupledTrailerContent($trailer_name, $data) :
+					$content = generateTrailerContent($trailer_name, $accessories_name, $data);
+//				!d($content);
+//				exit();
 				file_put_contents($dirname."/".$file, $content);
 			}
 		}
 	}
 	closedir($dir);
+}
+
+function generateCoupledTrailerContent($trailer_name, $data){
+	GLOBAL $heavy_ats_accessory_with_spreader;
+	$content = null;
+	if($data['accessory']){
+		$temp = 'magnitude_55l';
+		if(in_array($data['accessory'], $heavy_ats_accessory_with_spreader)) $temp .= '_spreader';
+		$content = file_get_contents('files/'.$_POST['target'].'/coupled_templates/'.$temp.'.sii');
+		$content = str_replace(['%cargo%'], $data['accessory'], $content);
+	}
+	if($data['paint_job']){
+		$content = file_get_contents('files/'.$_POST['target'].'/coupled_templates/'.$_POST['chassis'].'.sii');
+		$content = str_replace(['%color%'], $data['color'] ? "base_color: (".$data['color'].")" : '', $content);
+		$content = str_replace(['%paint_job%'], $data['paint_job'], $content);
+		$content = str_replace(['%paint_job_s%'], str_replace('profiliner', 'proficarrier', $data['paint_job']), $content);
+	}
+	$to_replace = ['box_pup_2', 'box_pup_3', 'box_rm_2', 'reefer_pup_2', 'reefer_pup_3', 'reefer_rm_2', '%trailer%'];
+	$content = str_replace($to_replace, $trailer_name, $content);
+
+	return $content;
 }
 
 function generateTrailerContent($name, $a_name, $data){
@@ -181,22 +223,6 @@ function generateTrailerContent($name, $a_name, $data){
 		}
 	}
 	return $output_string;
-}
-
-function replaceCompanyFiles($dirname, $look){
-	$pattern = '/trailer_look: [a-z.-_0-9]*/'; // паттерн на компанию
-	$retext = 'trailer_look: '.$look; // Строка замены
-	$dir = opendir($dirname);
-	while (($file = readdir($dir)) !== false){
-		if($file != "." && $file != ".."){
-			if(is_file($dirname."/".$file)){
-				$content = file_get_contents($dirname."/".$file);
-				$content = preg_replace($pattern, $retext, $content);
-				file_put_contents($dirname."/".$file, $content);
-			}
-		}
-	}
-	closedir($dir);
 }
 
 function zip_files($modname = 'mod'){
@@ -301,7 +327,7 @@ function getPaintByChassis($lang, $game, $chassis = null){
 		return $list;
 	}
 	if(key_exists($chassis, $with_paint_job)){
-		$chassis = str_replace(['_1', '_1_4', '_4', '_4_3',], '', $chassis);
+		$chassis = str_replace(['_1', '_1_4', '_4', '_4_3', 'rm_double', 'rm53_double', 'pup_double', 'pup_triple'], '', $chassis);
 		foreach($paints[$game][$chassis] as $def){
 			$list[$def] = t(getTrailerLook($def), $lang);
 		}
