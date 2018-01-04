@@ -1,6 +1,7 @@
 <?php
 
 	$strings_en = [
+		'title' => 'Trailer Mod Generator',
 		'head_title' => 'trailer mod generator',
 		'ets2mp' => 'ETS2MP',
 		'atsmp' => 'ATSMP',
@@ -23,6 +24,16 @@
 		'type_color_hex' => 'HEX color value (6 chars, ex. #E1A1F3)',
 		'type_color_rgb' => 'RGB color (values from 0 to 255)',
 		'type_color_scs' => 'SCS color (values from 0 to 1)',
+		'how_to' => 'How to use?',
+		'beta_notification' => 'Works in beta-mode, there may be some bugs.',
+		'how_to_modal' => 'How to use this tool?',
+		'instruction_modal' => 'bunch of text',
+		'close_modal' => 'I got it',
+		'instruction_modal_1' => 'Choose a name for future mod (not required, otherwise generated from the chassis name).',
+		'instruction_modal_2' => 'Pick a chassis from dropdown list (required). You can use search.',
+		'instruction_modal_3' => 'Depending on the chosen chassis, you will be asked to additionally choose the cargo or the skin for the trailer.',
+		'instruction_modal_4' => 'Also, if you selected a colored skin, you can specify the color you want.',
+		'instruction_modal_5' => 'Click the "Next" button. The mod will be generated and you will see a button for its download.',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Aero dynamic',
@@ -340,6 +351,7 @@
 
 
 	$strings_ru = [
+		'title' => 'Генератор мода на прицеп',
 		'head_title' => 'Генератор мода на прицеп',
 		'ets2mp' => 'ETS2MP',
 		'atsmp' => 'ATSMP',
@@ -362,6 +374,15 @@
 		'type_color_scs' => 'SCS цвет (значения от 0 до 1)',
 		'type_color_hex' => 'HEX цвет (6 символов, пример: #E1A1F3)',
 		'type_color_rgb' => 'RGB цвет (значения от 0 до 255)',
+		'how_to' => 'Как использовать?',
+		'beta_notification' => 'Работает в бета-режиме, могут присутствовать баги.',
+		'how_to_modal' => 'Как использовать этот генератор модов?',
+		'close_modal' => 'Я понял',
+		'instruction_modal_1' => 'Выберите название для будущего мода (необязательно, иначе сгенерируется из названия шасси).',
+		'instruction_modal_2' => 'Выберите шасси из выпадающего списка (обязательно). Вы можете использовать поиск.',
+		'instruction_modal_3' => 'В зависимости от выбраного шасси Вам будет предложено дополнительно выбрать груз или скин для прицепа.',
+		'instruction_modal_4' => 'Также, если вы выбрали цыетной скин, Вы можете указать нужный цвет.',
+		'instruction_modal_5' => 'Нажмите на кнопку "Продолжить". Мод будет сгенерирован и Вы увидите кнопку для его скачивания.',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Аэродинамический рефрижератор',

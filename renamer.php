@@ -51,4 +51,4 @@
 
 	$add = $_POST['target'] == 'ats' ? 'game=ats&' : '';
 
-	header('Location: http://'.$_SERVER['HTTP_HOST'].'/?'.$add.'download='.$filename);
+	header('Location: http://'.$_SERVER['HTTP_HOST'].'/?'.$add.'d='.$filename);

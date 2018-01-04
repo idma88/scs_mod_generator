@@ -1,8 +1,8 @@
 <div class="container grey-text">
-	<?php if(isset($_GET['download'])) : ?>
+	<?php if(isset($_GET['d'])) : ?>
 		<div class="row">
 			<h5 class="center">
-				<a href="/download/<?= $_GET['download'] ?>.scs" class="btn blue-grey darken-3 large card-title waves-effect waves-light"><?= t('download_mod') ?></a>
+				<a href="/download/<?= $_GET['d'] ?>.scs" class="btn blue-grey darken-3 large card-title waves-effect waves-light"><?= t('download_mod') ?></a>
 			</h5>
 		</div>
 	<?php endif ?>
@@ -109,5 +109,25 @@
 			<input type="hidden" name="target" value="<?= $game ?>">
 		</form>
 	</div>
-
+	<div class="card-panel grey darken-3">
+		<div class="card-title"><i class="material-icons left notranslate">info</i><?= t('beta_notification') ?></div>
+	</div>
+</div>
+<div class="fixed-action-btn">
+	<a class="btn-floating btn-large waves-effect waves-light red modal-trigger tooltipped" data-tooltip="<?= t('how_to') ?>" href="#how">?</a>
+</div>
+<div id="how" class="modal grey darken-2 white-text">
+	<div class="modal-content">
+		<h4 class="light"><?= t('how_to_modal') ?></h4>
+		<ol class="light">
+			<li><?= t('instruction_modal_1') ?></li>
+			<li><?= t('instruction_modal_2') ?></li>
+			<li><?= t('instruction_modal_3') ?></li>
+			<li><?= t('instruction_modal_4') ?></li>
+			<li><?= t('instruction_modal_5') ?></li>
+		</ol>
+	</div>
+	<div class="modal-footer grey darken-2">
+		<a href="#!" class="modal-action modal-close waves-effect btn-flat white-text"><?= t('close_modal') ?></a>
+	</div>
 </div>

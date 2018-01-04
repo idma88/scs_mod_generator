@@ -4,7 +4,6 @@
 	outline: 0;
 	border: 0;
 }
-
 select{
 	border: 0;
 	color: #eee;
@@ -20,13 +19,22 @@ input{
 .input-field.inline{
 	max-width: 50px;
 }
+ol{
+	margin-left: 15px;
+}
+.btn-floating{
+	font-size: 25px;
+	font-weight: bold;
+}
+.footer-copyright{
+	font-size: 12px;
+}
 
 @media (max-width: 730px){
 	nav .brand-logo.left{
 		font-size: 1.5rem;
 	}
 }
-
 @media (max-width: 610px){
 	nav .brand-logo.left{
 		display: none;

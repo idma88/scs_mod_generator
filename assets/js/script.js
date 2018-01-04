@@ -4,6 +4,13 @@ $(document).ready(function(){
         minimumResultsForSearch : 15
     });
 
+	$('.tooltipped').tooltip({
+		position : 'left',
+		exitDelay : 200
+	});
+
+	$('.modal').modal();
+
 	$('#lang-btn').click(function(){
 		document.cookie = 'lang=' + $(this).data('lang');
 	});
