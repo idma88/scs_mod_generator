@@ -4,6 +4,9 @@
 	outline: 0;
 	border: 0;
 }
+body{
+	min-height: 97vh;
+}
 select{
 	border: 0;
 	color: #eee;

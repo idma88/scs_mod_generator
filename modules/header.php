@@ -11,6 +11,6 @@
 	<link type="text/css" rel="stylesheet" href="assets/css/style.css"  media="screen,projection"/>
 	<title><?= t('title') ?></title>
 </head>
-<body class="grey darken-4" style="min-height: 98vh">
+<body class="grey darken-4">
 	<?php require_once 'navbar.php'; ?>
 	<main>
