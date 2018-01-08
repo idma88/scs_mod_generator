@@ -33,7 +33,7 @@
 			'schmitz_universal' => '/def/vehicle/trailer/schmitz/universal/chassis.sii',
 			'schw_food_cistern' => '/def/vehicle/trailer/schw_cistern_food/chassis.dlc_schwarzmuller.sii',
 			'schw_curtain' => '/def/vehicle/trailer/schw_curtain/chassis.dlc_schwarzmuller.sii',
-			'Schw Overweight' => '/def/vehicle/trailer/schw_overweight/chassis.dlc_schwarzmuller.sii',
+			'schw_overweight' => '/def/vehicle/trailer/schw_overweight/chassis.dlc_schwarzmuller.sii',
 			'schw_reefer' => '/def/vehicle/trailer/schw_reefer/chassis.dlc_schwarzmuller.sii',
 			'schw_slidep' => '/def/vehicle/trailer/schw_slidepost/chassis.dlc_schwarzmuller.sii',
 			'truck_tranporter' => '/def/vehicle/trailer/truck_transporter/chassis.sii',
@@ -129,7 +129,7 @@
 		'schmitz_universal' => '/def/vehicle/t_wheel/385_65_r22_5.sii',
 		'schw_food_cistern' => '/def/vehicle/t_wheel/single.sii',
 		'schw_curtain' => '/def/vehicle/t_wheel/single.sii',
-		'Schw Overweight' => '/def/vehicle/t_wheel/overweight.sii',
+		'schw_overweight' => '/def/vehicle/t_wheel/overweight.sii',
 		'schw_reefer' => '/def/vehicle/t_wheel/single.sii',
 		'schw_slidep' => '/def/vehicle/t_wheel/single.sii',
 		'truck_tranporter' => '/def/vehicle/t_wheel/single.sii',
@@ -224,7 +224,7 @@
 		'schmitz_universal' => 3,
 		'schw_food_cistern' => 3,
 		'schw_curtain' => 3,
-		'Schw Overweight' => 3,
+		'schw_overweight' => 3,
 		'schw_reefer' => 3,
 		'schw_slidep' => 3,
 		'truck_tranporter' => 3,
@@ -300,7 +300,7 @@
 		'overweight_black',
 		'overweight_yellow',
 		's_ki_solid',
-		'Schw Overweight',
+		'schw_overweight',
 		'schw_slidep',
 		'truck_tranporter',
 		'goldhofer_mpa_default',
@@ -467,7 +467,7 @@
 				'/def/vehicle/trailer/s_ki_solid/ore.sii' => 'ore',
 				'/def/vehicle/trailer/s_ki_solid/sand.sii' => 'sand',
 			],
-			'Schw Overweight' => [
+			'schw_overweight' => [
 				'/def/vehicle/trailer/overweight/aircond_schw.dlc_trailers.sii' => 'aircond_schw',
 				'/def/vehicle/trailer/overweight/driller_schw.dlc_trailers.sii' => 'driller_schw',
 				'/def/vehicle/trailer/overweight/helicopter_schw.dlc_trailers.sii' => 'helicopter_schw',
@@ -1315,7 +1315,7 @@
 		'proficarrier' => 'scandinavia',
 		'schw_food_cistern' => 'schwarzmuller',
 		'schw_curtain' => 'schwarzmuller',
-		'Schw Overweight' => 'schwarzmuller',
+		'schw_overweight' => 'schwarzmuller',
 		'schw_reefer' => 'schwarzmuller',
 		'schw_slidep' => 'schwarzmuller',
 		'goldhofer_mpa_default' => 'heavy',
@@ -1807,4 +1807,10 @@
 		'/def/vehicle/trailer/magnitude_55l/cargo_kalmar_rt240.sii',
 		'/def/vehicle/trailer/magnitude_55l/cargo_transformer.sii',
 		'/def/vehicle/trailer/magnitude_55l/cargo_wirtgen_w250i.sii'
+	];
+
+	$chassis_images = [
+		'willig_cistern' => [
+
+		]
 	];

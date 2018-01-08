@@ -200,7 +200,7 @@ function generateTrailerContent($name, $a_name, $data){
 		data_path: \"".$chassis."\"\n}\n";
 	for($i = 0; $i < $axles; $i++){
 		$output_string .= "\nvehicle_wheel_accessory: " . $a_name . ".trwheel" . $i . "\n{";
-		if($_POST['chassis'] == 'Schw Overweight' && $i == 2){
+		if($_POST['chassis'] == 'schw_overweight' && $i == 2){
 			$output_string .= "\n\toffset: 0\n\t\tdata_path: \"/def/vehicle/t_wheel/overweight_f.sii\"";
 		}elseif($_POST['chassis'] == 'chemical_long' && $i == 0){
 			$output_string .= "\n\toffset: 0\n\t\tdata_path: \"/def/vehicle/t_wheel/front.sii\"";
@@ -216,7 +216,7 @@ function generateTrailerContent($name, $a_name, $data){
 		}
 		if($paint_job){
 			$output_string .= "\nvehicle_paint_job_accessory: ".$a_name.".paint_job\n{\n";
-			if(stripos($paint_job ,'default.sii')){
+			if(stripos($paint_job ,'default.sii') && $_POST['chassis'] != 'aero_dynamic'){
 				$output_string .= "\tbase_color: (".$color.")\n";
 			}
 			$output_string .= "\t\tdata_path: \"".$paint_job."\"\n}";

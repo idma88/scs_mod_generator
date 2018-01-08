@@ -16,6 +16,31 @@ select{
 	width: 24px;
 	vertical-align: middle;
 }
+.tabs .indicator{
+	background-color: #607d8b;
+}
+.text-shadow{
+	text-shadow: 0 0 8px rgba(0, 0, 0, 1);
+}
+.trailer .card-content{
+	padding: 0;
+}
+.collapsible{
+	margin: 0;
+}
+.collapsible, .collapsible-header{
+	border-radius: 4px;
+	border-color: #424242 ;
+}
+.collapsible-body{
+	border-bottom: 0;
+}
+.collapsible-header i{
+	transition: .3s ease;
+}
+li.active > .collapsible-header i{
+	transform: rotate(180deg);
+}
 input{
 	color: #eee;
 }

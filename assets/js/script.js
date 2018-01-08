@@ -11,6 +11,47 @@ $(document).ready(function(){
 
 	$('.modal').modal();
 
+	$('.tabs').tabs();
+
+	$('.collapsible').collapsible({
+		onOpenStart : function(){
+			var ul = $(this)[0].$el;
+			$.ajax({
+				cache: false,
+				dataType : 'json',
+				type : 'POST',
+				data : {
+					'ajax' : true,
+					'game' : ul.parents().find('.game').attr('id'),
+					'chassis' : ul.data('trailer'),
+					'lang' : getCookie('lang')
+				},
+				beforeSend : function(){
+					ul.find('.collapsible-header').append(getPreloaderHtml('tiny'));
+				},
+				success : function(response){
+					if(response.status === 'OK'){
+						var html ='<ul class="ac-list browser-default">';
+						$.each(response.result, function(key, value){
+							html += '<li>'+value;
+							if(key.indexOf('.jpg') !== -1) html += '<img class="responsive-img" src="assets/img/trailers/'+response.chassis+'/'+key+'">';
+							html += '</li>';
+						});
+						html += '</ul>';
+						ul.find('.collapsible-body').append(html);
+					}
+				},
+				complete : function(){
+					$('.preloader-wrapper').remove();
+				}
+			});
+		},
+		onCloseEnd : function(){
+			var ul = $(this)[0].$el;
+			ul.find('.ac-list').remove();
+		}
+	});
+
 	$('#lang-btn').click(function(){
 		document.cookie = 'lang=' + $(this).data('lang');
 	});
@@ -36,20 +77,18 @@ $(document).ready(function(){
 				},
 				success : function(response){
 					if(response.status === 'OK'){
-						if(response.status === 'OK'){
-							$.each(response.result, function(target, data){
-								$('#'+target).show();
-								$('select[name='+target+']').find('option').remove();
-								var value = target === 'accessory' ? '' : 'all';
-								$('select[name='+target+']').append('<option value="'+value+'">'+data.first+'</option>');
-								$.each(data.echo, function(def, name){
-									$('select[name='+target+']').append('<option value="'+def+'">'+name+'</option>');
-								});
+						$.each(response.result, function(target, data){
+							$('#'+target).show();
+							$('select[name='+target+']').find('option').remove();
+							var value = target === 'accessory' ? '' : 'all';
+							$('select[name='+target+']').append('<option value="'+value+'">'+data.first+'</option>');
+							$.each(data.echo, function(def, name){
+								$('select[name='+target+']').append('<option value="'+def+'">'+name+'</option>');
 							});
-							$('select').select2({
-                                minimumResultsForSearch : 15
-                            });
-						}
+						});
+						$('select').select2({
+							minimumResultsForSearch : 15
+						});
 					}
 				},
 				complete : function(){
