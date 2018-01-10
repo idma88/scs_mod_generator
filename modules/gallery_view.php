@@ -27,7 +27,7 @@
 						<?php $name_alt = in_array($name, $diff) ? $name . '_default' : $name;
 						if(key_exists($name_alt, $with_paint_job) || in_array($name_alt, $with_accessory)) : ?>
 							<div class="card-content">
-								<ul class="collapsible grey darken-3 z-depth-0 grey-text text-lighten-2" data-trailer="<?= $name_alt ?>">
+								<ul class="collapsible grey darken-3 z-depth-0 grey-text text-lighten-2" data-trailer="<?= $name_alt ?>" data-game="ets2">
 									<li>
 										<div class="collapsible-header grey darken-3">
 											<i class="material-icons notranslate">arrow_downward</i>
@@ -49,11 +49,11 @@
 				<?php endif ?>
 			<?php endforeach ?>
 		</div>
-		<div id="ats" class="col s12">
+		<div id="ats" class="game">
 			<h4 class="light"><?= t('ats_trailer_guide') ?></h4>
 			<?php $chassis = array();
 			foreach($chassis_list['ats'] as $key => $value){
-				$chassis[] = str_replace(['_default', '_black', '_yellow', '_red', '_blue', '_grey'], '', $key);
+				$chassis[] = str_replace(['_default', '_black', '_yellow', '_red', '_blue', '_grey', '_1', '_4', '_3'], '', $key);
 			}
 			foreach(array_values(array_unique($chassis)) as $key => $name) :?>
 				<div class="col m6 s12">
@@ -65,7 +65,7 @@
 						<?php $name_alt = in_array($name, $diff) ? $name . '_default' : $name;
 							if(key_exists($name_alt, $with_paint_job) || in_array($name_alt, $with_accessory)) : ?>
 								<div class="card-content">
-									<ul class="collapsible grey darken-3 z-depth-0 grey-text text-lighten-2" data-trailer="<?= $name_alt ?>">
+									<ul class="collapsible grey darken-3 z-depth-0 grey-text text-lighten-2" data-trailer="<?= $name_alt ?>" data-game="ats">
 										<li>
 											<div class="collapsible-header grey darken-3">
 												<i class="material-icons notranslate">arrow_downward</i>

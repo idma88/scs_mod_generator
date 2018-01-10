@@ -22,7 +22,7 @@ $(document).ready(function(){
 				type : 'POST',
 				data : {
 					'ajax' : true,
-					'game' : ul.parents().find('.game').attr('id'),
+					'game' : ul.data('game'),
 					'chassis' : ul.data('trailer'),
 					'lang' : getCookie('lang')
 				},
