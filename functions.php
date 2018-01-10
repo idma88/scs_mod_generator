@@ -157,6 +157,9 @@ function replaceTrailerFiles($dirname, $data){
 function generateCoupledTrailerContent($trailer_name, $data){
 	GLOBAL $heavy_ats_accessory_with_spreader;
 	$content = null;
+	if(!$data['accessory'] && $_POST['chassis'] == 'magnitude_55l'){
+		$content = file_get_contents('files/ats/coupled_templates/magnitude_55l_empty.sii');
+	}
 	if($data['accessory']){
 		$temp = 'magnitude_55l';
 		if(in_array($data['accessory'], $heavy_ats_accessory_with_spreader)) $temp .= '_spreader';
