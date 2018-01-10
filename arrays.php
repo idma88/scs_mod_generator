@@ -239,7 +239,7 @@
 
 		// ats axles
 		'acid' => 2,
-		'acid_long' => 3,
+		'acid_long' => 4,
 		'box' => 1,
 		'box_long' => 2,
 		'box_pup_double' => 1,
@@ -1807,10 +1807,4 @@
 		'/def/vehicle/trailer/magnitude_55l/cargo_kalmar_rt240.sii',
 		'/def/vehicle/trailer/magnitude_55l/cargo_transformer.sii',
 		'/def/vehicle/trailer/magnitude_55l/cargo_wirtgen_w250i.sii'
-	];
-
-	$chassis_images = [
-		'willig_cistern' => [
-
-		]
 	];

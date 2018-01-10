@@ -202,7 +202,7 @@ function generateTrailerContent($name, $a_name, $data){
 		$output_string .= "\nvehicle_wheel_accessory: " . $a_name . ".trwheel" . $i . "\n{";
 		if($_POST['chassis'] == 'schw_overweight' && $i == 2){
 			$output_string .= "\n\toffset: 0\n\t\tdata_path: \"/def/vehicle/t_wheel/overweight_f.sii\"";
-		}elseif($_POST['chassis'] == 'chemical_long' && $i == 0){
+		}elseif(($_POST['chassis'] == 'chemical_long' || $_POST['chassis'] == 'acid_long') && $i == 0){
 			$output_string .= "\n\toffset: 0\n\t\tdata_path: \"/def/vehicle/t_wheel/front.sii\"";
 		}else{
 			$output_string .= "\n\toffset: ".($i*2)."\n\t\tdata_path: \"".$wheels."\"";
