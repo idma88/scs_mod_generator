@@ -11,6 +11,15 @@ select{
 	border: 0;
 	color: #eee;
 }
+.download-row{
+	margin-top: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.download-row h6{
+	margin-left: 10px;
+}
 .preloader-wrapper.tiny{
 	height: 24px;
 	width: 24px;

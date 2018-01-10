@@ -1,9 +1,10 @@
 <div class="container grey-text">
 	<?php if(isset($_GET['d'])) : ?>
 		<div class="row">
-			<h5 class="center">
-				<a href="/download/<?= $_GET['d'] ?>.scs" class="btn blue-grey darken-3 large card-title waves-effect waves-light"><?= t('download_mod') ?></a>
-			</h5>
+			<div class="download-row">
+				<a href="/download/<?= $_GET['d'] ?>.scs" class="btn-large blue-grey darken-3 large card-title waves-effect waves-light left"><?= t('download_mod') ?></a>
+				<h6><?= $_GET['d'] ?>.scs</h6>
+			</div>
 		</div>
 	<?php endif ?>
 	<div class="card grey darken-3">
