@@ -103,9 +103,12 @@
 				</div>
 			</div>
 			<div class="card-action row">
-				<div class="col s12">
-					<button class="btn blue-grey waves-effect" type="submit" onclick="return confirm('<?= t('are_you_sure') ?>')"><?= t('proceed') ?></button>
-				</div>
+				<button class="btn blue-grey waves-effect left" type="submit" onclick="return confirm('<?= t('are_you_sure') ?>')">
+					<i class="material-icons right notranslate">send</i><?= t('proceed') ?>
+				</button>
+				<a href="/gallery.php" class="right btn-flat waves-effect grey-text" style="margin: 0;">
+					<i class="material-icons left notranslate">photo_library</i>Галлерея прицепов
+				</a>
 			</div>
 			<input type="hidden" name="target" value="<?= $game ?>">
 		</form>
