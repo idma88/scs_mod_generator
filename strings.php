@@ -38,6 +38,7 @@
 		'ets_trailer_guide' => 'Euro Truck Simulator 2 Trailers Gallery',
 		'see_paints' => 'Available paints',
 		'see_cargo' => 'Available cargoes',
+		'trailers_gallery' => 'Trailers gallery',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Aero dynamic',
@@ -400,6 +401,7 @@
 		'ets_trailer_guide' => 'Галерея прицепов Euro Truck Simulator 2',
 		'see_paints' => 'Доступные скины',
 		'see_cargo' => 'Доступные аксессуары',
+		'trailers_gallery' => 'Галлерея прицепов',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Аэродинамический рефрижератор',

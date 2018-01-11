@@ -107,7 +107,7 @@
 					<i class="material-icons right notranslate">send</i><?= t('proceed') ?>
 				</button>
 				<a href="/gallery.php" class="right btn-flat waves-effect grey-text" style="margin: 0;">
-					<i class="material-icons left notranslate">photo_library</i>Галлерея прицепов
+					<i class="material-icons left notranslate">photo_library</i><?= t('trailers_gallery') ?>
 				</a>
 			</div>
 			<input type="hidden" name="target" value="<?= $game ?>">
