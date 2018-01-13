@@ -9,6 +9,16 @@
 	<link type="text/css" rel="stylesheet" href="assets/select2/select2.min.css"  media="screen,projection"/>
 	<link type="text/css" rel="stylesheet" href="assets/select2/select2-custom.css"  media="screen,projection"/>
 	<link type="text/css" rel="stylesheet" href="assets/css/style.css"  media="screen,projection"/>
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99570317-2"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-99570317-2');
+	</script>
+
 	<title><?= t('title') ?></title>
 </head>
 <body class="grey darken-4">
