@@ -33,12 +33,20 @@
 		'instruction_modal_2' => 'Pick a chassis from dropdown list (required). You can use search.',
 		'instruction_modal_3' => 'Depending on the chosen chassis, you will be asked to additionally choose the cargo or the skin for the trailer.',
 		'instruction_modal_4' => 'Also, if you selected a colored skin, you can specify the color you want.',
-		'instruction_modal_5' => 'Click the "Next" button. The mod will be generated and you will see a button for its download.',
+		'instruction_modal_5' => 'In advanced setting you can change mod image (for Modification Manager) and cargo weight (optional).',
+		'instruction_modal_6' => 'Click the "Next" button. The mod will be generated and you will see a button for its download.',
 		'ats_trailer_guide' => 'American Truck Simulator Trailers Gallery',
 		'ets_trailer_guide' => 'Euro Truck Simulator 2 Trailers Gallery',
 		'see_paints' => 'Available paints',
 		'see_cargo' => 'Available cargoes',
 		'trailers_gallery' => 'Trailers gallery',
+		'advanced' => 'Advanced settings',
+		'trailer_weight' => 'Cargo weight (tons)',
+		'trailer_weight_placeholder' => 'Enter weight for cargo',
+		'image_upload' => 'Upload mod image (max. 5Mb)',
+		'max_file_size_5' => 'Max image size 5 Mb',
+		'max_dimensions_3000' => 'Max image dimensions 3000 x 3000',
+		'vtc' => 'VTC',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Aero dynamic',
@@ -186,7 +194,7 @@
 		'logs_schw' => 'Logs - DLC Schwarzmüller Trailer Pack',
 		'scaniacargo' => 'Scania trucks',
 		'volvocargo' => 'Volvo trucks',
-		'iveco_daily' => 'Vans - DLC Italia - !NOT SUPPORTED BY MP!',
+		'iveco_daily' => 'Vans - DLC Italia',
 
 		/* ets2 companies/paints */
 		'default' => 'Colored',
@@ -395,13 +403,21 @@
 		'instruction_modal_1' => 'Выберите название для будущего мода (необязательно, иначе сгенерируется из названия шасси).',
 		'instruction_modal_2' => 'Выберите шасси из выпадающего списка (обязательно). Вы можете использовать поиск.',
 		'instruction_modal_3' => 'В зависимости от выбраного шасси Вам будет предложено дополнительно выбрать груз или скин для прицепа.',
-		'instruction_modal_4' => 'Также, если вы выбрали цыетной скин, Вы можете указать нужный цвет.',
-		'instruction_modal_5' => 'Нажмите на кнопку "Продолжить". Мод будет сгенерирован и Вы увидите кнопку для его скачивания.',
+		'instruction_modal_4' => 'Также, если вы выбрали цветной скин, Вы можете указать нужный цвет.',
+		'instruction_modal_5' => 'В дополнительных настройках Вы можете изменить изображение мода (для менеджера модификаций) и желаемый тоннаж (опционально).',
+		'instruction_modal_6' => 'Нажмите на кнопку "Продолжить". Мод будет сгенерирован и Вы увидите кнопку для его скачивания.',
 		'ats_trailer_guide' => 'Галерея прицепов American Truck Simulator',
 		'ets_trailer_guide' => 'Галерея прицепов Euro Truck Simulator 2',
 		'see_paints' => 'Доступные скины',
 		'see_cargo' => 'Доступные аксессуары',
 		'trailers_gallery' => 'Галлерея прицепов',
+		'advanced' => 'Дополнительные настройки',
+		'trailer_weight' => 'Вес груза (в тоннах)',
+		'trailer_weight_placeholder' => 'Введите желаемый тоннаж',
+		'image_upload' => 'Загрузите изображение модификации (макс. 5Мб)',
+		'max_file_size_5' => 'Максимальный размер файла 5 Мб',
+		'max_dimensions_3000' => 'Макс. 3000 x 3000',
+		'vtc' => 'ВТК',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Аэродинамический рефрижератор',
@@ -450,7 +466,7 @@
 		'goldhofer_stz_red' => 'Низкорамный полуприцеп с гуськой Goldhofer STZ (Красный) - DLC Heavy Cargo Pack',
 		'goldhofer_stz_yellow' => 'Низкорамный полуприцеп с гуськой Goldhofer STZ (Желтый) - DLC Heavy Cargo Pack',
 		'willig_cistern' => 'Топливная цистерна Willig',
-		'van_transporter' => 'Автовоз (Фургоны) - DLC Italia - !НЕ ПОДДЕРЖИВАЕТСЯ В МП!',
+		'van_transporter' => 'Облегчённый грузовой автовоз - DLC Italia',
 
 		/* ets2 accessories */
 		'cargo_cars_it' => 'Автомобили - DLC Italia - !НЕ ПОДДЕРЖИВАЕТСЯ МУЛЬТИПЛЕЕРОМ!',
