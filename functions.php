@@ -218,7 +218,7 @@ function generateTrailerContent($name, $a_name, $data){
 	$chassis = $data['chassis'];
 	$accessory = $data['accessory'];
 	$paint_job = $data['paint_job'];
-	$color = $data['color'];
+	$color = $data['color'] ?? '1, 1, 1';
 	$axles = $data['axles'];
 	$wheels = $data['wheels'];
 
