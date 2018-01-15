@@ -55,6 +55,13 @@
 			foreach($chassis_list['ats'] as $key => $value){
 				$chassis[] = str_replace(['_default', '_black', '_yellow', '_red', '_blue', '_grey', '_1', '_4', '_3'], '', $key);
 			}
+			$diff = [
+				'lowboy' => 'lowboy_black',
+				'gooseneck_ats' => 'gooseneck_ats_blue',
+				'flatbed' => 'flatbed_black',
+				'car' => 'car_black',
+				'dump' => 'dump_black',
+			];
 			foreach(array_values(array_unique($chassis)) as $key => $name) :?>
 				<div class="col m6 s12">
 					<div class="card trailer grey darken-3 <?= $key ?>">
@@ -62,10 +69,10 @@
 							<img src="/assets/img/trailers/<?= $name ?>/<?= $name ?>.jpg">
 							<h5 class="card-title trailer-name light text-shadow"><?= t($name) ?></h5>
 						</div>
-						<?php $name_alt = in_array($name, $diff) ? $name . '_default' : $name;
+						<?php $name_alt = key_exists($name, $diff) ? $diff[$name] : $name;
 							if(key_exists($name_alt, $with_paint_job) || in_array($name_alt, $with_accessory)) : ?>
 								<div class="card-content">
-									<ul class="collapsible grey darken-3 z-depth-0 grey-text text-lighten-2" data-trailer="<?= $name_alt ?>" data-game="ats">
+									<ul class="collapsible show-skin grey darken-3 z-depth-0 grey-text text-lighten-2" data-trailer="<?= $name_alt ?>" data-game="ats">
 										<li>
 											<div class="collapsible-header grey darken-3">
 												<i class="material-icons notranslate">arrow_downward</i>
