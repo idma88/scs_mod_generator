@@ -132,6 +132,41 @@ function replaceCompanyFiles($dirname, $look){
 	closedir($dir);
 }
 
+function copyCargoFiles($dlc_list){
+	mkdir('out/cargo');
+	foreach($dlc_list as $dlc){
+		$dir = 'files/'.$_POST['target'].'/'.$dlc.'/cargos';
+		if($inner_dirs = scandir($dir)){
+			foreach($inner_dirs as $inner_dir){
+				if($inner_dir !== '.' && $inner_dir !== '..'){
+					$out_dir = 'out/cargo/'.$inner_dir;
+					is_dir($out_dir) ? : mkdir($out_dir);
+					foreach(scandir($dir.'/'.$inner_dir) as $file){
+						if($file !== '.' && $file !== '..'){
+							copy($dir . '/' . $inner_dir .'/'. $file, $out_dir .'/'. $file);
+						}
+					}
+				}
+
+			}
+		}
+	}
+}
+
+function replaceCargoFiles($dirname, $weight){
+	foreach(scandir($dirname) as $inner_dir){
+		if($inner_dir !== '.' && $inner_dir !== '..'){
+			foreach(scandir($dirname.'/'.$inner_dir) as $file){
+				if($file !== '.' && $file !== '..'){
+					$content = file_get_contents($dirname.'/'.$inner_dir.'/'.$file);
+					$content = preg_replace('/mass: [0-9]*/', 'mass: '.$weight.'000', $content);
+					file_put_contents($dirname.'/'.$inner_dir.'/'.$file, $content);
+				}
+			}
+		}
+	}
+}
+
 function replaceTrailerFiles($dirname, $data){
 	GLOBAL $coupled_trailers;
 	if(!is_dir($dirname)) mkdir($dirname);
@@ -228,11 +263,12 @@ function generateTrailerContent($name, $a_name, $data){
 	return $output_string;
 }
 
-function zip_files($modname = 'mod'){
+function zip_files($modname = 'Mod'){
+	$modname = trim($modname);
 	$zip = new ZipArchive();
-	$filename = transliterate($modname);
+	$filename = time().'_'.transliterate($modname);
 
-	if ($zip->open('download/'.$filename.'.scs', ZipArchive::CREATE) !== true){
+	if($zip->open('download/'.$filename.'.scs', ZipArchive::CREATE) !== true){
 		return false;
 	}
 
@@ -241,7 +277,7 @@ function zip_files($modname = 'mod'){
 	file_put_contents('files/mod/manifest.sii', $content);
 
 	$zip->addFile('files/mod/manifest.sii', 'manifest.sii');
-	$zip->addFile('files/mod/mod_icon.jpg', 'mod_icon.jpg');
+	$zip->addFile('out/mod_icon.jpg', 'mod_icon.jpg');
 	$zip->addEmptyDir('def/vehicle/trailer');
 
 	$dir = scandir('out/vehicle/trailer');
@@ -260,6 +296,23 @@ function zip_files($modname = 'mod'){
 			}
 		}
 	};
+
+	if(is_dir('out/cargo')){
+		$zip->addEmptyDir('def/cargo');
+		$dir = scandir('out/cargo');
+		foreach($dir as $inner_dir){
+			if($inner_dir != '.' && $inner_dir != '..'){
+				$zip->addEmptyDir('def/cargo/'.$inner_dir);
+				foreach(scandir('out/cargo/'.$inner_dir) as $file){
+					if($file != '.' && $file != '..'){
+						$zip->addFile('out/cargo/'.$inner_dir.'/'.$file, 'def/cargo/'.$inner_dir.'/'.$file);
+					}
+				}
+
+			}
+		}
+	};
+
 	$zip->close();
 
 	return $filename;
@@ -277,6 +330,7 @@ function transliterate($str){
 		'ч' => 'ch',  'ш' => 'sh',  'щ' => 'sch',
 		'ь' => '',  'ы' => 'y',   'ъ' => '',
 		'э' => 'e',   'ю' => 'yu',  'я' => 'ya',
+		'ü' => 'u',
 
 		'А' => 'A',   'Б' => 'B',   'В' => 'V',
 		'Г' => 'G',   'Д' => 'D',   'Е' => 'E',
@@ -289,6 +343,7 @@ function transliterate($str){
 		'Ч' => 'Ch',  'Ш' => 'Sh',  'Щ' => 'Sch',
 		'Ь' => '',  'Ы' => 'Y',   'Ъ' => '',
 		'Э' => 'E',   'Ю' => 'Yu',  'Я' => 'Ya',
+		'Ü' => 'u',
 
 		' ' => '_'];
 
