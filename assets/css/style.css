@@ -43,6 +43,7 @@ select{
 }
 .collapsible-body{
 	border-bottom: 0;
+	border-left: 1px solid;
 }
 .collapsible-header i{
 	transition: .3s ease;
@@ -56,6 +57,22 @@ input{
 .input-field.inline{
 	max-width: 50px;
 }
+.input-field.weight, .file-field{
+	max-width: 225px;
+}
+.file-field{
+	margin-top: 0;
+	margin-bottom: 35px;
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating).gallery-btn{
+	margin: 0;
+}
+@media (max-width: 600px){
+	.gallery-btn{
+		margin-top: 15px;
+		margin-left: 24px;
+	}
+}
 ol{
 	margin-left: 15px;
 }
@@ -66,6 +83,10 @@ ol{
 .footer-copyright{
 	font-size: 12px;
 }
+.footer-link, .footer-copyright{
+	text-decoration: none;
+	display: block;
+}
 
 @media (max-width: 730px){
 	nav .brand-logo.left{
@@ -75,5 +96,13 @@ ol{
 @media (max-width: 610px){
 	nav .brand-logo.left{
 		display: none;
+	}
+}
+@media (min-width: 601px){
+	.left-med-and-up{
+		float: left !important;
+	}
+	.right-med-and-up{
+		float: right !important;
 	}
 }
