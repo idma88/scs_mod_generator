@@ -27,7 +27,7 @@
 						<?php $name_alt = in_array($name, $diff) ? $name . '_default' : $name;
 						if(key_exists($name_alt, $with_paint_job) || in_array($name_alt, $with_accessory)) : ?>
 							<div class="card-content">
-								<ul class="collapsible grey darken-3 z-depth-0 grey-text text-lighten-2" data-trailer="<?= $name_alt ?>" data-game="ets2">
+								<ul class="collapsible show-skin grey darken-3 z-depth-0 grey-text text-lighten-2" data-trailer="<?= $name_alt ?>" data-game="ets2">
 									<li>
 										<div class="collapsible-header grey darken-3">
 											<i class="material-icons notranslate">arrow_downward</i>
