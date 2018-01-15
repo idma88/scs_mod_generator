@@ -1,6 +1,7 @@
 <?php require_once 'functions.php';
 
-$game = $_GET['game'] ?? 'ets2'; ?>
+$game = $_GET['game'] ?? 'ets2';
+$_SERVER['SCRIPT_NAME'] !== '/gallery.php' ? : $game = null; ?>
 
 <div class="navbar-fixed">
 	<nav class="blue-grey darken-3">
@@ -11,7 +12,7 @@ $game = $_GET['game'] ?? 'ets2'; ?>
 				<li<?php if($game == 'ats'): ?> class="active"<?php endif ?>><a href="/?game=ats"><?= t('atsmp') ?></a></li>
 				<li>
 					<a href="<?= !$_SERVER['QUERY_STRING'] ? '' : '?'.$_SERVER['QUERY_STRING'] ?>" id="lang-btn" data-lang="<?= getUserLanguage() == 'en' ? 'ru' : 'en' ?>">
-						<?= getUserLanguage() == 'en' ? 'RU' : 'EN' ?><i class="material-icons notranslate left">language</i>
+						<?= getUserLanguage() == 'en' ? 'РУС' : 'EN' ?><i class="material-icons notranslate left">language</i>
 					</a>
 				</li>
 			</ul>
