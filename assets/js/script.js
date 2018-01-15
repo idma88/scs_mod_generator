@@ -13,7 +13,9 @@ $(document).ready(function(){
 
 	$('.tabs').tabs();
 
-	$('.collapsible').collapsible({
+	$('.collapsible').collapsible();
+
+	$('.show-skin').collapsible({
 		onOpenStart : function(){
 			var ul = $(this)[0].$el;
 			$.ajax({
@@ -215,7 +217,42 @@ $(document).ready(function(){
 			}
 		}
 	});
-	
+
+	$('#weight').keyup(function(){
+		var val = $(this).val();
+		var newVal = $(this).val();
+		var regexpDigits = new RegExp('^\d*$');
+		if(!regexpDigits.test(val)){
+			newVal = val.replace(/\D/, '');
+			$(this).val(newVal);
+		}
+		if(newVal.length > 10){
+			$(this).val(newVal.substr(0, 10));
+		}
+	});
+
+	$('#image').change(function(){
+		var _URL = window.URL || window.webkitURL;
+		if(this.files[0].size > 5500000){
+			alert($(this).data('size'));
+			$(this).val('');
+			return false;
+		}
+		var file, img, dimensions = $(this).data('dimensions');
+		if ((file = this.files[0])) {
+			img = new Image();
+			img.src = _URL.createObjectURL(file);
+			img.onload = function () {
+				if(this.width > 3000 || this.height > 3000){
+					alert(dimensions);
+					$('#image').val('');
+					$('#image-path').val('');
+					return false;
+				}
+			};
+		}
+	});
+
 });
 
 function setColors(hex, rgb, scs){

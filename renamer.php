@@ -1,6 +1,7 @@
 <?php
 
-	include 'modules/kint/Kint.class.php';
+	include 'classes/kint/Kint.class.php';
+	include 'classes/Image.php';
 	include 'functions.php';
 	include 'arrays.php';
 
@@ -9,6 +10,7 @@
 	$chassis = getChassis($_POST['chassis'], $_POST['target']);
 	$wheels  = getWheels($_POST['chassis']);
 	$axles  = getAxles($_POST['chassis']);
+	$weight  = $_POST['weight'] ?? null;
 	$accessory = null;
 	$paint_job = null;
 	$color = null;
@@ -34,9 +36,10 @@
 		'axles' => $axles,
 		'color' => $color
 	];
-
 	!is_dir('out/company') ? : rrmdir('out/company');
     !is_dir('out/vehicle') ? : rrmdir('out/vehicle');
+    !is_dir('out/cargo') ? : rrmdir('out/cargo');
+    !file_exists('out/mod_icon.jpg') ? : unlink('out/mod_icon.jpg');
 
 	copyTrailerFiles($dlc_list);
 	replaceTrailerFiles('out/vehicle/trailer', $trailer_data);
@@ -45,6 +48,25 @@
 		$trailer_look = getTrailerLook($paint_job);
 		copyCompanyFiles($dlc_list);
 		replaceCompanyFiles('out/company', $trailer_look);
+	}
+
+	if($weight && is_numeric($weight)){
+		copyCargoFiles($dlc_list);
+		replaceCargoFiles('out/cargo', $weight);
+	}
+
+	if(is_uploaded_file($_FILES['img']['tmp_name'])){
+		$file = $_FILES[0]['img'];
+		if($file->size <= 5500000){
+			$img = new Image();
+			$img->load($_FILES['img']['tmp_name']);
+			$img->resizeToHeight(162);
+			$img->save('out/mod_icon.jpg');
+		}
+	}else{
+		if(file_exists('files/mod/mod_icon.jpg')){
+			copy('files/mod/mod_icon.jpg', 'out/mod_icon.jpg');
+		}
 	}
 
 	$filename = zip_files($_POST['title']);

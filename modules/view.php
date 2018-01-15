@@ -8,11 +8,11 @@
 		</div>
 	<?php endif ?>
 	<div class="card grey darken-3">
-		<form action="renamer.php" method="post">
+		<form action="renamer.php" method="post" enctype="multipart/form-data">
 			<div class="card-content">
 				<div class="row">
 					<div class="input-field col s12">
-						<input type="text" name="title" placeholder="<chassis> - <accessory/paint>">
+						<input type="text" name="title">
 						<label><?= t('mod_title') ?></label>
 					</div>
 				</div>
@@ -101,12 +101,35 @@
 						</label>
 					</h5>
 				</div>
+				<div class="advanced row" style="margin-bottom: 0;">
+					<ul class="collapsible grey darken-3 z-depth-0 col s12">
+						<li>
+							<div class="collapsible-header grey darken-3"><i class="material-icons">arrow_drop_down</i><?= t('advanced') ?></div>
+							<div class="collapsible-body">
+								<label><?= t('image_upload') ?></label>
+								<div class="file-field input-field">
+									<div class="btn blue-grey darken-2">
+										<span><i class="material-icons notranslate" style="font-size: 2em;">file_upload</i></span>
+										<input type="file" name="img" id="image" accept="image/jpeg, image/png" data-size="<?= t('max_file_size_5') ?>" data-dimensions="<?= t('max_dimensions_3000') ?>">
+									</div>
+									<div class="file-path-wrapper">
+										<input class="file-path" type="text" id="image-path" readonly>
+									</div>
+								</div>
+								<div class="input-field weight">
+									<input id="weight" type="text" name="weight" >
+									<label for="weight"><?= t('trailer_weight') ?></label>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<div class="card-action row">
-				<button class="btn blue-grey waves-effect left" type="submit" onclick="return confirm('<?= t('are_you_sure') ?>')">
+			<div class="card-action row center-on-small-only">
+				<button class="btn blue-grey waves-effect left-med-and-up" type="submit" onclick="return confirm('<?= t('are_you_sure') ?>')">
 					<i class="material-icons right notranslate">send</i><?= t('proceed') ?>
 				</button>
-				<a href="/gallery.php" class="right btn-flat waves-effect grey-text" style="margin: 0;">
+				<a href="/gallery.php" class="gallery-btn right-med-and-up btn-flat waves-effect grey-text">
 					<i class="material-icons left notranslate">photo_library</i><?= t('trailers_gallery') ?>
 				</a>
 			</div>
@@ -129,6 +152,7 @@
 			<li><?= t('instruction_modal_3') ?></li>
 			<li><?= t('instruction_modal_4') ?></li>
 			<li><?= t('instruction_modal_5') ?></li>
+			<li><?= t('instruction_modal_6') ?></li>
 		</ol>
 	</div>
 	<div class="modal-footer grey darken-2">
