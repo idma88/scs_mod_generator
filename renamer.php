@@ -60,7 +60,7 @@
 		if($file->size <= 5500000){
 			$img = new Image();
 			$img->load($_FILES['img']['tmp_name']);
-			$img->resizeToHeight(162);
+			$img->resize(276, 162);
 			$img->save('out/mod_icon.jpg');
 		}
 	}else{
