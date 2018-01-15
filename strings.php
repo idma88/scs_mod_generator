@@ -96,7 +96,7 @@
 		'goldhofer_stz_red' => 'Goldhofer STZ (Red) - DLC Heavy Cargo Pack',
 		'goldhofer_stz_yellow' => 'Goldhofer STZ (Yellow) - DLC Heavy Cargo Pack',
 		'willig_cistern' => 'Willig Fuel cistern',
-		'van_transporter' => 'Van transporter - DLC Italia - !NOT SUPPORTED BY MP!',
+		'van_transporter' => 'Van transporter - DLC Italia',
 
 		/* ets2 accessories */
 		'cargo_cars_it' => 'Cars - DLC Italia - !NOT SUPPORTED BY MP!',
