@@ -69,7 +69,9 @@
 		}
 	}
 
-	$filename = zip_files($_POST['title']);
+	$title = trim($_POST['title']);
+	$title = strlen($title) == 0 ? 'Mod' : $title;
+	$filename = zip_files($title);
 
 	$add = $_POST['target'] == 'ats' ? 'game=ats&' : '';
 
