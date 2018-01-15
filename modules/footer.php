@@ -11,10 +11,10 @@
 		</div>
 	</div>
 	<div class="version center">
-		<p><?= t('current_version') ?> - 0.8.13</p>
+		<p><?= t('current_version') ?> - 0.8.14</p>
 	</div>
 	<div class="row center">
-		<a href="https://volvovtc.com" target="_blank" class="grey-text footer-link"><?= t('vtc') ?> Volvo Trucks</a>
+		<p><a href="https://volvovtc.com" target="_blank" class="grey-text"><?= t('vtc') ?> Volvo Trucks</a></p>
 		<span class="footer-copyright">&copy; <a href="https://vk.com/viiper94" target="_blank" class="grey-text">viiper94</a> - <?= date('Y') ?></span>
 	</div>
 </footer>

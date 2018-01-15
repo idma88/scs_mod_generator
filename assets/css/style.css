@@ -83,7 +83,7 @@ ol{
 .footer-copyright{
 	font-size: 12px;
 }
-.footer-link, .footer-copyright{
+.footer-copyright{
 	text-decoration: none;
 	display: block;
 }
