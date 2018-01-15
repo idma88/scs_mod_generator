@@ -10,6 +10,9 @@
 			<p class=""><?= t('supported_ats_version') ?></p>
 		</div>
 	</div>
+	<div class="version center">
+		<p><?= t('current_version') ?> - 0.8.13</p>
+	</div>
 	<div class="row center">
 		<a href="https://volvovtc.com" target="_blank" class="grey-text footer-link"><?= t('vtc') ?> Volvo Trucks</a>
 		<span class="footer-copyright">&copy; <a href="https://vk.com/viiper94" target="_blank" class="grey-text">viiper94</a> - <?= date('Y') ?></span>
@@ -18,6 +21,6 @@
 <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
 <script type="text/javascript" src="assets/select2/select2.min.js"></script>
-<script type="text/javascript" src="assets/js/script.js?1501"></script>
+<script type="text/javascript" src="assets/js/script.js?v0.8.13"></script>
 </body>
 </html>

@@ -47,6 +47,7 @@
 		'max_file_size_5' => 'Max image size 5 Mb',
 		'max_dimensions_3000' => 'Max image dimensions 3000 x 3000',
 		'vtc' => 'VTC',
+		'current_version' => 'Current service version',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Aero dynamic',
@@ -418,6 +419,7 @@
 		'max_file_size_5' => 'Максимальный размер файла 5 Мб',
 		'max_dimensions_3000' => 'Макс. 3000 x 3000',
 		'vtc' => 'ВТК',
+		'current_version' => 'Текущая версия сервиса',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Аэродинамический рефрижератор',
