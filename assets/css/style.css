@@ -41,9 +41,11 @@ select{
 	border-radius: 4px;
 	border-color: #424242 ;
 }
+.advanced .collapsible-body{
+	border-left: 1px solid;
+}
 .collapsible-body{
 	border-bottom: 0;
-	border-left: 1px solid;
 }
 .collapsible-header i{
 	transition: .3s ease;
