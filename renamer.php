@@ -18,12 +18,15 @@
 		$accessory = $_POST['accessory'] ?? null;
 	}
 	if(key_exists($_POST['chassis'], $with_paint_job)){
-		$paint_job = $_POST['paint'] ?? null;
+		$paint_job = $_POST['paint'] ?? $with_paint_job[$_POST['chassis']];
 		if($_POST['paint'] == 'all'){
 			$paint_job = $with_paint_job[$_POST['chassis']];
 		}
 		if(stripos($_POST['paint'], 'default.sii')){
-			$color = $_POST['color']['scs']['r'].', '.$_POST['color']['scs']['g'].', '.$_POST['color']['scs']['b'];
+			$colors['r'] = $_POST['color']['scs']['r'] ?? '1';
+			$colors['g'] = $_POST['color']['scs']['g'] ?? '1';
+			$colors['b'] = $_POST['color']['scs']['b'] ?? '1';
+			$color = $colors['r'].', '.$colors['g'].', '.$colors['b'];
 		}
 	}
 	if($_POST['chassis'] == 'aero_dynamic') $paint_job = '/def/vehicle/trailer/aero_dynamic/company_paint_job/default.sii';
@@ -44,7 +47,7 @@
 	copyTrailerFiles($dlc_list);
 	replaceTrailerFiles('out/vehicle/trailer', $trailer_data);
 
-	if($paint_job && $_POST['paint'] != 'all' && $_POST['chassis'] != 'aero_dynamic'){
+	if(isset($_POST['paint']) && $_POST['paint'] != 'all' && $_POST['chassis'] != 'aero_dynamic'){
 		$trailer_look = getTrailerLook($paint_job);
 		copyCompanyFiles($dlc_list);
 		replaceCompanyFiles('out/company', $trailer_look);
