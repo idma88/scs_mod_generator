@@ -7,6 +7,11 @@
 			</div>
 		</div>
 	<?php endif ?>
+	<!--[if gt IE 6]>
+	<div class="card-panel grey-text text-darken-3 yellow lighten-3">
+		<div class="card-title"><i class="material-icons left notranslate">warning</i><?= t('ie_notification') ?></div>
+	</div>
+	<![endif]-->
 	<div class="card grey darken-3">
 		<form action="renamer.php" method="post" enctype="multipart/form-data">
 			<div class="card-content">
