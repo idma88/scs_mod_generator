@@ -49,6 +49,7 @@
 		'max_dimensions_3000' => 'Max image dimensions 3000 x 3000',
 		'vtc' => 'VTC',
 		'current_version' => 'Current service version',
+		'error' => 'An error occurred, mod haven\'t been generated. (Code: ',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Aero dynamic',
@@ -422,6 +423,7 @@
 		'max_dimensions_3000' => 'Макс. 3000 x 3000',
 		'vtc' => 'ВТК',
 		'current_version' => 'Текущая версия сервиса',
+		'error' => 'Возникла ошибка, мод не был сгенерирован. (код ошибки: ',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Аэродинамический рефрижератор',

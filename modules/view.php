@@ -7,9 +7,19 @@
 			</div>
 		</div>
 	<?php endif ?>
+	<?php if(isset($_GET['e'])) :
+		GLOBAL $error_codes;
+		if(key_exists($_GET['e'], $error_codes)): ?>
+			<div class="row">
+				<div class="card-panel grey darken-3">
+					<h5 class="card-title light"><i class="material-icons left notranslate">warning</i><?= t('error').$_GET['e'] ?>)</h5>
+				</div>
+			</div>
+		<?php endif;
+	endif ?>
 	<!--[if gt IE 6]>
 	<div class="card-panel grey-text text-darken-3 yellow lighten-3">
-		<div class="card-title"><i class="material-icons left notranslate">warning</i><?= t('ie_notification') ?></div>
+		<h4 class="card-title"><i class="material-icons left notranslate">warning</i><?= t('ie_notification') ?></h4>
 	</div>
 	<![endif]-->
 	<div class="card grey darken-3">

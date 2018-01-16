@@ -7,6 +7,20 @@
 
 	GLOBAL $with_accessory, $with_paint_job, $dlc_accessories, $dlc_chassis_list, $dlc_paints;
 
+	// POST validation
+	if(!isset($_POST['chassis']) || $_POST['chassis'] == ''){
+		header('Location: http://'.$_SERVER['HTTP_HOST'].'/?e=2301');
+	}
+	if(in_array($_POST['chassis'], $with_accessory) && !isset($_POST['accessory'])){
+		header('Location: http://'.$_SERVER['HTTP_HOST'].'/?e=9502');
+	}
+	if(key_exists($_POST['chassis'], $with_paint_job) && (!isset($_POST['paint']) || $_POST['paint'] == '')){
+		header('Location: http://'.$_SERVER['HTTP_HOST'].'/?e=8113');
+	}
+	if(!isset($_POST['target']) || $_POST['target'] == ''){
+		header('Location: http://'.$_SERVER['HTTP_HOST'].'/?e=6764');
+	}
+
 	$chassis = getChassis($_POST['chassis'], $_POST['target']);
 	$wheels  = getWheels($_POST['chassis']);
 	$axles  = getAxles($_POST['chassis']);

@@ -1808,3 +1808,10 @@
 		'/def/vehicle/trailer/magnitude_55l/cargo_transformer.sii',
 		'/def/vehicle/trailer/magnitude_55l/cargo_wirtgen_w250i.sii'
 	];
+
+	$error_codes = [
+		2301 => 'No chassis',
+		9502 => 'No accessory',
+		8113 => 'No paint job',
+		6764 => 'No target',
+	];
