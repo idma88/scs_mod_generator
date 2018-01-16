@@ -141,6 +141,7 @@
 				</div>
 			</div>
 			<div class="card-action row center-on-small-only">
+				<input type="hidden" name="target" value="<?= $game ?>">
 				<button class="btn blue-grey waves-effect left-med-and-up" type="submit" onclick="return confirm('<?= t('are_you_sure') ?>')">
 					<i class="material-icons right notranslate">send</i><?= t('proceed') ?>
 				</button>
@@ -148,7 +149,6 @@
 					<i class="material-icons left notranslate">photo_library</i><?= t('trailers_gallery') ?>
 				</a>
 			</div>
-			<input type="hidden" name="target" value="<?= $game ?>">
 		</form>
 	</div>
 	<div class="card-panel grey darken-3">
