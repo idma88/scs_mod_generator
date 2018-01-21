@@ -1,0 +1,9 @@
+21-01-2018 10:59 1516528786_Cisterna_dlya_cementa
+Title:		Цистерна для цемента
+Chassis:	cement_cistern
+Accessory:	
+Paint:		/def/vehicle/trailer/cement/company_paint_job/default.sii
+Weight:		
+Color:		0.753, 0.8, 0.8
+Target:		ets2
+
