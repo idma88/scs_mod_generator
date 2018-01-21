@@ -92,11 +92,11 @@
 
 	$log = file_get_contents('log.txt');
 	$user_data = getBrowser();
-	$log .= date('d-m-Y H:i')." $filename\nTitle:\t\t$_POST[title]\nChassis:\t$_POST[chassis]\n".
+	$append = date('d-m-Y H:i')." $filename\nTitle:\t\t$_POST[title]\nChassis:\t$_POST[chassis]\n".
 		"Accessory:\t$_POST[accessory]\nPaint:\t\t$_POST[paint]\nWeight:\t\t$_POST[weight]".
 		"\nColor:\t\t".$_POST['color']['scs']['r'].", ".$_POST['color']['scs']['g'].", ".$_POST['color']['scs']['b']."\n".
 		"Target:\t\t$_POST[target]\nUser:\t\t".$user_data['platform']." ".$user_data['name']." ".$user_data['version']."\n\n";
-	file_put_contents('log.txt', $log);
+	file_put_contents('log.txt', $append.$log);
 
 	$add = $_POST['target'] == 'ats' ? 'game=ats&' : '';
 
