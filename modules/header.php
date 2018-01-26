@@ -9,7 +9,7 @@
 	<link type="text/css" rel="stylesheet" href="assets/materialize/css/materialize.min.css"  media="screen,projection"/>
 	<link type="text/css" rel="stylesheet" href="assets/select2/select2.min.css"  media="screen,projection"/>
 	<link type="text/css" rel="stylesheet" href="assets/select2/select2-custom.css"  media="screen,projection"/>
-	<link type="text/css" rel="stylesheet" href="assets/css/style.css?v0.8.13"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="assets/css/style.css?v0.9.1"  media="screen,projection"/>
 	<!-- Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99570317-2"></script>
 	<script>
