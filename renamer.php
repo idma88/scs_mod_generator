@@ -22,7 +22,9 @@
 	}
 
 	$chassis = getChassis($_POST['chassis'], $_POST['target']);
-	$wheels  = getWheels($_POST['chassis']);
+	$wheels  = $_POST['chassis'] === 'schw_overweight' || !isset($_POST['wheels']) || $_POST['wheels'] == '' ?
+        getWheels($_POST['chassis']) :
+        $_POST['wheels'];
 	$axles  = getAxles($_POST['chassis']);
 	$weight  = $_POST['weight'] ?? null;
 	$accessory = null;
