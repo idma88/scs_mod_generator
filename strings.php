@@ -50,6 +50,8 @@
 		'vtc' => 'VTC',
 		'current_version' => 'Current service version',
 		'error' => 'An error occurred, mod haven\'t been generated. (Code: ',
+		'select_wheels' => 'Choose wheels for trailer',
+		'w_default' => 'Default',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Aero dynamic',
@@ -276,6 +278,20 @@
 		'skoda' => 'Scout',
 		'voitureux' => 'Voitureux',
 
+		// ets2 wheels
+		'w_single' => 'Single',
+		'w_385_65_r22_5' => '385, 65, r22.5',
+		'w_435_50_r19_5' => '435, 50, r19.5',
+		'w_cartrans' => 'Cartrans',
+		'w_overweight' => 'Overweight',
+		'w_overweight_f' => 'Overweight_f',
+		'w_1.dlc_raven' => '1 - DLC Raven - Auto kick in MP',
+		'w_steel' => 'Steel - Auto kick in MP',
+		'w_steel_single' => 'Steel Single - Auto kick in MP',
+		'w_1' => '1 - Auto kick in MP',
+		'w_2' => '2 - Auto kick in MP',
+		'w_3' => '3 - Auto kick in MP',
+
 		// ats trailers
 		'acid' => 'Acid tank',
 		'acid_long' => 'Acid tank long',
@@ -372,6 +388,11 @@
 		'voltison' => 'Voltison',
 		'gallon' => 'Gallon',
 		'global_mills' => 'Global Mills',
+
+		// ats wheels
+		'w_single_small' => 'Single Small',
+		'w_front' => 'Front',
+		'w_chrome' => 'Chrome - Auto kick in MP',
 	];
 
 
@@ -424,6 +445,8 @@
 		'vtc' => 'ВТК',
 		'current_version' => 'Текущая версия сервиса',
 		'error' => 'Возникла ошибка, мод не был сгенерирован. (код ошибки: ',
+		'select_wheels' => 'Выберите колёса для прицепа',
+		'w_default' => 'Стандартно',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Аэродинамический рефрижератор',
@@ -650,6 +673,20 @@
 		'skoda' => 'Scout',
 		'voitureux' => 'Voitureux',
 
+		// ets2 wheels
+		'w_single' => 'Single',
+		'w_385_65_r22_5' => '385, 65, r22.5',
+		'w_435_50_r19_5' => '435, 50, r19.5',
+		'w_cartrans' => 'Cartrans',
+		'w_overweight' => 'Overweight',
+		'w_overweight_f' => 'Overweight_f',
+		'w_1.dlc_raven' => '1 - DLC Raven - Авто кик в МП',
+		'w_steel' => 'Steel - Авто кик в МП',
+		'w_steel_single' => 'Steel Single - Авто кик в МП',
+		'w_1' => '1 - Авто кик в МП',
+		'w_2' => '2 - Авто кик в МП',
+		'w_3' => '3 - Авто кик в МП',
+
 		// ats trailers
 		'acid' => 'Цистерна для кислот',
 		'acid_long' => 'Длинная цистерна для кислот',
@@ -746,4 +783,9 @@
 		'voltison' => 'Voltison',
 		'gallon' => 'Gallon',
 		'global_mills' => 'Global Mills',
+
+		// ats wheels
+		'w_single_small' => 'Single Small',
+		'w_front' => 'Front',
+		'w_chrome' => 'Chrome - Авто кик в МП',
 	];

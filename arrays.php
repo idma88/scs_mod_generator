@@ -96,6 +96,30 @@
 		]
 	];
 
+	$available_wheels = [
+		'ets2' => [
+			'/def/vehicle/t_wheel/single.sii' => 'w_single',
+			'/def/vehicle/t_wheel/385_65_r22_5.sii' => 'w_385_65_r22_5',
+			'/def/vehicle/t_wheel/435_50_r19_5.sii' => 'w_435_50_r19_5',
+			'/def/vehicle/t_wheel/cartrans.sii' => 'w_cartrans',
+			'/def/vehicle/t_wheel/overweight.sii' => 'w_overweight',
+//			'/def/vehicle/t_wheel/overweight_f.sii' => 'w_overweight_f',
+//			'/def/vehicle/r_wheel/1.dlc_raven.sii' => 'w_1.dlc_raven',
+			'/def/vehicle/r_wheel/steel.sii' => 'w_steel',
+			'/def/vehicle/r_wheel/steel_single.sii' => 'w_steel_single',
+			'/def/vehicle/r_wheel/1.sii' => 'w_1',
+			'/def/vehicle/r_wheel/2.sii' => 'w_2',
+			'/def/vehicle/r_wheel/3.sii' => 'w_3',
+		],
+		'ats' => [
+			'/def/vehicle/t_wheel/single.sii' => 'w_single',
+			'/def/vehicle/t_wheel/single_small.sii' => 'w_single_small',
+			'/def/vehicle/t_wheel/front.sii' => 'w_front',
+			'/def/vehicle/r_wheel/chrome.sii' => 'w_chrome',
+			'/def/vehicle/r_wheel/steel.sii' => 'w_steel',
+		]
+	];
+
 	$wheels = [
 		// ets2 wheels
 		'aero_dynamic' => '/def/vehicle/t_wheel/single.sii',

@@ -61,10 +61,13 @@ input{
 }
 .input-field.weight, .file-field{
 	max-width: 225px;
+	margin-bottom: 35px;
+}
+.input-field.wheels{
+	max-width: 430px;
 }
 .file-field{
 	margin-top: 0;
-	margin-bottom: 35px;
 }
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating).gallery-btn{
 	margin: 0;
@@ -78,6 +81,32 @@ input{
 ol{
 	margin-left: 15px;
 }
+.select-wrapper input.select-dropdown:focus{
+	border-bottom: #546e7a solid 2px;
+}
+.wheels .select-wrapper li{
+	height: 70px;
+}
+.wheels .dropdown-content{
+	background-color: #616161;
+}
+.wheels .select-dropdown.dropdown-content li:hover{
+	background-color: #757575;
+}
+.wheels .dropdown-content li>a, .dropdown-content li>span{
+	line-height: 61px;
+	padding: 5px 16px;
+	color: #eee;
+}
+.wheels .select-wrapper li img{
+	width: auto;
+	height: 60px;
+}
+.select-wrapper .caret{
+	z-index: 0;
+	fill: #888;
+}
+
 .btn-floating{
 	font-size: 25px;
 	font-weight: bold;

@@ -34,7 +34,7 @@
 				<div class="row" id="chassis">
 					<div class="col s12">
 						<label><?= t('pick_chassis') ?></label>
-						<select class="browser-default grey darken-3" name="chassis" required>
+						<select class="browser-default grey darken-3 select2" name="chassis" required>
 							<option selected value=""><?= t('choose_chassis') ?></option>
 							<?php
 							foreach($chassis_list[$game] as $name => $chassis): ?>
@@ -46,7 +46,7 @@
 				<div class="row" id="accessory" style="display: none">
 					<div class="col s12">
 						<label><?= t('pick_accessory') ?></label>
-						<select class="browser-default grey darken-3" name="accessory">
+						<select class="browser-default grey darken-3 select2" name="accessory">
 							<option value="" selected><?= t('choose_accessory') ?></option>
 						</select>
 					</div>
@@ -60,7 +60,7 @@
 				<div class="row" id="paint" style="display: none">
 					<div class="col s12">
 						<label><?= t('pick_paint') ?></label>
-						<select class="browser-default grey darken-3" name="paint">
+						<select class="browser-default grey darken-3 select2" name="paint">
 							<option selected value="all"><?= t('all_companies') ?></option>
 						</select>
 					</div>
@@ -134,6 +134,15 @@
 								<div class="input-field weight">
 									<input id="weight" type="text" name="weight" >
 									<label for="weight"><?= t('trailer_weight') ?></label>
+								</div>
+								<div class="wheels input-field" style="display: none;">
+									<select class="icons" name="wheels">
+										<option value="" selected><?= t('w_default') ?></option>
+										<?php foreach($available_wheels[$game] as $def => $wheel) : ?>
+											<option value="<?= $def ?>" data-icon="assets/img/wheels/<?= $game ?>/<?= $wheel ?>.jpg"><?= t($wheel) ?></option>
+										<?php endforeach ?>
+									</select>
+									<label><?= t('select_wheels') ?></label>
 								</div>
 							</div>
 						</li>

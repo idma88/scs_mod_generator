@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$('select').select2({
+	$('.select2').select2({
         minimumResultsForSearch : 15
     });
 
@@ -8,6 +8,8 @@ $(document).ready(function(){
 		position : 'left',
 		exitDelay : 200
 	});
+
+	$('.wheels select').select();
 
 	$('.modal').modal();
 
@@ -64,6 +66,12 @@ $(document).ready(function(){
 		$('.colors').hide();
 		$('#all_accessories, #all_paints').attr('checked',false);
 		if($(this).val() !== ''){
+			if($(this).val() !== 'schw_overweight' && $(this).val().indexOf('goldhofer') === -1){
+				$('.wheels.input-field').show();
+			}else{
+				$('.wheels.input-field').hide();
+				$('.wheels.input-field select').val('');
+			}
 			$.ajax({
 				cache: false,
 				dataType : 'json',
@@ -88,7 +96,7 @@ $(document).ready(function(){
 								$('select[name='+target+']').append('<option value="'+def+'">'+name+'</option>');
 							});
 						});
-						$('select').select2({
+						$('.select2').select2({
 							minimumResultsForSearch : 15
 						});
 					}
@@ -318,7 +326,7 @@ function getPreloaderHtml(preloaderClass, color){
 }
 
 $(window).resize(function() {
-	$('select').select2({
+	$('.select2').select2({
 		minimumResultsForSearch : 15
 	});
 });
