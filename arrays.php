@@ -191,6 +191,16 @@
 		'magnitude_55l' => '/def/vehicle/t_wheel/single.sii',
 	];
 
+	$chassis_one_wheel_support = [
+        'schw_overweight',
+        'goldhofer_mpa_default',
+        'goldhofer_mpa_red',
+        'goldhofer_mpa_yellow',
+        'goldhofer_stz_default',
+        'goldhofer_stz_red',
+        'goldhofer_stz_yellow',
+    ];
+
 	$axles = [
 		// ets2 axles
 		'aero_dynamic' => 3,

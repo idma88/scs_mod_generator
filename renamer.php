@@ -5,7 +5,7 @@
 	include 'functions.php';
 	include 'arrays.php';
 
-	GLOBAL $with_accessory, $with_paint_job, $dlc_accessories, $dlc_chassis_list, $dlc_paints;
+	GLOBAL $with_accessory, $with_paint_job, $dlc_accessories, $dlc_chassis_list, $dlc_paints, $chassis_one_wheel_support;
 
 	// POST validation
 	if(!isset($_POST['chassis']) || $_POST['chassis'] == ''){
@@ -22,7 +22,7 @@
 	}
 
 	$chassis = getChassis($_POST['chassis'], $_POST['target']);
-	$wheels  = $_POST['chassis'] === 'schw_overweight' || !isset($_POST['wheels']) || $_POST['wheels'] == '' ?
+	$wheels  = in_array($_POST['chassis'], $chassis_one_wheel_support) || !isset($_POST['wheels']) || $_POST['wheels'] == '' ?
         getWheels($_POST['chassis']) :
         $_POST['wheels'];
 	$axles  = getAxles($_POST['chassis']);
