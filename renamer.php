@@ -98,7 +98,7 @@
 		$append = date('d-m-Y H:i')." $filename\nTitle:\t\t$_POST[title]\nChassis:\t$_POST[chassis]\n".
 			"Accessory:\t$_POST[accessory]\nPaint:\t\t$_POST[paint]\nWeight:\t\t$_POST[weight]".
 			"\nColor:\t\t".$_POST['color']['scs']['r'].", ".$_POST['color']['scs']['g'].", ".$_POST['color']['scs']['b']."\n".
-			"Wheels: \t$_POST[wheels]".
+			"Wheels: \t$_POST[wheels]\n".
 			"Target:\t\t$_POST[target]\nUser:\t\t".$user_data['platform']." ".$user_data['name']." ".$user_data['version']."\n\n";
 		file_put_contents('log.txt', $append.$log);
 
