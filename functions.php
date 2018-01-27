@@ -209,6 +209,7 @@ function generateCoupledTrailerContent($trailer_name, $data){
 	}
 	$to_replace = ['box_pup_2', 'box_pup_3', 'box_rm_2', 'reefer_pup_2', 'reefer_pup_3', 'reefer_rm_2', '%trailer%'];
 	$content = str_replace($to_replace, $trailer_name, $content);
+	$content = str_replace(['%wheel%'], $data['wheels'], $content);
 
 	return $content;
 }
