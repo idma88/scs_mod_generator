@@ -11,7 +11,7 @@
 		</div>
 	</div>
 	<div class="version center">
-		<p><?= t('current_version') ?> - 0.9.1</p>
+		<p><?= t('current_version') ?> - 0.9.2</p>
 	</div>
 	<div class="row center">
 		<p><a href="https://volvovtc.com" target="_blank" class="grey-text"><?= t('vtc') ?> Volvo Trucks</a></p>
