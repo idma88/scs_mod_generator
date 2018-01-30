@@ -11,7 +11,7 @@
 		</div>
 	</div>
 	<div class="version center">
-		<p><?= t('current_version') ?> - 0.10.4</p>
+		<p><?= t('current_version') ?> - 0.11.4</p>
 	</div>
 	<div class="row center">
 		<p><a href="https://volvovtc.com" target="_blank" class="grey-text"><?= t('vtc') ?> Volvo Trucks</a></p>
@@ -21,6 +21,6 @@
 <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
 <script type="text/javascript" src="assets/select2/select2.min.js"></script>
-<script type="text/javascript" src="assets/js/script.js?v0.10.4"></script>
+<script type="text/javascript" src="assets/js/script.js?v0.11.4"></script>
 </body>
 </html>
