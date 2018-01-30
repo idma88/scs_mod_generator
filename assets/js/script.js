@@ -26,7 +26,7 @@ $(document).ready(function(){
 				type : 'POST',
 				data : {
 					'ajax' : true,
-					'game' : ul.data('game'),
+					'target' : ul.data('game'),
 					'chassis' : ul.data('trailer'),
 					'lang' : getCookie('lang')
 				},
