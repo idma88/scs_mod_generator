@@ -64,7 +64,7 @@ $(document).ready(function(){
 		$('#accessory').hide();
 		$('#paint').hide();
 		$('.colors').hide();
-		$('#all_accessories, #all_paints').attr('checked',false);
+		$('#all_accessories, #all_paints').prop('checked',false);
 		if($(this).val() !== ''){
 			if($(this).val() !== 'schw_overweight' && $(this).val().indexOf('goldhofer') === -1){
 				$('.wheels.input-field').show();
@@ -78,7 +78,7 @@ $(document).ready(function(){
 				type : 'POST',
 				data : {
 					'ajax' : true,
-					'game' : $('input[name=target]').val(),
+					'target' : $('input[name=target]').val(),
 					'chassis' : $(this).val(),
 					'lang' : getCookie('lang')
 				},
@@ -123,9 +123,9 @@ $(document).ready(function(){
 			type : 'POST',
 			data : {
 				'ajax' : true,
-				'game' : $('input[name=target]').val(),
+				'target' : $('input[name=target]').val(),
 				'all' : $(this)[0].checked,
-				'target' : target,
+				'select' : target,
 				'chassis' : $('select[name=chassis]').val(),
 				'lang' : getCookie('lang')
 			},
