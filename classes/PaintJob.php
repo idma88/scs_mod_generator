@@ -5,6 +5,7 @@ class PaintJob{
 	public $paint_def;
 	public $look;
 	public $dlc = array();
+	public $allCompanies = false;
 	public $color = '1, 1, 1';
 	private $game;
 
@@ -21,6 +22,7 @@ class PaintJob{
 			$paint_def = '/def/vehicle/trailer/aero_dynamic/company_paint_job/default.sii';
 		}else if($_POST['paint'] == 'all'){
 			$paint_def = $chassis->default_paint_job;
+			$this->allCompanies = true;
 		}else{
 			$paint_def = $_POST['paint'];
 		}

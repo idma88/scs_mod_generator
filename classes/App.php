@@ -25,7 +25,7 @@ class App{
 		$this->clearOutDirectory();
 		$this->copyTrailerFiles();
 		$this->replaceTrailerFiles();
-		if($this->paintJob){
+		if($this->paintJob && !$this->paintJob->allCompanies && $this->chassis->chassis_name !== 'aero_dynamic'){
 			$this->copyCompanyFiles();
 			$this->replaceCompanyFiles();
 		}
@@ -186,10 +186,10 @@ class App{
 			$output_string .= "\n\taccessories[]: ".$accessory_name.".trwheel".$i;
 		}
 		if($this->accessory || $this->paintJob){
-			if($this->accessory){
+			if(isset($this->accessory->accessory_def) && $this->accessory->accessory_def !== ''){
 				$output_string .= "\n\taccessories[]: ".$accessory_name.".cargo";
 			}
-			if($this->paintJob){
+			if(isset($this->paintJob->paint_def) && $this->paintJob->paint_def !== ''){
 				$output_string .= "\n\taccessories[]: ".$accessory_name.".paint_job";
 			}
 		}
