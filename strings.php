@@ -3,8 +3,8 @@
 	$strings_en = [
 		'title' => 'Trailer Mod Generator',
 		'head_title' => 'trailer mod generator',
-		'ets2mp' => 'ETS2MP',
-		'atsmp' => 'ATSMP',
+		'ets2mp' => 'ETS2',
+		'atsmp' => 'ATS',
 		'download_mod' => 'Download mod',
 		'mod_title' => 'Mod title',
 		'pick_chassis' => 'Pick a chassis from list below (required)',
@@ -399,8 +399,8 @@
 	$strings_ru = [
 		'title' => 'Генератор мода на прицеп',
 		'head_title' => 'Генератор мода на прицеп',
-		'ets2mp' => 'ETS2MP',
-		'atsmp' => 'ATSMP',
+		'ets2mp' => 'ETS2',
+		'atsmp' => 'ATS',
 		'download_mod' => 'Скачать мод',
 		'mod_title' => 'Название мода',
 		'pick_chassis' => 'Выберите шасси из списка ниже (обязательно)',
