@@ -25,6 +25,15 @@ select{
 	width: 24px;
 	vertical-align: middle;
 }
+.switch{
+	margin-top: 15px;
+}
+.switch label input[type=checkbox]:checked+.lever{
+	background-color: #607d8b;
+}
+.switch label input[type=checkbox]:checked+.lever:after{
+	background-color: #78909c;
+}
 .tabs .indicator{
 	background-color: #607d8b;
 }
