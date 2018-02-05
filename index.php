@@ -1,42 +1,49 @@
 <?php
+require_once 'classes/Chassis.php';
+require_once 'classes/Accessory.php';
+require_once 'classes/PaintJob.php';
 require_once 'arrays.php';
 require_once 'functions.php';
 
 $game = $_GET['game'] ?? 'ets2';
 
 if(isset($_POST['ajax']) && $chassis = $_POST['chassis']){
+
 	$lang = $_POST['lang'] ?? null;
+
 	if(isset($_POST['all']) && $_POST['all'] == 'true'){
-		if($_POST['target'] == 'accessory'){
+		if($_POST['select'] == 'accessory'){
 			$chassis = null;
 			$data['accessory'] = [
-				'echo' => getAccessoriesByChassis($lang, $game),
+				'echo' => Accessory::getAllAccessoriesDefs($game),
 				'first' => t('choose_accessory')
 			];
 		}
-		if($_POST['target'] == 'paint'){
+		if($_POST['select'] == 'paint'){
 			$chassis = null;
 			$data['paint'] = [
-				'echo' => getPaintByChassis($lang, $game),
+				'echo' => PaintJob::getAllPaintsDefs($game),
 				'first' => t('all_companies')
 			];
 		}
 		echo json_encode(['result' => $data, 'status' => 'OK']);
 		die();
 	}
-	GLOBAL $with_accessory, $with_paint_job;
+
+	$chassis = new Chassis();
+	$chassis->game = $game;
 	$echo = false;
 	$target = null;
 	$data = null;
-	if(in_array($_POST['chassis'], $with_accessory)){
+	if($chassis->isWithAccessory()){
 		$data['accessory'] = [
-			'echo' => getAccessoriesByChassis($lang, $game, $chassis),
+			'echo' => $chassis->getAvailableAccessories($lang),
 			'first' => t('choose_accessory', $lang)
 		];
 	}
-	if(key_exists($_POST['chassis'], $with_paint_job)){
+	if($chassis->isWithPaintJob()){
 		$data['paint'] = [
-			'echo' => getPaintByChassis($lang, $game, $chassis),
+			'echo' => $chassis->getAvailablePaints($lang),
 			'first' => t('all_companies', $lang)
 		];
 	}

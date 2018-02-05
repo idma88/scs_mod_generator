@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$('select').select2({
+	$('.select2').select2({
         minimumResultsForSearch : 15
     });
 
@@ -8,6 +8,8 @@ $(document).ready(function(){
 		position : 'left',
 		exitDelay : 200
 	});
+
+	$('.wheels select').select();
 
 	$('.modal').modal();
 
@@ -24,7 +26,7 @@ $(document).ready(function(){
 				type : 'POST',
 				data : {
 					'ajax' : true,
-					'game' : ul.data('game'),
+					'target' : ul.data('game'),
 					'chassis' : ul.data('trailer'),
 					'lang' : getCookie('lang')
 				},
@@ -62,15 +64,21 @@ $(document).ready(function(){
 		$('#accessory').hide();
 		$('#paint').hide();
 		$('.colors').hide();
-		$('#all_accessories, #all_paints').attr('checked',false);
+		$('#all_accessories, #all_paints').prop('checked',false);
 		if($(this).val() !== ''){
+			if($(this).val() !== 'schw_overweight' && $(this).val().indexOf('goldhofer') === -1){
+				$('.wheels.input-field').show();
+			}else{
+				$('.wheels.input-field').hide();
+				$('.wheels.input-field select').val('');
+			}
 			$.ajax({
 				cache: false,
 				dataType : 'json',
 				type : 'POST',
 				data : {
 					'ajax' : true,
-					'game' : $('input[name=target]').val(),
+					'target' : $('input[name=target]').val(),
 					'chassis' : $(this).val(),
 					'lang' : getCookie('lang')
 				},
@@ -88,7 +96,7 @@ $(document).ready(function(){
 								$('select[name='+target+']').append('<option value="'+def+'">'+name+'</option>');
 							});
 						});
-						$('select').select2({
+						$('.select2').select2({
 							minimumResultsForSearch : 15
 						});
 					}
@@ -115,9 +123,9 @@ $(document).ready(function(){
 			type : 'POST',
 			data : {
 				'ajax' : true,
-				'game' : $('input[name=target]').val(),
+				'target' : $('input[name=target]').val(),
 				'all' : $(this)[0].checked,
-				'target' : target,
+				'select' : target,
 				'chassis' : $('select[name=chassis]').val(),
 				'lang' : getCookie('lang')
 			},
@@ -318,7 +326,7 @@ function getPreloaderHtml(preloaderClass, color){
 }
 
 $(window).resize(function() {
-	$('select').select2({
+	$('.select2').select2({
 		minimumResultsForSearch : 15
 	});
 });

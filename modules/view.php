@@ -23,7 +23,7 @@
 	</div>
 	<![endif]-->
 	<div class="card grey darken-3">
-		<form action="renamer.php" method="post" enctype="multipart/form-data">
+		<form action="generator.php" method="post" enctype="multipart/form-data">
 			<div class="card-content">
 				<div class="row">
 					<div class="input-field col s12">
@@ -34,7 +34,7 @@
 				<div class="row" id="chassis">
 					<div class="col s12">
 						<label><?= t('pick_chassis') ?></label>
-						<select class="browser-default grey darken-3" name="chassis" required>
+						<select class="browser-default grey darken-3 select2" name="chassis" required>
 							<option selected value=""><?= t('choose_chassis') ?></option>
 							<?php
 							foreach($chassis_list[$game] as $name => $chassis): ?>
@@ -46,21 +46,22 @@
 				<div class="row" id="accessory" style="display: none">
 					<div class="col s12">
 						<label><?= t('pick_accessory') ?></label>
-						<select class="browser-default grey darken-3" name="accessory">
+						<select class="browser-default grey darken-3 select2" name="accessory">
 							<option value="" selected><?= t('choose_accessory') ?></option>
 						</select>
 					</div>
-					<h5 class="col s12">
+					<div class="col s12 switch">
 						<label>
 							<input type="checkbox" id="all_accessories" data-target="accessory">
-							<span><?= t('show_all_accessories') ?></span>
+							<span class="lever"></span>
+							<?= t('show_all_accessories') ?>
 						</label>
-					</h5>
+					</div>
 				</div>
 				<div class="row" id="paint" style="display: none">
 					<div class="col s12">
 						<label><?= t('pick_paint') ?></label>
-						<select class="browser-default grey darken-3" name="paint">
+						<select class="browser-default grey darken-3 select2" name="paint">
 							<option selected value="all"><?= t('all_companies') ?></option>
 						</select>
 					</div>
@@ -109,12 +110,13 @@
 							<span class="offset-m3"><?= t('type_color_scs') ?></span>
 						</div>
 					</div>
-					<h5 class="col s12">
+					<div class="col s12 switch">
 						<label>
 							<input type="checkbox" id="all_paints" data-target="paint">
-							<span><?= t('show_all_paints') ?></span>
+							<span class="lever"></span>
+							<?= t('show_all_paints') ?>
 						</label>
-					</h5>
+					</div>
 				</div>
 				<div class="advanced row" style="margin-bottom: 0;">
 					<ul class="collapsible grey darken-3 z-depth-0 col s12">
@@ -123,7 +125,7 @@
 							<div class="collapsible-body">
 								<label><?= t('image_upload') ?></label>
 								<div class="file-field input-field">
-									<div class="btn blue-grey darken-2">
+									<div class="btn blue-grey darken-2 waves-effect waves-light">
 										<span><i class="material-icons notranslate" style="font-size: 2em;">file_upload</i></span>
 										<input type="file" name="img" id="image" accept="image/jpeg, image/png" data-size="<?= t('max_file_size_5') ?>" data-dimensions="<?= t('max_dimensions_3000') ?>">
 									</div>
@@ -135,6 +137,15 @@
 									<input id="weight" type="text" name="weight" >
 									<label for="weight"><?= t('trailer_weight') ?></label>
 								</div>
+								<div class="wheels input-field" style="display: none;">
+									<select class="icons" name="wheels">
+										<option value="" selected><?= t('w_default') ?></option>
+										<?php foreach($available_wheels[$game] as $def => $wheel) : ?>
+											<option value="<?= $def ?>" data-icon="assets/img/wheels/<?= $game ?>/<?= $wheel ?>.jpg"><?= t($wheel) ?></option>
+										<?php endforeach ?>
+									</select>
+									<label><?= t('select_wheels') ?></label>
+								</div>
 							</div>
 						</li>
 					</ul>
@@ -142,10 +153,10 @@
 			</div>
 			<div class="card-action row center-on-small-only">
 				<input type="hidden" name="target" value="<?= $game ?>">
-				<button class="btn blue-grey waves-effect left-med-and-up" type="submit" onclick="return confirm('<?= t('are_you_sure') ?>')">
+				<button class="btn blue-grey waves-effect waves-light left-med-and-up" type="submit" onclick="return confirm('<?= t('are_you_sure') ?>')">
 					<i class="material-icons right notranslate">send</i><?= t('proceed') ?>
 				</button>
-				<a href="/gallery.php" class="gallery-btn right-med-and-up btn-flat waves-effect grey-text">
+				<a href="/gallery.php<?php if($game == 'ats'): ?>#ats<?php endif ?>" class="gallery-btn right-med-and-up btn-flat waves-effect grey-text">
 					<i class="material-icons left notranslate">photo_library</i><?= t('trailers_gallery') ?>
 				</a>
 			</div>

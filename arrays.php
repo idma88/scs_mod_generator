@@ -37,12 +37,17 @@
 			'schw_reefer' => '/def/vehicle/trailer/schw_reefer/chassis.dlc_schwarzmuller.sii',
 			'schw_slidep' => '/def/vehicle/trailer/schw_slidepost/chassis.dlc_schwarzmuller.sii',
 			'truck_tranporter' => '/def/vehicle/trailer/truck_transporter/chassis.sii',
+			'goldhofer_mpa_k' => '/def/vehicle/trailer/goldhofer_mpa_k/chassis.sii',
+			'goldhofer_mpa_k_short' => '/def/vehicle/trailer/goldhofer_mpa_k/chassis_short.sii',
+			'goldhofer_mpa_k_flat' => '/def/vehicle/trailer/goldhofer_mpa_k_flat/chassis.sii',
+			'goldhofer_mpa_special' => '/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/chassis.dlc_oversize_cargo.sii',
 			'goldhofer_mpa_default' => '/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/chassis.dlc_heavy_cargo.sii',
 			'goldhofer_mpa_red' => '/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/chassis_r.dlc_heavy_cargo.sii',
 			'goldhofer_mpa_yellow' => '/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/chassis_y.dlc_heavy_cargo.sii',
 			'goldhofer_stz_default' => '/def/vehicle/trailer/goldhofer_stz_vl/chassis_short.sii',
 			'goldhofer_stz_red' => '/def/vehicle/trailer/goldhofer_stz_vl/chassis_short_r.sii',
 			'goldhofer_stz_yellow' => '/def/vehicle/trailer/goldhofer_stz_vl/chassis_short_y.sii',
+			'goldhofer_stz_long' => '/def/vehicle/trailer/goldhofer_stz_vl/chassis.sii',
 			'willig_cistern' => '/def/vehicle/trailer/willig/fuel_cistern/chassis.sii',
 			'van_transporter' => '/def/vehicle/trailer/van_transporter/chassis.sii'
 		],
@@ -96,6 +101,30 @@
 		]
 	];
 
+	$available_wheels = [
+		'ets2' => [
+			'/def/vehicle/t_wheel/single.sii' => 'w_single',
+			'/def/vehicle/t_wheel/385_65_r22_5.sii' => 'w_385_65_r22_5',
+			'/def/vehicle/t_wheel/435_50_r19_5.sii' => 'w_435_50_r19_5',
+			'/def/vehicle/t_wheel/cartrans.sii' => 'w_cartrans',
+			'/def/vehicle/t_wheel/overweight.sii' => 'w_overweight',
+//			'/def/vehicle/t_wheel/overweight_f.sii' => 'w_overweight_f',
+//			'/def/vehicle/r_wheel/1.dlc_raven.sii' => 'w_1.dlc_raven',
+			'/def/vehicle/r_wheel/steel.sii' => 'w_steel',
+			'/def/vehicle/r_wheel/steel_single.sii' => 'w_steel_single',
+			'/def/vehicle/r_wheel/1.sii' => 'w_1',
+			'/def/vehicle/r_wheel/2.sii' => 'w_2',
+			'/def/vehicle/r_wheel/3.sii' => 'w_3',
+		],
+		'ats' => [
+			'/def/vehicle/t_wheel/single.sii' => 'w_single',
+			'/def/vehicle/t_wheel/single_small.sii' => 'w_single_small',
+			'/def/vehicle/t_wheel/front.sii' => 'w_front',
+			'/def/vehicle/r_wheel/chrome.sii' => 'w_chrome',
+			'/def/vehicle/r_wheel/steel.sii' => 'w_steel',
+		]
+	];
+
 	$wheels = [
 		// ets2 wheels
 		'aero_dynamic' => '/def/vehicle/t_wheel/single.sii',
@@ -133,12 +162,17 @@
 		'schw_reefer' => '/def/vehicle/t_wheel/single.sii',
 		'schw_slidep' => '/def/vehicle/t_wheel/single.sii',
 		'truck_tranporter' => '/def/vehicle/t_wheel/single.sii',
+		'goldhofer_mpa_k' => '/def/vehicle/t_wheel/overweight_f.sii',
+		'goldhofer_mpa_k_short' => '/def/vehicle/t_wheel/overweight_f.sii',
+		'goldhofer_mpa_k_flat' => '/def/vehicle/t_wheel/overweight_f.sii',
+		'goldhofer_mpa_special' => '/def/vehicle/t_wheel/overweight_f.sii',
 		'goldhofer_mpa_default' => '/def/vehicle/t_wheel/overweight_f.sii',
 		'goldhofer_mpa_red' => '/def/vehicle/t_wheel/overweight_f.sii',
 		'goldhofer_mpa_yellow' => '/def/vehicle/t_wheel/overweight_f.sii',
 		'goldhofer_stz_default' => '/def/vehicle/t_wheel/overweight_f.sii',
 		'goldhofer_stz_red' => '/def/vehicle/t_wheel/overweight_f.sii',
 		'goldhofer_stz_yellow' => '/def/vehicle/t_wheel/overweight_f.sii',
+		'goldhofer_stz_long' => '/def/vehicle/t_wheel/overweight_f.sii',
 		'willig_cistern' => '/def/vehicle/t_wheel/single.sii',
 		'van_transporter' => '/def/vehicle/t_wheel/cartrans.sii',
 
@@ -193,12 +227,17 @@
 
 	$chassis_one_wheel_support = [
         'schw_overweight',
+		'goldhofer_mpa_k',
+		'goldhofer_mpa_k_short',
+		'goldhofer_mpa_k_flat',
+		'goldhofer_mpa_special',
         'goldhofer_mpa_default',
         'goldhofer_mpa_red',
         'goldhofer_mpa_yellow',
         'goldhofer_stz_default',
         'goldhofer_stz_red',
         'goldhofer_stz_yellow',
+        'goldhofer_stz_long',
     ];
 
 	$axles = [
@@ -238,12 +277,17 @@
 		'schw_reefer' => 3,
 		'schw_slidep' => 3,
 		'truck_tranporter' => 3,
+		'goldhofer_mpa_k' => 6,
+		'goldhofer_mpa_k_short' => 6,
+		'goldhofer_mpa_k_flat' => 10,
+		'goldhofer_mpa_special' => 5,
 		'goldhofer_mpa_default' => 5,
 		'goldhofer_mpa_red' => 5,
 		'goldhofer_mpa_yellow' => 5,
 		'goldhofer_stz_default' => 4,
 		'goldhofer_stz_red' => 4,
 		'goldhofer_stz_yellow' => 4,
+		'goldhofer_stz_long' => 4,
 		'willig_cistern' => 3,
 		'van_transporter' => 3,
 
@@ -313,12 +357,17 @@
 		'schw_overweight',
 		'schw_slidep',
 		'truck_tranporter',
+		'goldhofer_mpa_k',
+		'goldhofer_mpa_k_short',
+		'goldhofer_mpa_k_flat',
+		'goldhofer_mpa_special',
 		'goldhofer_mpa_default',
 		'goldhofer_mpa_red',
 		'goldhofer_mpa_yellow',
 		'goldhofer_stz_default',
 		'goldhofer_stz_red',
 		'goldhofer_stz_yellow',
+		'goldhofer_stz_long',
 		'van_transporter',
 
 		// ats
@@ -501,6 +550,24 @@
 				'/def/vehicle/trailer/truck_transporter/scaniacargo.sii' => 'scaniacargo',
 				'/def/vehicle/trailer/truck_transporter/volvocargo.sii' => 'volvocargo',
 			],
+			'goldhofer_mpa_k' => [
+				'/def/vehicle/trailer/goldhofer_mpa_k/cat_785c.sii' => 'cat_785c',
+			],
+			'goldhofer_mpa_k_short' => [
+				'/def/vehicle/trailer/goldhofer_mpa_k/boiler_parts.sii' => 'boiler_parts',
+				'/def/vehicle/trailer/goldhofer_mpa_k/excavator_bucket.sii' => 'excavator_bucket',
+				'/def/vehicle/trailer/goldhofer_mpa_k/mystery_box.sii' => 'mystery_box',
+			],
+			'goldhofer_mpa_k_flat' => [
+				'/def/vehicle/trailer/goldhofer_mpa_k_flat/heat_exchanger.sii' => 'heat_exchanger',
+				'/def/vehicle/trailer/goldhofer_mpa_k_flat/lattice_structure.sii' => 'lattice_structure',
+				'/def/vehicle/trailer/goldhofer_mpa_k_flat/silo.sii' => 'silo',
+			],
+			'goldhofer_mpa_special' => [
+				'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/condensator.sii' => 'condensator',
+				'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/michelin_59_80_r63.sii' => 'michelin_59_80_r63',
+				'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/mystery_cylinder.sii' => 'mystery_cylinder',
+			],
 			'goldhofer_mpa' => [
 				'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/komatsu_d155ax_5.sii' => 'komatsu_d155ax_5',
 				'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/terex_challenger_3160.sii' => 'terex_challenger_3160',
@@ -512,6 +579,9 @@
 				'/def/vehicle/trailer/goldhofer_stz_vl/concrete_beam.sii' => 'concrete_beam',
 				'/def/vehicle/trailer/goldhofer_stz_vl/metal_centering.sii' => 'metal_centering',
 				'/def/vehicle/trailer/goldhofer_stz_vl/transformer.sii' => 'transformer',
+			],
+			'goldhofer_stz_long' => [
+				'/def/vehicle/trailer/goldhofer_stz_vl/pilot_boat.sii' => 'pilot_boat',
 			],
 			'van_transporter' => [
 				'/def/vehicle/trailer/van_transporter/iveco_daily.sii' => 'iveco_daily'
@@ -1328,12 +1398,17 @@
 		'schw_overweight' => 'schwarzmuller',
 		'schw_reefer' => 'schwarzmuller',
 		'schw_slidep' => 'schwarzmuller',
+		'goldhofer_mpa_k' => 'special',
+		'goldhofer_mpa_k_short' => 'special',
+		'goldhofer_mpa_k_flat' => 'special',
+		'goldhofer_mpa_special' => 'special',
 		'goldhofer_mpa_default' => 'heavy',
 		'goldhofer_mpa_red' => 'heavy',
 		'goldhofer_mpa_yellow' => 'heavy',
 		'goldhofer_stz_default' => 'heavy',
 		'goldhofer_stz_red' => 'heavy',
 		'goldhofer_stz_yellow' => 'heavy',
+		'goldhofer_stz_long' => 'special',
 		'van_transporter' => 'italy',
 		'magnitude_55l' => 'heavy_ats'
 	];
@@ -1349,6 +1424,17 @@
 		'/def/vehicle/trailer/flat_bed/metal_coil.sii' => 'italy',
 		'/def/vehicle/trailer/flat_bed/metal_pipes.sii' => 'italy',
 		'/def/vehicle/trailer/flat_bed/square_tubing.sii' => 'italy',
+		'/def/vehicle/trailer/goldhofer_mpa_k/boiler_parts.sii' => 'special',
+		'/def/vehicle/trailer/goldhofer_mpa_k/cat_785c.sii' => 'special',
+		'/def/vehicle/trailer/goldhofer_mpa_k/excavator_bucket.sii' => 'special',
+		'/def/vehicle/trailer/goldhofer_mpa_k/mystery_box.sii' => 'special',
+		'/def/vehicle/trailer/goldhofer_mpa_k_flat/heat_exchanger.sii' => 'special',
+		'/def/vehicle/trailer/goldhofer_mpa_k_flat/lattice_structure.sii' => 'special',
+		'/def/vehicle/trailer/goldhofer_mpa_k_flat/silo.sii' => 'special',
+		'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/condensator.sii' => 'special',
+		'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/michelin_59_80_r63.sii' => 'special',
+		'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/mystery_cylinder.sii' => 'special',
+		'/def/vehicle/trailer/goldhofer_stz_vl/pilot_boat.sii' => 'special',
 		'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/komatsu_d155ax_5.sii' => 'heavy',
 		'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/terex_challenger_3160.sii' => 'heavy',
 		'/def/vehicle/trailer/goldhofer_mpa_k_flat_1x4/vossloh_g6.sii' => 'heavy',
