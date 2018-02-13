@@ -61,12 +61,15 @@ class PaintJob{
 
 	public static function getAllPaintsDefs($game){
 		GLOBAL $paints;
-		$list = array();
 		foreach($paints[$game] as $chassis => $item){
-			foreach($item as $def){
-				$list[$def] = $def;
+			foreach($item as $key => $def){
+				$list[] = [
+					'name' => $def,
+					'value' => $def
+				];
 			}
 		}
+		$list[0]['selected'] = true;
 		return $list;
 	}
 
