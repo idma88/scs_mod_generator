@@ -143,7 +143,7 @@
 											   data-dimensions="<?= t('max_dimensions_3000') ?>">
 									</div>
 									<div class="file-path-wrapper">
-										<input class="file-path right" type="text" id="image-path" placeholder="Upload image" readonly>
+										<input class="file-path right" type="text" id="image-path" placeholder="<?= t('upload_image') ?>" readonly>
 									</div>
 								</div>
 								<div class="mdc-text-field weight">

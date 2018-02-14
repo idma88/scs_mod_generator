@@ -53,6 +53,7 @@
 		'select_wheels' => 'Choose wheels for trailer',
 		'w_default' => 'Default',
 		'dark_theme' => 'Dark theme',
+		'upload_image' => 'Upload image',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Aero dynamic',
@@ -465,6 +466,7 @@
 		'select_wheels' => 'Выберите колёса для прицепа',
 		'w_default' => 'Стандартно',
 		'dark_theme' => 'Тёмная тема',
+		'upload_image' => 'Выбрать файл',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Аэродинамический рефрижератор',
