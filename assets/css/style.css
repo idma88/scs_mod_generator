@@ -73,6 +73,7 @@ select{
 }
 .mdc-text-field__label{
 	font-size: 15px;
+	color: rgba(0,0,0,.87);
 }
 .mdc-switch{
 	margin-top: 15px;
@@ -129,11 +130,24 @@ li.active > .collapsible-header i{
 .mdc-theme--dark input{
 	color: #eee;
 }
+input, .mdc-text-field__input, input[type=text]:not(.browser-default){
+	transition: border-bottom-color .3s ease;
+}
 input[type=text]:not(.browser-default){
-	border-bottom: 1px solid hsla(0,0%,100%,.5);
+	border-bottom: 1px solid rgba(0,0,0,.5);
 }
 input[type=text]:not(.browser-default):hover{
-	border-bottom: 1px solid #fff;
+	border-bottom: 1px solid #000;
+}
+.mdc-theme--dark .mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box) .mdc-text-field__label{
+	color: var(--mdc-theme-text-primary-on-primary);
+}
+.mdc-theme--dark input.select-dropdown{
+	border-bottom-color: hsla(0,0%,100%,.5);
+	transition: border-bottom-color .3s ease;
+}
+.mdc-theme--dark input.select-dropdown:hover{
+	border-bottom-color: #fff;
 }
 .mdc-text-field.inline{
 	max-width: 57px;
@@ -150,6 +164,19 @@ input[type=text]:not(.browser-default):hover{
 }
 .file-field{
 	margin-top: 0;
+	display: flex;
+}
+.file-field .file-path-wrapper{
+	height: 100%;
+}
+.file-field input.file-path{
+	height: 100%;
+	border: none !important;
+	text-transform: uppercase;
+	font-weight: 500;
+	color: var(--mdc-theme-text-primary-on-primary,#fff);
+	font-size: .875rem;
+	text-overflow: ellipsis;
 }
 .gallery-btn{
 	margin: 0 !important;
@@ -165,10 +192,10 @@ ol{
 	margin-left: 15px;
 }
 .mdc-theme--dark .select-wrapper input.select-dropdown{
-	color: var(--mdc-theme-text-primary-on-primary-dark);
+	color: var(--mdc-theme-text-primary-on-primary);
 }
 .select-wrapper input.select-dropdown:focus{
-	border-bottom: #546e7a solid 2px;
+	border-bottom: #546e7a solid 1px;
 }
 .wheels .select-wrapper li{
 	height: 70px;

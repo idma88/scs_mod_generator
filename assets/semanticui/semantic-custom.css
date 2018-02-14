@@ -9,19 +9,26 @@ select.browser-default {
 	display: block;
 	padding: 10px 0;
 	border: 0;
-	border-bottom: 1px solid #616161;
+	border-bottom: 1px solid rgba(0,0,0,.5);
 	border-radius: 0;
 	font-family: Roboto, sans-serif;
 	min-height: 37px;
 	height: 37px;
+	transition: border-bottom-color .3s ease;
 }
 .mdc-theme--dark .ui.search.dropdown{
 	background-color: var(--mdc-theme-background-dark-2);
+	border-bottom: 1px solid hsla(0,0%,100%,.5);
 }
 .ui.selection.dropdown:hover,
 .ui.selection.active.dropdown,
 .ui.selection.active.dropdown:hover{
-	border-color: #616161;
+	border-color: #000;
+}
+.mdc-theme--dark .ui.selection.dropdown:hover,
+.mdc-theme--dark .ui.selection.active.dropdown,
+.mdc-theme--dark .ui.selection.active.dropdown:hover{
+	border-color: #fff;
 }
 .ui.search.dropdown>.text,
 .ui.selection.dropdown>.delete.icon,

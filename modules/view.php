@@ -1,6 +1,6 @@
 <div class="container">
 	<?php if(isset($_GET['d'])) : ?>
-		<div class="row">
+		<section class="row">
 			<div class="download-row">
 				<a href="/download/<?= $_GET['d'] ?>.scs" class="mdc-button mdc-button--raised mdc-ripple large-btn left">
 					<i class="material-icons mdc-button__icon">file_download</i>
@@ -8,24 +8,24 @@
 				</a>
 				<h6><?= $_GET['d'] ?>.scs</h6>
 			</div>
-		</div>
+		</section>
 	<?php endif ?>
 	<?php if(isset($_GET['e'])) :
 		GLOBAL $error_codes;
 		if(key_exists($_GET['e'], $error_codes)): ?>
-			<div class="row">
+			<section class="row">
 				<div class="card-panel">
 					<h5 class="card-title light"><i class="material-icons left notranslate">warning</i><?= t('error').$_GET['e'] ?>)</h5>
 				</div>
-			</div>
+			</section>
 		<?php endif;
 	endif ?>
 	<!--[if gt IE 6]>
-	<div class="card-panel yellow lighten-3">
+	<section class="card-panel yellow lighten-3">
 		<h5 class="card-title"><i class="material-icons left notranslate">warning</i><?= t('ie_notification') ?></h5>
-	</div>
+	</section>
 	<![endif]-->
-	<div class="card">
+	<section class="card">
 		<form action="generator.php" method="post" enctype="multipart/form-data">
 			<div class="card-content">
 				<div class="row">
@@ -129,21 +129,21 @@
 						<label for="all_paints" class="mdc-switch-label"><?= t('show_all_paints') ?></label>
 					</div>
 				</div>
-				<div class="advanced row" style="margin-bottom: 0;">
+				<section class="advanced row" style="margin-bottom: 0;">
 					<ul class="collapsible z-depth-0 col s12">
 						<li>
 							<div class="collapsible-header grey-text"><i class="material-icons">arrow_drop_down</i><?= t('advanced') ?></div>
 							<div class="collapsible-body">
 								<label><?= t('image_upload') ?></label>
-								<div class="file-field input-field">
-									<div class="btn blue-grey waves-effect waves-light">
-										<span><i class="material-icons notranslate" style="font-size: 2em;">file_upload</i></span>
+								<div class="file-field input-field mdc-button mdc-button--raised">
+									<div class="input-wrapper">
+										<i class="material-icons mdc-button__icon notranslate" style="font-size: 2em; padding-top: 2px;">file_upload</i>
 										<input type="file" name="img" id="image" accept="image/jpeg, image/png"
 											   data-size="<?= t('max_file_size_5') ?>"
 											   data-dimensions="<?= t('max_dimensions_3000') ?>">
 									</div>
 									<div class="file-path-wrapper">
-										<input class="file-path" type="text" id="image-path" readonly>
+										<input class="file-path right" type="text" id="image-path" placeholder="Upload image" readonly>
 									</div>
 								</div>
 								<div class="mdc-text-field weight">
@@ -163,7 +163,7 @@
 							</div>
 						</li>
 					</ul>
-				</div>
+				</section>
 			</div>
 			<div class="card-action row center-on-small-only">
 				<input type="hidden" name="target" value="<?= $game ?>">
@@ -175,13 +175,13 @@
 				</a>
 			</div>
 		</form>
-	</div>
-	<div class="card-panel grey-text">
-		<div class="card-title"><i class="material-icons left notranslate">info</i><?= t('beta_notification') ?></div>
-	</div>
+	</section>
+	<section class="card-panel grey-text">
+		<span class="card-title"><i class="material-icons left notranslate">info</i><?= t('beta_notification') ?></span>
+	</section>
 </div>
-<div class="fixed-action-btn">
-	<a class="mdc-fab mdc-ripple orange darken-3 modal-trigger tooltipped" data-tooltip="<?= t('how_to') ?>" href="#how">
+<div class="fixed-action-btn tooltipped" data-tooltip="<?= t('how_to') ?>">
+	<a class="mdc-fab mdc-ripple orange darken-3 modal-trigger" href="#how">
 		<span class="mdc-fab__icon">?</span>
 	</a>
 </div>
