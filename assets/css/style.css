@@ -102,6 +102,12 @@ select{
 .tabs .indicator{
 	background-color: var(--mdc-theme-primary);
 }
+.game h4{
+	color: var(--mdc-theme-text-primary-on-primary-light);
+}
+.mdc-theme--dark .game h4{
+	color: var(--mdc-theme-text-primary-on-primary-dark);
+}
 .text-shadow{
 	text-shadow: 0 0 8px rgba(0, 0, 0, 1);
 }
