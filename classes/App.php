@@ -6,7 +6,7 @@ class App{
 	public $chassis;
 	public $accessory;
 	public $paintJob;
-	public $outDir = 'out';
+	public $outDir = 'out_';
 	public $downloadDir = 'download';
 	public $dlc = ['base'];
 	public $game;
@@ -19,10 +19,11 @@ class App{
 		$this->paintJob = $paintJob;
 		$this->dlc = $this->getDLCArray([$this->chassis->dlc, $this->accessory->dlc, $this->paintJob->dlc]);
 		$this->game = $_POST['target'];
+		$this->outDir .= time();
 	}
 
 	public function run(){
-		$this->clearOutDirectory();
+		$this->makeOutDirectory();
 		$this->copyTrailerFiles();
 		$this->replaceTrailerFiles();
 		if($this->paintJob && !$this->paintJob->allCompanies && $this->chassis->chassis_name !== 'aero_dynamic'){
@@ -35,6 +36,7 @@ class App{
 		}
 		$this->copyImage();
 		$this->fileName = $this->zipFiles();
+		$this->removeOutDirectory();
 	}
 
 	private function getDLCArray($dlc){
@@ -45,11 +47,12 @@ class App{
 		return array_unique($array);
 	}
 
-	private function clearOutDirectory(){
-		!file_exists($this->outDir.'/mod_icon.jpg') ? : unlink($this->outDir.'/mod_icon.jpg');
-		!is_dir($this->outDir.'/company') ? : rrmdir($this->outDir.'/company');
-		!is_dir($this->outDir.'/vehicle') ? : rrmdir($this->outDir.'/vehicle');
-		!is_dir($this->outDir.'/cargo') ? : rrmdir($this->outDir.'/cargo');
+	private function makeOutDirectory(){
+		mkdir($this->outDir);
+	}
+
+	private function removeOutDirectory(){
+		!is_dir($this->outDir) ? : rrmdir($this->outDir);
 	}
 
 	private function copyTrailerFiles(){
@@ -272,7 +275,7 @@ class App{
 			}
 		}
 
-		if(is_dir('out/company')){
+		if(is_dir($this->outDir.'/company')){
 			$zip->addEmptyDir('def/company');
 			$dir = scandir($this->outDir.'/company');
 			foreach($dir as $item){
@@ -282,7 +285,7 @@ class App{
 			}
 		};
 
-		if(is_dir('out/cargo')){
+		if(is_dir($this->outDir.'/cargo')){
 			$zip->addEmptyDir('def/cargo');
 			$dir = scandir($this->outDir.'/cargo');
 			foreach($dir as $inner_dir){
