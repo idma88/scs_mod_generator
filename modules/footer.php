@@ -29,9 +29,8 @@
 </footer>
 <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="assets/mdc/js/material-components-web.min.js"></script>
-<script type="text/javascript" src="assets/semanticui/transition.min.js"></script>
-<script type="text/javascript" src="assets/semanticui/dropdown.min.js"></script>
+<script type="text/javascript" src="assets/semanticui/semanticui.min.js"></script>
 <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
-<script type="text/javascript" src="assets/js/script.js?v0.11.4"></script>
+<script type="text/javascript" src="assets/js/script-v0.13.6.min.js"></script>
 </body>
 </html>
