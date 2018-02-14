@@ -32,6 +32,9 @@ body.mdc-theme--dark{
 	background-color: var(--mdc-theme-background-dark-2);
 	color: var(--mdc-theme-text-primary-on-primary-dark);
 }
+nav ul a{
+	font-weight: 500;
+}
 select{
 	border: 0;
 	color: #eee;
