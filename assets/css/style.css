@@ -69,7 +69,7 @@ select{
 }
 .mdc-text-field--focused:not(.mdc-text-field--invalid):not(.mdc-text-field--disabled) .mdc-text-field__label,
 .mdc-text-field--focused:not(.mdc-text-field--invalid):not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder{
-	color: var(--mdc-theme-primary-light);
+	color: var(--mdc-theme-primary-light) !important;
 }
 .mdc-text-field__label{
 	font-size: 15px;
