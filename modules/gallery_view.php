@@ -22,7 +22,7 @@
 					<div class="card trailer <?= $key ?>">
 						<div class="card-image">
 							<img src="/assets/img/trailers/<?= $name ?>/<?= $name ?>.jpg">
-							<h5 class="card-title trailer-name text-shadow"><?= t($name) ?></h5>
+							<h5 class="card-title trailer-name text-shadow"><?= str_replace(' - ', '<br>', t($name)) ?></h5>
 						</div>
 						<?php $name_alt = in_array($name, $diff) ? $name . '_default' : $name;
 						if(key_exists($name_alt, $with_paint_job) || in_array($name_alt, $with_accessory)) : ?>

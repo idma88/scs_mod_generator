@@ -102,6 +102,12 @@ select{
 .text-shadow{
 	text-shadow: 0 0 8px rgba(0, 0, 0, 1);
 }
+.trailer .card-title{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 22px;
+}
 .trailer .card-content{
 	padding: 0;
 }
