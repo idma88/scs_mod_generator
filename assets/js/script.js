@@ -130,6 +130,8 @@ $(document).ready(function(){
 								select.uidropdown({
 									fullTextSearch : true,
 									duration : 300,
+									placeholder : false,
+									forceSelection : false,
 									onChange : function(value, text, $choice){
 										value = value.split('/');
 										if(value[value.length - 1] === 'default.sii'){
@@ -176,23 +178,27 @@ $(document).ready(function(){
 			},
 			success : function(response){
 				if(response.status === 'OK'){
-					$.each(response.result, function(target, data){
-						$('#'+target).find('.ui.search').remove();
-						var select = $('<select class="browser-default ui search dropdown '+target+'" name="'+target+'"></select>');
-						$.each(data.echo, function(index, item){
-							var option = '<option value="'+item.value+'"';
-							if(item.selected) option += ' selected';
-							option += '>'+item.name+'</option>';
-							select.append(option);
-						});
-						$('#'+target).show().find('label.for-select').after(select);
-						select.uidropdown({
-							fullTextSearch : true,
-							duration : 300,
-							onChange : function(value, text, $choice){
-								showColors(value);
-							}
-						});
+					$.each(response.result, function(key, data){
+						if(key === target){
+							$('#'+key).find('.ui.search').remove();
+							var select = $('<select class="browser-default ui search dropdown '+target+'" name="'+target+'"></select>');
+							$.each(data.echo, function(index, item){
+								var option = '<option value="'+item.value+'"';
+								if(item.selected) option += ' selected';
+								option += '>'+item.name+'</option>';
+								select.append(option);
+							});
+							$('#'+key).show().find('label.for-select').after(select);
+							select.uidropdown({
+								fullTextSearch : true,
+								duration : 300,
+								placeholder : false,
+								forceSelection : false,
+								onChange : function(value, text, $choice){
+									showColors(value);
+								}
+							});
+						}
 					});
 					showColors($('#paint').find('select').val());
 				}
