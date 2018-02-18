@@ -52,6 +52,9 @@ select{
 .download-row h6{
 	margin-left: 10px;
 }
+.mdc-theme--dark .download-row h6{
+	color: var(--mdc-theme-text-primary-on-primary-dark);
+}
 .download-row .large-btn{
 	height: 54px;
 	line-height: 54px;
