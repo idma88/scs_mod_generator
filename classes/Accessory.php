@@ -23,9 +23,17 @@ class Accessory{
 
 	public static function getAllAccessoriesDefs($game){
 		GLOBAL $accessories;
+		$list[] = [
+			'name' => t('choose_accessory'),
+			'value' => '',
+			'selected' => true
+		];
 		foreach($accessories[$game] as $chassis => $item){
 			foreach($item as $def => $name){
-				$list[$def] = $def;
+				$list[] = [
+					'name' => $def,
+					'value' => $def
+				];
 			}
 		}
 		return $list;

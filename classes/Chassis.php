@@ -56,11 +56,18 @@ class Chassis{
 
 	public function getAvailableAccessories($lang = null){
 		GLOBAL $accessories;
-		$list = array();
+		$list[] = [
+			'name' => t('choose_accessory'),
+			'value' => '',
+			'selected' => true
+		];
 		if($this->isWithAccessory()){
 			$chassis = str_replace(['_default', '_black', '_yellow', '_red', '_blue', '_grey'], '', $this->chassis_name);
 			foreach($accessories[$this->game][$chassis] as $def => $name){
-				$list[$def] = t($name, $lang);
+				$list[] = [
+					'name' => t($name, $lang),
+					'value' => $def
+				];
 			}
 			return $list;
 		}else{
@@ -72,8 +79,16 @@ class Chassis{
 		GLOBAL $paints;
 		if($this->isWithPaintJob()){
 			$chassis = str_replace(['_1', '_1_4', '_4', '_4_3', 'rm_double', 'rm53_double', 'pup_double', 'pup_triple'], '', $this->chassis_name);
+			$list[] = [
+				'name' => t('all_companies'),
+				'value' => 'all',
+				'selected' => true
+			];
 			foreach($paints[$this->game][$chassis] as $def){
-				$list[$def] = t(PaintJob::getTrailerLookByDef($def), $lang);
+				$list[] = [
+					'name' => t(PaintJob::getTrailerLookByDef($def), $lang),
+					'value' => $def
+				];
 			}
 			return $list;
 		}else{
