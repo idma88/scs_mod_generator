@@ -20,11 +20,11 @@
 		<label for="toggle-dark" class="mdc-switch-label"><?= t('dark_theme') ?></label>
 	</div>
 	<div class="version center">
-		<p><?= t('current_version') ?> - 1.0</p>
+		<p><?= t('current_version') ?> - 1.0.1</p>
 	</div>
 	<div class="row center">
 		<p><a href="https://volvovtc.com" target="_blank"><?= t('vtc') ?> Volvo Trucks</a></p>
-		<span class="footer-copyright">&copy; <a href="https://vk.com/viiper94" target="_blank">viiper94</a> - <?= date('Y') ?></span>
+		<span class="footer-copyright">&copy; <a href="http://steamcommunity.com/id/viiper94/" target="_blank">[Volvo Trucks] Mayday</a> - <?= date('Y') ?></span>
 	</div>
 </footer>
 <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
