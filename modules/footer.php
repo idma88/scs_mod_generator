@@ -20,7 +20,7 @@
 		<label for="toggle-dark" class="mdc-switch-label"><?= t('dark_theme') ?></label>
 	</div>
 	<div class="version center">
-		<p><?= t('current_version') ?> - 1.0.1</p>
+		<p><?= t('current_version') ?> - 1.0.3</p>
 	</div>
 	<div class="row center">
 		<p><a href="https://volvovtc.com" target="_blank"><?= t('vtc') ?> Volvo Trucks</a></p>
