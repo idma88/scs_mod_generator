@@ -56,7 +56,7 @@
 				$chassis[] = str_replace(['_default', '_black', '_yellow', '_red', '_blue', '_grey', '_1', '_4', '_3'], '', $key);
 			}
 			$diff = [
-				'lowboy' => 'lowboy_black',
+				'lowboy' => 'lowboy_red',
 				'gooseneck_ats' => 'gooseneck_ats_blue',
 				'flatbed' => 'flatbed_black',
 				'car' => 'car_black',
