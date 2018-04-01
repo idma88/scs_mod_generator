@@ -134,7 +134,7 @@ $(document).ready(function(){
 									forceSelection : false,
 									onChange : function(value, text, $choice){
 										value = value.split('/');
-										if(value[value.length - 1] === 'default.sii'){
+										if(value[value.length - 1] === 'default.sii' || value[value.length - 1] === 'default'){
 											$('.colors').show();
 										}else{
 											$('.colors').hide();

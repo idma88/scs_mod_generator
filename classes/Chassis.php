@@ -12,25 +12,27 @@ class Chassis{
 	public $dlc = array();
 	public $game;
 
-	public function __construct(){
+	public function __construct($chassis_data){
 		GLOBAL $chassis_list, $axles, $with_paint_job;
-		$this->chassis_name = $_POST['chassis'];
-		$this->game = $_POST['target'];
-		$this->chassis_def = $chassis_list[$this->game][$this->chassis_name];
-		$this->wheels = $this->getWheels();
-		$this->axles = $axles[$this->chassis_name];
-		$this->default_paint_job = $this->isWithPaintJob() ? $with_paint_job[$this->chassis_name] : null;
-		$this->dlc = $this->getChassisDlc();
-		$this->weight = isset($_POST['weight']) && is_numeric($_POST['weight']) ? $_POST['weight'] : false;
+		$this->chassis_name = $chassis_data['chassis'];
+		$this->game = $chassis_data['target'];
+		if($this->chassis_name != 'paintable'){
+			$this->chassis_def = $chassis_list[$this->game][$this->chassis_name];
+			$this->wheels = $this->getWheels($chassis_data['wheels']);
+			$this->axles = $axles[$this->chassis_name];
+			$this->default_paint_job = $this->isWithPaintJob() ? $with_paint_job[$this->chassis_name] : null;
+			$this->dlc = $this->getChassisDlc();
+		}
+		$this->weight = isset($chassis_data['weight']) && is_numeric($chassis_data['weight']) ? $chassis_data['weight'] : false;
 	}
 
-	private function getWheels(){
+	private function getWheels($wheels_data){
 		GLOBAL $chassis_one_wheel_support, $wheels;
-		if(in_array($this->chassis_name, $chassis_one_wheel_support) || !isset($_POST['wheels']) || $_POST['wheels'] == ''){
+		if(in_array($this->chassis_name, $chassis_one_wheel_support) || !isset($wheels_data) || $wheels_data == ''){
 			$wheels = $wheels[$this->chassis_name];
 		}else{
 			$this->customWheels = true;
-			$wheels = $_POST['wheels'];
+			$wheels = $wheels_data;
 		}
 		return $wheels;
 	}
@@ -46,7 +48,7 @@ class Chassis{
 
 	public function isWithPaintJob(){
 		GLOBAL $with_paint_job;
-		return key_exists($this->chassis_name, $with_paint_job);
+		return key_exists($this->chassis_name, $with_paint_job) || $this->chassis_name == 'paintable';
 	}
 
 	public function isWithAccessory(){
@@ -94,6 +96,25 @@ class Chassis{
 		}else{
 			return false;
 		}
+	}
+
+	public function getAllCompanies($lang){
+		GLOBAL $companies;
+		$list[] = [
+			'name' => t('choose_paint'),
+			'value' => '',
+			'selected' => true
+		];
+		$list[] = [
+			'name' => t('default', $lang),
+			'value' => 'default'];
+		foreach($companies[$this->game] as $company){
+			$list[] = [
+				'name' => t($company, $lang),
+				'value' => $company
+			];
+		}
+		return $list;
 	}
 
 }

@@ -28,13 +28,25 @@ if(!isset($_POST['target']) || $_POST['target'] == ''){
 	header('Location: http://'.$_SERVER['HTTP_HOST'].'/?e=6764');
 }
 
-$chassis = new Chassis();
+$chassis = new Chassis([
+	'target' => $_POST['target'],
+	'chassis' => $_POST['chassis'],
+	'weight' => isset($_POST['weight']) ?? null,
+	'wheels' => isset($_POST['wheels']) ?? null,
+]);
 $accessory = null;
 $paint_job = null;
 
 if($chassis->isWithAccessory()) $accessory = new Accessory();
-if($chassis->isWithPaintJob() || $chassis->chassis_name == 'aero_dynamic') $paint_job = new PaintJob($chassis);
+if($chassis->isWithPaintJob() || $chassis->chassis_name == 'aero_dynamic'){
+	$paint_job = new PaintJob($chassis, [
+		'target' => $_POST['target'],
+		'paint' => $_POST['paint'],
+		'color' => $_POST['color'],
+	]);
+}
 
+//!d($chassis);
 //!d($paint_job); exit;
 
 $generator = new App();

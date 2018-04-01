@@ -9,27 +9,30 @@ class PaintJob{
 	public $color = '1, 1, 1';
 	private $game;
 
-	public function __construct($chassis){
-		$this->paint_def = $this->getPaintDef($chassis);
-		$this->look = $this->getTrailerLook();
+	public function __construct($chassis, $paint_data){
+		$this->paint_def = $this->getPaintDef($chassis, $paint_data['paint']);
+		$this->look = $this->getTrailerLook($paint_data['paint']);
 		$this->dlc = $this->getPaintDLC();
-		$this->color = $this->getPaintColor();
-		$this->game = $_POST['target'];
+		$this->color = $this->getPaintColor($paint_data['color']);
+		$this->game = $paint_data['target'];
 	}
 
-	private function getPaintDef($chassis){
+	private function getPaintDef($chassis, $paint){
 		if($chassis->chassis_name == 'aero_dynamic'){
 			$paint_def = '/def/vehicle/trailer/aero_dynamic/company_paint_job/default.sii';
-		}else if($_POST['paint'] == 'all'){
+		}else if($paint == 'all'){
 			$paint_def = $chassis->default_paint_job;
 			$this->allCompanies = true;
+		}else if($chassis->chassis_name == 'paintable'){
+			$paint_def = false;
 		}else{
-			$paint_def = $_POST['paint'];
+			$paint_def = $paint;
 		}
 		return $paint_def;
 	}
 
-	private function getTrailerLook(){
+	private function getTrailerLook($paint){
+		if(!$this->paint_def) return $paint;
 		$array = explode('/', $this->paint_def);
 		return str_replace('.sii', '', $array[count($array) - 1]);
 	}
@@ -40,20 +43,30 @@ class PaintJob{
 	}
 
 	private function getPaintDLC(){
-		GLOBAL $dlc_paints;
+		GLOBAL $dlc_paints, $companies_dlc;
 		$dlc = $this->dlc;
-		if(key_exists($this->paint_def, $dlc_paints)){
-			$dlc = explode(',', $dlc_paints[$this->paint_def]);
+		if(!$this->paint_def){
+			if(key_exists($this->look, $companies_dlc)){
+				$dlc = [$companies_dlc[$this->look]];
+			}
+		}else{
+			if(key_exists($this->paint_def, $dlc_paints)){
+				$dlc = explode(',', $dlc_paints[$this->paint_def]);
+			}
 		}
 		return $dlc;
 	}
 
-	private function getPaintColor(){
+	private function getPaintColor($color){
 		if($this->look == 'default'){
-			$colors['r'] = $_POST['color']['scs']['r'] ?? '1';
-			$colors['g'] = $_POST['color']['scs']['g'] ?? '1';
-			$colors['b'] = $_POST['color']['scs']['b'] ?? '1';
-			return $colors['r'].', '.$colors['g'].', '.$colors['b'];
+			if(is_array($color)){
+				$colors['r'] = $color['scs']['r'] ?? '1';
+				$colors['g'] = $color['scs']['g'] ?? '1';
+				$colors['b'] = $color['scs']['b'] ?? '1';
+				return $colors['r'].', '.$colors['g'].', '.$colors['b'];
+			}else{
+				return $color;
+			}
 		}else{
 			return '1, 1, 1';
 		}
