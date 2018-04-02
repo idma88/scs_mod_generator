@@ -31,8 +31,8 @@ if(!isset($_POST['target']) || $_POST['target'] == ''){
 $chassis = new Chassis([
 	'target' => $_POST['target'],
 	'chassis' => $_POST['chassis'],
-	'weight' => isset($_POST['weight']) ?? null,
-	'wheels' => isset($_POST['wheels']) ?? null,
+	'weight' => $_POST['weight'] ?? null,
+	'wheels' => $_POST['wheels'] ?? null,
 ]);
 $accessory = null;
 $paint_job = null;

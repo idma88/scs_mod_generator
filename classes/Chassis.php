@@ -16,9 +16,9 @@ class Chassis{
 		GLOBAL $chassis_list, $axles, $with_paint_job;
 		$this->chassis_name = $chassis_data['chassis'];
 		$this->game = $chassis_data['target'];
+        $this->wheels = $this->getWheels($chassis_data['wheels']);
 		if($this->chassis_name != 'paintable'){
 			$this->chassis_def = $chassis_list[$this->game][$this->chassis_name];
-			$this->wheels = $this->getWheels($chassis_data['wheels']);
 			$this->axles = $axles[$this->chassis_name];
 			$this->default_paint_job = $this->isWithPaintJob() ? $with_paint_job[$this->chassis_name] : null;
 			$this->dlc = $this->getChassisDlc();
@@ -28,7 +28,7 @@ class Chassis{
 
 	private function getWheels($wheels_data){
 		GLOBAL $chassis_one_wheel_support, $wheels;
-		if(in_array($this->chassis_name, $chassis_one_wheel_support) || !isset($wheels_data) || $wheels_data == ''){
+		if(in_array($this->chassis_name, $chassis_one_wheel_support) || !$wheels_data || $wheels_data == ''){
 			$wheels = $wheels[$this->chassis_name];
 		}else{
 			$this->customWheels = true;

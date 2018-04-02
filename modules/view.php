@@ -160,6 +160,21 @@
 									</select>
 									<label><?= t('select_wheels') ?></label>
 								</div>
+                                <div class="dlc">
+                                    <label><?= t('include_dlc') ?>:</label>
+                                    <?php foreach($dlc_list[$game] as $dlc) : ?>
+                                        <div class="<?= $dlc ?>">
+                                            <div class="mdc-switch">
+                                                <input type="checkbox" id="dlc_<?= $dlc ?>" data-target="paint"
+                                                       class="mdc-switch__native-control" name="dlc[<?= $dlc ?>]">
+                                                <div class="mdc-switch__background">
+                                                    <div class="mdc-switch__knob"></div>
+                                                </div>
+                                            </div>
+                                            <label for="dlc_<?= $dlc ?>" class="mdc-switch-label"><?= t($dlc) ?></label>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
 							</div>
 						</li>
 					</ul>

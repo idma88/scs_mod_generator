@@ -43,9 +43,15 @@ class App{
 
 	private function getDLCArray($dlc){
 		$array = $this->dlc;
+		if(isset($_POST['dlc']) && is_array($_POST['dlc'])){
+		    foreach($_POST['dlc'] as $key => $value){
+		        array_push($array, $key);
+            }
+        }
 		foreach($dlc as $item){
 			if($item) $array = array_merge($array, $item);
 		}
+//		d($array);exit;
 		return array_unique($array);
 	}
 
@@ -325,7 +331,7 @@ class App{
 		$chassis_data = [
 			'target' => $this->game,
 			'chassis' => $picked_key,
-			'wheels' => '/def/vehicle/t_wheel/single.sii'
+			'wheels' => $this->chassis->wheels
 		];
 		$paint_data = [
 			'target' => $this->game,

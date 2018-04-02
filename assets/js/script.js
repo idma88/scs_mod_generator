@@ -95,7 +95,8 @@ $(document).ready(function(){
 			$('#accessory').hide().find('.ui.search').remove();
 			$('#paint').hide().find('.ui.search').remove();
 			$('.colors').hide();
-			$('#all_accessories, #all_paints').prop('checked',false);
+			$('#all_accessories, #all_paints').prop('checked', false);
+            $('[id^=dlc_]').prop('checked', false).prop('disabled', false);
 			if(value !== ''){
 				if(value !== 'schw_overweight' && value.indexOf('goldhofer') === -1){
 					$('.wheels.input-field').show();
@@ -133,6 +134,7 @@ $(document).ready(function(){
 									placeholder : false,
 									forceSelection : false,
 									onChange : function(value, text, $choice){
+										getDLCList(value);
 										value = value.split('/');
 										if(value[value.length - 1] === 'default.sii' || value[value.length - 1] === 'default'){
 											$('.colors').show();
@@ -141,6 +143,9 @@ $(document).ready(function(){
 										}
 									}
 								});
+                                $.each(response.dlc, function(index, dlc){
+									$('#dlc_'+dlc).prop('checked', true).prop('disabled', true);
+                                });
 							});
 						}
 					},
@@ -159,6 +164,7 @@ $(document).ready(function(){
 	});
 
 	$('#all_accessories, #all_paints').change(function(){
+        getDLCList('');
 		$('.colors').hide();
 		var target = $(this).data('target');
 		$.ajax({
@@ -195,6 +201,7 @@ $(document).ready(function(){
 								placeholder : false,
 								forceSelection : false,
 								onChange : function(value, text, $choice){
+                                    getDLCList(value);
 									showColors(value);
 								}
 							});
@@ -315,8 +322,28 @@ $(document).ready(function(){
 
 });
 
+function getDLCList(value) {
+	$.ajax({
+        cache: false,
+        dataType : 'json',
+        type : 'POST',
+        data : {
+            'ajax' : true,
+            'target' : $('input[name=target]').val(),
+			'accessory' : value,
+            'chassis' : $('select[name=chassis]').val(),
+        },
+		success : function(response){
+            $('[id^=dlc_]').prop('checked', false).prop('disabled', false);
+            $.each(response.dlc, function(index, dlc){
+                $('#dlc_'+dlc).prop('checked', true).prop('disabled', true);
+            });
+        }
+	});
+}
+
 function showColors(value){
-	value = value.split('/');
+	if(value.length > 0) value = value.split('/');
 	if(value[value.length - 1] === 'default.sii'){
 		$('.colors').show();
 	}else{

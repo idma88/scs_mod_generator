@@ -56,6 +56,17 @@
 		'w_default' => 'Default',
 		'dark_theme' => 'Dark theme',
 		'upload_image' => 'Upload image',
+		'include_dlc' => 'Also, include DLC content',
+
+        // dlc list
+        'scandinavia' => 'DLC Scandinavia',
+        'france' => 'DLC Vive la France!',
+        'italy' => 'DLC Italia',
+        'schwarzmuller' => 'DLC Schwarzmüller Trailer Pack',
+        'high' => 'DLC High Power Cargo Pack',
+        'heavy' => 'DLC Heavy Cargo Pack',
+        'heavy_ats' => 'DLC Heavy Cargo Pack',
+        'special' => 'DLC Special Transport - !NO MP SUPPORT!',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Aero dynamic',
@@ -471,6 +482,17 @@
 		'w_default' => 'Стандартно',
 		'dark_theme' => 'Тёмная тема',
 		'upload_image' => 'Выбрать файл',
+        'include_dlc' => 'Так же, включить контент из DLC',
+
+        // dlc list
+        'scandinavia' => 'DLC Scandinavia',
+        'france' => 'DLC Vive la France!',
+        'italy' => 'DLC Italia',
+        'schwarzmuller' => 'DLC Schwarzmüller Trailer Pack',
+        'high' => 'DLC High Power Cargo Pack',
+        'heavy' => 'DLC Heavy Cargo Pack',
+        'heavy_ats' => 'DLC Heavy Cargo Pack',
+        'special' => 'DLC Special Transport - !НЕ ПОДДЕРЖИВАЕТСЯ В МП!',
 
 		// ets2 trailers
 		'aero_dynamic' => 'Аэродинамический рефрижератор',

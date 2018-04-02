@@ -23,7 +23,7 @@ class PaintJob{
 		}else if($paint == 'all'){
 			$paint_def = $chassis->default_paint_job;
 			$this->allCompanies = true;
-		}else if($chassis->chassis_name == 'paintable'){
+		}else if($chassis->chassis_name == 'paintable' && stripos($paint, '/def/vehicle/trailer/') === false){
 			$paint_def = false;
 		}else{
 			$paint_def = $paint;

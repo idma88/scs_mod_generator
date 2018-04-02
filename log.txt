@@ -1,0 +1,143 @@
+02-04-2018 16:03 1522677827_Schmitz_S.KI_Solid
+Title:		Schmitz S.KI Solid
+Chassis:	s_ki_solid
+Accessory:	/def/vehicle/trailer/car_transporter/cargo_octavia.sii
+Paint:		
+Weight:		
+Color:		1, 1, 1
+Wheels: 	/def/vehicle/t_wheel/435_50_r19_5.sii
+Target:		ets2
+User:		windows Google Chrome 64.0.3282.186
+
+02-04-2018 16:02 1522677745_All_paintable_chassis
+Title:		All paintable chassis
+Chassis:	paintable
+Accessory:	
+Paint:		/def/vehicle/trailer/krone/coolliner/company_paint_job/fui.sii
+Weight:		
+Color:		1, 1, 1
+Wheels: 	
+Target:		ets2
+User:		windows Google Chrome 64.0.3282.186
+
+02-04-2018 16:01 1522677677_All_paintable_chassis
+Title:		All paintable chassis
+Chassis:	paintable
+Accessory:	
+Paint:		default
+Weight:		2
+Color:		0.063, 0, 0.063
+Wheels: 	/def/vehicle/t_wheel/overweight.sii
+Target:		ets2
+User:		windows Google Chrome 64.0.3282.186
+
+02-04-2018 15:53 1522677210_All_paintable_chassis
+Title:		All paintable chassis
+Chassis:	paintable
+Accessory:	
+Paint:		default
+Weight:		1
+Color:		1, 1, 1
+Wheels: 	/def/vehicle/t_wheel/overweight.sii
+Target:		ets2
+User:		windows Google Chrome 64.0.3282.186
+
+02-04-2018 15:52 1522677144_All_paintable_chassis
+Title:		All paintable chassis
+Chassis:	paintable
+Accessory:	
+Paint:		drekkar
+Weight:		
+Color:		1, 1, 1
+Wheels: 	
+Target:		ets2
+User:		windows Google Chrome 64.0.3282.186
+
+02-04-2018 15:52 1522677121_Single_Extendable_Semi_Lowloader
+Title:		Single Extendable Semi Lowloader 
+Chassis:	goldhofer_mpa_k
+Accessory:	/def/vehicle/trailer/goldhofer_mpa_k/cat_785c.sii
+Paint:		
+Weight:		
+Color:		1, 1, 1
+Wheels: 	
+Target:		ets2
+User:		windows Google Chrome 64.0.3282.186
+
+02-04-2018 15:51 1522677091_Aero_dynamic
+Title:		Aero dynamic
+Chassis:	aero_dynamic
+Accessory:	
+Paint:		
+Weight:		
+Color:		1, 1, 1
+Wheels: 	
+Target:		ets2
+User:		windows Google Chrome 64.0.3282.186
+
+02-04-2018 15:50 1522677048_Schmitz_Universal
+Title:		Schmitz Universal
+Chassis:	schmitz_universal
+Accessory:	
+Paint:		/def/vehicle/trailer/schmitz/universal/company_paint_job/default.sii
+Weight:		
+Color:		1, 1, 1
+Wheels: 	
+Target:		ets2
+User:		windows Google Chrome 64.0.3282.186
+
+02-04-2018 15:48 1522676933_Chemical_cistern
+Title:		Chemical cistern
+Chassis:	chemical_cistern
+Accessory:	
+Paint:		/def/vehicle/trailer/chemical_cistern/company_paint_job/default.sii
+Weight:		
+Color:		1, 1, 1
+Wheels: 	
+Target:		ets2
+User:		windows Google Chrome 64.0.3282.186
+
+02-04-2018 15:46 1522676784_Krone_Cool_Liner
+Title:		Krone Cool Liner
+Chassis:	coolliner
+Accessory:	
+Paint:		/def/vehicle/trailer/krone/coolliner/company_paint_job/default.sii
+Weight:		
+Color:		0.063, 0, 0.063
+Wheels: 	
+Target:		ets2
+User:		windows Google Chrome 64.0.3282.186
+
+02-04-2018 15:45 1522676742_Car_transporter
+Title:		Car transporter 
+Chassis:	car_transporter_default
+Accessory:	/def/vehicle/trailer/car_transporter/cargo_france_cars.dlc_fr.sii
+Paint:		
+Weight:		
+Color:		1, 1, 1
+Wheels: 	
+Target:		ets2
+User:		windows Google Chrome 64.0.3282.186
+
+02-04-2018 15:44 1522676698_Car_transporter
+Title:		Car transporter 
+Chassis:	car_transporter_default
+Accessory:	/def/vehicle/trailer/car_transporter/cargo_france_cars.dlc_fr.sii
+Paint:		
+Weight:		
+Color:		1, 1, 1
+Wheels: 	
+Target:		ets2
+User:		windows Google Chrome 64.0.3282.186
+
+02-04-2018 15:44 1522676660_Aero_dynamic
+Title:		Aero dynamic
+Chassis:	aero_dynamic
+Accessory:	
+Paint:		
+Weight:		
+Color:		1, 1, 1
+Wheels: 	
+Target:		ets2
+User:		windows Google Chrome 64.0.3282.186
+

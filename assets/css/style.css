@@ -251,6 +251,10 @@ ol{
 	z-index: 0;
 	fill: #888;
 }
+.dlc > label{
+	display: block;
+	margin-top: 10px;
+}
 
 .mdc-fab span{
 	font-size: 20px;

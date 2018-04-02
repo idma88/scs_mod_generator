@@ -8,9 +8,9 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="assets/mdc/css/material-components-web.min.css" media="screen,projection"/>
 	<link type="text/css" rel="stylesheet" href="assets/semanticui/semanticui.min.css" media="screen,projection"/>
-	<link type="text/css" rel="stylesheet" href="assets/semanticui/semantic-custom.css" media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="assets/semanticui/semantic-custom.min.css" media="screen,projection"/>
 	<link type="text/css" rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection"/>
-	<link type="text/css" rel="stylesheet" href="assets/css/style-v1.0.min.css" media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="assets/css/style-v1.2.1.min.css" media="screen,projection"/>
 	<!-- Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99570317-2"></script>
 	<script>
