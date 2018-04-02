@@ -9,7 +9,11 @@ if(isset($_POST['ajax']) && $_POST['chassis']){
 	GLOBAL $with_accessory, $with_paint_job;
 	$lang = $_POST['lang'] ?? null;
 	$result = null;
-	$chassis = new Chassis();
+	$chassis = new Chassis([
+	    'chassis' => $_POST['chassis'],
+        'target' => $_POST['target'],
+        'wheels' => '/def/vehicle/t_wheel/single.sii'
+    ]);
 	if($chassis->isWithPaintJob()){
 		$data = $chassis->getAvailablePaints($lang);
 	}elseif(in_array($_POST['chassis'], $with_accessory)){
