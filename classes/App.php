@@ -24,8 +24,10 @@ class App{
 
 	public function run(){
 		$this->makeOutDirectory();
-		$this->copyTrailerFiles();
-		$this->replaceTrailerFiles();
+		if($this->chassis->chassis_name != 'paintable' || ($this->chassis->chassis_name == 'paintable' && $this->paintJob->look == 'default')){
+			$this->copyTrailerFiles();
+			$this->replaceTrailerFiles();
+		}
 		if($this->paintJob && !$this->paintJob->allCompanies && $this->chassis->chassis_name !== 'aero_dynamic'){
 			$this->copyCompanyFiles();
 			$this->replaceCompanyFiles();
@@ -141,9 +143,16 @@ class App{
 					$rows = file($dirname."/".$file, FILE_IGNORE_NEW_LINES);
 					$trailer_name = trim(preg_split('/trailer\./', $rows[0])[1]);
 					$accessory_name = trim(preg_replace('/\.[a-z0-9]+$/', '', explode(':', $rows[2])[1]));
-					in_array($_POST['chassis'], $coupled_trailers) ?
-						$content = $this->generateCoupledTrailerContent($trailer_name) :
-						$content = $this->generateTrailerContent($trailer_name, $accessory_name);
+					if($this->chassis->chassis_name == 'paintable'){
+						$content = $this->generatePaintableTrailersContent($rows);
+						if(stripos($content,'base_color') === false){
+							$content = $this->generateRandomTrailerContent($trailer_name, $accessory_name);
+						}
+					}else{
+						in_array($_POST['chassis'], $coupled_trailers) ?
+							$content = $this->generateCoupledTrailerContent($trailer_name) :
+							$content = $this->generateTrailerContent($trailer_name, $accessory_name);
+					}
 					file_put_contents($dirname."/".$file, $content);
 				}
 			}
@@ -252,6 +261,89 @@ class App{
 		return $content;
 	}
 
+	private function generatePaintableTrailersContent($rows){
+		foreach($rows as $key => $row){
+			if(stripos($row,'vehicle_paint_job_accessory') !== false){
+				array_splice($rows, $key + 2, 0, "\tbase_color: (".$this->paintJob->color.")");
+				break;
+			}
+		}
+		$rows = implode("\n", $rows);
+		return $rows;
+	}
+
+	private function generateRandomTrailerContent($trailer_name, $accessory_name){
+		GLOBAL $paints;
+		$paintable_trailers = [
+			'ets2' => [
+				'cement_cistern' => '/def/vehicle/trailer/cement/company_paint_job/default.sii',
+				'chemical_cistern' => '/def/vehicle/trailer/chemical_cistern/company_paint_job/default.sii',
+				'food_cistern' => '/def/vehicle/trailer/food_cistern/company_paint_job/default.sii',
+				'fuel_cistern' => '/def/vehicle/trailer/fuel_cistern/company_paint_job/default.sii',
+				'coolliner' => '/def/vehicle/trailer/krone/coolliner/company_paint_job/default.sii',
+				'fridge' => '/def/vehicle/trailer/krone/fridge/company_paint_job/default.sii',
+				'profiliner' => '/def/vehicle/trailer/krone/profiliner/company_paint_job/default.sii',
+				'livestock' => '/def/vehicle/trailer/livestock/company_paint_job/default.sii',
+				'willig_cistern' => '/def/vehicle/trailer/willig/fuel_cistern/company_paint_job/default.sii',
+			],
+			'ats' => [
+				'acid' => '/def/vehicle/trailer/acid/company_paint_job/default.sii',
+				'acid_long' => '/def/vehicle/trailer/acid_long/company_paint_job/default.sii',
+				'box' => '/def/vehicle/trailer/box/company_paint_job/default.sii',
+				'box_long' => '/def/vehicle/trailer/box_long/company_paint_job/default.sii',
+				'box_pup_double' => '/def/vehicle/trailer/box_wabash/company_paint_job/default.sii',
+				'box_rm_double' => '/def/vehicle/trailer/box_wabash/company_paint_job/default.sii',
+				'box_rm53_double' => '/def/vehicle/trailer/box_wabash/company_paint_job/default.sii',
+				'box_pup_triple' => '/def/vehicle/trailer/box_wabash/company_paint_job/default.sii',
+				'chemical' => '/def/vehicle/trailer/chemical/company_paint_job/default.sii',
+				'chemical_long' => '/def/vehicle/trailer/chemical_long/company_paint_job/default.sii',
+				'curtain' => '/def/vehicle/trailer/curtain/company_paint_job/default.sii',
+				'curtain_1' => '/def/vehicle/trailer/curtain/company_paint_job/default.sii',
+				'curtain_1_4' => '/def/vehicle/trailer/curtain/company_paint_job/default.sii',
+				'curtain_4' => '/def/vehicle/trailer/curtain/company_paint_job/default.sii',
+				'curtain_4_3' => '/def/vehicle/trailer/curtain/company_paint_job/default.sii',
+				'curtain_long' => '/def/vehicle/trailer/curtain_long/company_paint_job/default.sii',
+				'curtain_long_1' => '/def/vehicle/trailer/curtain_long/company_paint_job/default.sii',
+				'curtain_long_1_4' => '/def/vehicle/trailer/curtain_long/company_paint_job/default.sii',
+				'curtain_long_4' => '/def/vehicle/trailer/curtain_long/company_paint_job/default.sii',
+				'curtain_long_4_3' => '/def/vehicle/trailer/curtain_long/company_paint_job/default.sii',
+				'food_tank' => '/def/vehicle/trailer/food_tank/company_paint_job/default.sii',
+				'fuel' => '/def/vehicle/trailer/fuel/company_paint_job/default.sii',
+				'fuel_long' => '/def/vehicle/trailer/fuel_long/company_paint_job/default.sii',
+				'gas' => '/def/vehicle/trailer/gas/company_paint_job/default.sii',
+				'gas_long' => '/def/vehicle/trailer/gas_long/company_paint_job/default.sii',
+				'reefer' => '/def/vehicle/trailer/reefer/company_paint_job/default.sii',
+				'reefer_pup_double' => '/def/vehicle/trailer/reefer_wabash/company_paint_job/default.sii',
+				'reefer_rm_double' => '/def/vehicle/trailer/reefer_wabash/company_paint_job/default.sii',
+				'reefer_rm53_double' => '/def/vehicle/trailer/reefer_wabash/company_paint_job/default.sii',
+				'reefer_pup_triple' => '/def/vehicle/trailer/reefer_wabash/company_paint_job/default.sii',
+				'reefer3000r' => '/def/vehicle/trailer/reefer3000r/company_paint_job/default.sii',
+				'reefer3000r_long' => '/def/vehicle/trailer/reefer3000r_long/company_paint_job/default.sii'
+			],
+		];
+		$picked_key = array_rand($paintable_trailers[$this->game]);
+		$chassis_data = [
+			'target' => $this->game,
+			'chassis' => $picked_key,
+			'wheels' => '/def/vehicle/t_wheel/single.sii'
+		];
+		$paint_data = [
+			'target' => $this->game,
+			'paint' => str_replace('default', $this->paintJob->look, $paints[$this->game][$picked_key][0]),
+			'color' => $this->paintJob->color,
+		];
+		$random_chassis = new Chassis($chassis_data);
+		$random_paint_job = new PaintJob($random_chassis, $paint_data);
+		$original_chassis = $this->chassis;
+		$original_paint_job = $this->paintJob;
+		$this->paintJob = $random_paint_job;
+		$this->chassis = $random_chassis;
+		$content = $this->generateTrailerContent($trailer_name, $accessory_name);
+		$this->chassis = $original_chassis;
+		$this->paintJob = $original_paint_job;
+		return $content;
+	}
+
 	private function zipFiles(){
 		$zip = new ZipArchive();
 		$filename = time().'_'.$this->transliterate($this->title);
@@ -266,12 +358,14 @@ class App{
 
 		$zip->addFile('files/mod/manifest.sii', 'manifest.sii');
 		$zip->addFile($this->outDir.'/mod_icon.jpg', 'mod_icon.jpg');
-		$zip->addEmptyDir('def/vehicle/trailer');
 
-		$dir = scandir($this->outDir.'/vehicle/trailer');
-		foreach($dir as $item){
-			if($item != '.' && $item != '..'){
-				$zip->addFile($this->outDir.'/vehicle/trailer/'.$item, 'def/vehicle/trailer/'.$item);
+		if(is_dir($this->outDir.'/vehicle')){
+			$zip->addEmptyDir('def/vehicle/trailer');
+			$dir = scandir($this->outDir . '/vehicle/trailer');
+			foreach($dir as $item){
+				if($item != '.' && $item != '..'){
+					$zip->addFile($this->outDir . '/vehicle/trailer/' . $item, 'def/vehicle/trailer/' . $item);
+				}
 			}
 		}
 

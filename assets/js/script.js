@@ -134,7 +134,7 @@ $(document).ready(function(){
 									forceSelection : false,
 									onChange : function(value, text, $choice){
 										value = value.split('/');
-										if(value[value.length - 1] === 'default.sii'){
+										if(value[value.length - 1] === 'default.sii' || value[value.length - 1] === 'default'){
 											$('.colors').show();
 										}else{
 											$('.colors').hide();
@@ -264,9 +264,9 @@ $(document).ready(function(){
 					b: parseFloat($('#color_scs_b').val())
 				};
 				var rgb = {
-					r: Math.round(scs.r * 255),
-					g: Math.round(scs.g * 255),
-					b: Math.round(scs.b * 255)
+					r: Math.round(Math.sqrt(scs.r) * 255),
+					g: Math.round(Math.sqrt(scs.g) * 255),
+					b: Math.round(Math.sqrt(scs.b) * 255)
 				};
 				var hex = rgbToHex(rgb.r, rgb.g, rgb.b);
 				$('#color_palette').val(hex);
@@ -330,9 +330,9 @@ function setColors(hex, rgb, scs){
 	$('#color_rgb_r').val(rgb.r);
 	$('#color_rgb_g').val(rgb.g);
 	$('#color_rgb_b').val(rgb.b);
-	$('#color_scs_r').val(parseFloat(scs.r.toFixed(3)));
-	$('#color_scs_g').val(parseFloat(scs.g.toFixed(1)));
-	$('#color_scs_b').val(parseFloat(scs.b.toFixed(1)));
+	$('#color_scs_r').val(parseFloat(scs.r.toFixed(4)));
+	$('#color_scs_g').val(parseFloat(scs.g.toFixed(4)));
+	$('#color_scs_b').val(parseFloat(scs.b.toFixed(4)));
 }
 
 function rgbToHex(r, g, b) {
@@ -355,9 +355,9 @@ function hexToRgb(hex) {
 
 function rgbToScs(r, g, b){
 	return {
-		r : r / 255,
-		g : g / 255,
-		b : b / 255
+		r : Math.pow((r / 255), 2),
+		g : Math.pow((g / 255), 2),
+		b : Math.pow((b / 255), 2)
 	};
 }
 

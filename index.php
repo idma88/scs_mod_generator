@@ -29,8 +29,10 @@ if(isset($_POST['ajax']) && $chassis = $_POST['chassis']){
 		echo json_encode(['result' => $data, 'status' => 'OK']);
 		die();
 	}
-
-	$chassis = new Chassis();
+	$chassis = new Chassis([
+		'target' => $_POST['target'],
+		'chassis' => $_POST['chassis']
+	]);
 	$chassis->game = $game;
 	$echo = false;
 	$target = null;
@@ -43,8 +45,7 @@ if(isset($_POST['ajax']) && $chassis = $_POST['chassis']){
 	}
 	if($chassis->isWithPaintJob()){
 		$data['paint'] = [
-			'echo' => $chassis->getAvailablePaints($lang),
-			'first' => t('all_companies', $lang)
+			'echo' => $chassis->chassis_name == 'paintable' ? $chassis->getAllCompanies($lang) : $chassis->getAvailablePaints($lang)
 		];
 	}
 	echo json_encode(['result' => $data, 'status' => 'OK']);
