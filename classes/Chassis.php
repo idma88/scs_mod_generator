@@ -29,12 +29,12 @@ class Chassis{
 	private function getWheels($wheels_data){
 		GLOBAL $chassis_one_wheel_support, $wheels;
 		if(in_array($this->chassis_name, $chassis_one_wheel_support) || !$wheels_data || $wheels_data == ''){
-			$wheels = $wheels[$this->chassis_name];
+			$t_wheels = $wheels[$this->chassis_name];
 		}else{
 			$this->customWheels = true;
-			$wheels = $wheels_data;
+            $t_wheels = $wheels_data;
 		}
-		return $wheels;
+		return $t_wheels;
 	}
 
 	private function getChassisDlc(){
