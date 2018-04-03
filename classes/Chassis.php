@@ -20,7 +20,7 @@ class Chassis{
 		if($this->chassis_name != 'paintable'){
 			$this->chassis_def = $chassis_list[$this->game][$this->chassis_name];
 			$this->axles = $axles[$this->chassis_name];
-			$this->default_paint_job = $this->isWithPaintJob() ? $with_paint_job[$this->chassis_name] : null;
+			$this->default_paint_job = $this->isWithPaintJob() ? $with_paint_job[$this->game][$this->chassis_name] : null;
 			$this->dlc = $this->getChassisDlc();
 		}
 		$this->weight = isset($chassis_data['weight']) && is_numeric($chassis_data['weight']) ? $chassis_data['weight'] : false;
@@ -48,7 +48,7 @@ class Chassis{
 
 	public function isWithPaintJob(){
 		GLOBAL $with_paint_job;
-		return key_exists($this->chassis_name, $with_paint_job) || $this->chassis_name == 'paintable';
+		return key_exists($this->chassis_name, $with_paint_job[$this->game]) || $this->chassis_name == 'paintable';
 	}
 
 	public function isWithAccessory(){
