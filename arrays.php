@@ -1990,7 +1990,19 @@
 			'voitureux'
 		],
 		'ats' => [
-
+            'chemso',
+            'bushnell',
+            'charged',
+            'darchelle',
+            'print',
+            'sellgoods',
+            'sunshine',
+            'wallbert',
+            'coastline',
+            'plaster',
+            'voltison',
+            'gallon',
+            'global_mills',
 		]
 	];
 

@@ -297,32 +297,16 @@ class App{
 				'acid_long' => '/def/vehicle/trailer/acid_long/company_paint_job/default.sii',
 				'box' => '/def/vehicle/trailer/box/company_paint_job/default.sii',
 				'box_long' => '/def/vehicle/trailer/box_long/company_paint_job/default.sii',
-				'box_pup_double' => '/def/vehicle/trailer/box_wabash/company_paint_job/default.sii',
-				'box_rm_double' => '/def/vehicle/trailer/box_wabash/company_paint_job/default.sii',
-				'box_rm53_double' => '/def/vehicle/trailer/box_wabash/company_paint_job/default.sii',
-				'box_pup_triple' => '/def/vehicle/trailer/box_wabash/company_paint_job/default.sii',
 				'chemical' => '/def/vehicle/trailer/chemical/company_paint_job/default.sii',
 				'chemical_long' => '/def/vehicle/trailer/chemical_long/company_paint_job/default.sii',
 				'curtain' => '/def/vehicle/trailer/curtain/company_paint_job/default.sii',
-				'curtain_1' => '/def/vehicle/trailer/curtain/company_paint_job/default.sii',
-				'curtain_1_4' => '/def/vehicle/trailer/curtain/company_paint_job/default.sii',
-				'curtain_4' => '/def/vehicle/trailer/curtain/company_paint_job/default.sii',
-				'curtain_4_3' => '/def/vehicle/trailer/curtain/company_paint_job/default.sii',
 				'curtain_long' => '/def/vehicle/trailer/curtain_long/company_paint_job/default.sii',
-				'curtain_long_1' => '/def/vehicle/trailer/curtain_long/company_paint_job/default.sii',
-				'curtain_long_1_4' => '/def/vehicle/trailer/curtain_long/company_paint_job/default.sii',
-				'curtain_long_4' => '/def/vehicle/trailer/curtain_long/company_paint_job/default.sii',
-				'curtain_long_4_3' => '/def/vehicle/trailer/curtain_long/company_paint_job/default.sii',
 				'food_tank' => '/def/vehicle/trailer/food_tank/company_paint_job/default.sii',
 				'fuel' => '/def/vehicle/trailer/fuel/company_paint_job/default.sii',
 				'fuel_long' => '/def/vehicle/trailer/fuel_long/company_paint_job/default.sii',
 				'gas' => '/def/vehicle/trailer/gas/company_paint_job/default.sii',
 				'gas_long' => '/def/vehicle/trailer/gas_long/company_paint_job/default.sii',
 				'reefer' => '/def/vehicle/trailer/reefer/company_paint_job/default.sii',
-				'reefer_pup_double' => '/def/vehicle/trailer/reefer_wabash/company_paint_job/default.sii',
-				'reefer_rm_double' => '/def/vehicle/trailer/reefer_wabash/company_paint_job/default.sii',
-				'reefer_rm53_double' => '/def/vehicle/trailer/reefer_wabash/company_paint_job/default.sii',
-				'reefer_pup_triple' => '/def/vehicle/trailer/reefer_wabash/company_paint_job/default.sii',
 				'reefer3000r' => '/def/vehicle/trailer/reefer3000r/company_paint_job/default.sii',
 				'reefer3000r_long' => '/def/vehicle/trailer/reefer3000r_long/company_paint_job/default.sii'
 			],
@@ -331,7 +315,7 @@ class App{
 		$chassis_data = [
 			'target' => $this->game,
 			'chassis' => $picked_key,
-			'wheels' => $this->chassis->wheels
+			'wheels' => $this->chassis->wheels ?? ''
 		];
 		$paint_data = [
 			'target' => $this->game,
