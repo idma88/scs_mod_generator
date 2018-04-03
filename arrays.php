@@ -439,6 +439,36 @@
         ]
     ];
 
+	$with_paint_job_to_random = [
+		'ets2' => [
+            'cement_cistern' => '/def/vehicle/trailer/cement/company_paint_job/default.sii',
+            'chemical_cistern' => '/def/vehicle/trailer/chemical_cistern/company_paint_job/default.sii',
+            'food_cistern' => '/def/vehicle/trailer/food_cistern/company_paint_job/default.sii',
+            'fuel_cistern' => '/def/vehicle/trailer/fuel_cistern/company_paint_job/default.sii',
+            'coolliner' => '/def/vehicle/trailer/krone/coolliner/company_paint_job/default.sii',
+            'fridge' => '/def/vehicle/trailer/krone/fridge/company_paint_job/default.sii',
+            'profiliner' => '/def/vehicle/trailer/krone/profiliner/company_paint_job/default.sii',
+            'livestock' => '/def/vehicle/trailer/livestock/company_paint_job/default.sii',
+            'willig_cistern' => '/def/vehicle/trailer/willig/fuel_cistern/company_paint_job/default.sii'
+        ],
+        'ats' => [
+            'acid' => '/def/vehicle/trailer/acid/company_paint_job/default.sii',
+            'box' => '/def/vehicle/trailer/box/company_paint_job/default.sii',
+            'box_long' => '/def/vehicle/trailer/box_long/company_paint_job/default.sii',
+            'chemical' => '/def/vehicle/trailer/chemical/company_paint_job/default.sii',
+            'curtain' => '/def/vehicle/trailer/curtain/company_paint_job/default.sii',
+            'curtain_long' => '/def/vehicle/trailer/curtain_long/company_paint_job/default.sii',
+            'food_tank' => '/def/vehicle/trailer/food_tank/company_paint_job/default.sii',
+            'fuel' => '/def/vehicle/trailer/fuel/company_paint_job/default.sii',
+            'fuel_long' => '/def/vehicle/trailer/fuel_long/company_paint_job/default.sii',
+            'gas' => '/def/vehicle/trailer/gas/company_paint_job/default.sii',
+            'gas_long' => '/def/vehicle/trailer/gas_long/company_paint_job/default.sii',
+            'reefer' => '/def/vehicle/trailer/reefer/company_paint_job/default.sii',
+            'reefer3000r' => '/def/vehicle/trailer/reefer3000r/company_paint_job/default.sii',
+            'reefer3000r_long' => '/def/vehicle/trailer/reefer3000r_long/company_paint_job/default.sii'
+        ]
+    ];
+
 	$accessories = [
 		'ets2' => [
 			'car_transporter' => [

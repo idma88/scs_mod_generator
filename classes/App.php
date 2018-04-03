@@ -51,7 +51,6 @@ class App{
 		foreach($dlc as $item){
 			if($item) $array = array_merge($array, $item);
 		}
-//		d($array);exit;
 		return array_unique($array);
 	}
 
@@ -151,7 +150,7 @@ class App{
 					$accessory_name = trim(preg_replace('/\.[a-z0-9]+$/', '', explode(':', $rows[2])[1]));
 					if($this->chassis->chassis_name == 'paintable'){
 						$content = $this->generatePaintableTrailersContent($rows);
-						if(stripos($content,'base_color') === false){
+						if(stripos($content,'base_color') === false || $trailer_name == 'aero_dynamic'){
 							$content = $this->generateRandomTrailerContent($trailer_name, $accessory_name);
 						}
 					}else{
@@ -269,9 +268,11 @@ class App{
 
 	private function generatePaintableTrailersContent($rows){
 		foreach($rows as $key => $row){
-			if(stripos($row,'vehicle_paint_job_accessory') !== false){
-				array_splice($rows, $key + 2, 0, "\tbase_color: (".$this->paintJob->color.")");
-				break;
+			if(stripos($row, 'paint_job/') !== false){
+				$rows[$key] = "\tbase_color: (".$this->paintJob->color.")\n".$rows[$key];
+			}
+			if($this->chassis->customWheels && stripos($row,'/def/vehicle/t_wheel/') !== false){
+				$rows[$key] = "\t\tdata_path: \"".$this->chassis->wheels."\"";
 			}
 		}
 		$rows = implode("\n", $rows);
@@ -279,8 +280,8 @@ class App{
 	}
 
 	private function generateRandomTrailerContent($trailer_name, $accessory_name){
-		GLOBAL $paints, $with_paint_job;
-		$picked_key = array_rand($with_paint_job[$this->game]);
+		GLOBAL $paints, $with_paint_job_to_random;
+		$picked_key = array_rand($with_paint_job_to_random[$this->game]);
 		$random_chassis = new Chassis([
             'target' => $this->game,
             'chassis' => $picked_key,
