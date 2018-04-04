@@ -25,13 +25,13 @@
 							<h5 class="card-title trailer-name text-shadow"><?= str_replace(' - ', '<br>', t($name)) ?></h5>
 						</div>
 						<?php $name_alt = in_array($name, $diff) ? $name . '_default' : $name;
-						if(key_exists($name_alt, $with_paint_job) || in_array($name_alt, $with_accessory)) : ?>
+						if(key_exists($name_alt, $with_paint_job['ets2']) || in_array($name_alt, $with_accessory)) : ?>
 							<div class="card-content">
 								<ul class="collapsible show-skin z-depth-0" data-trailer="<?= $name_alt ?>" data-game="ets2">
 									<li>
 										<div class="collapsible-header">
 											<i class="material-icons notranslate">arrow_downward</i>
-											<?php if(key_exists($name_alt, $with_paint_job)) : ?>
+											<?php if(key_exists($name_alt, $with_paint_job['ets2'])) : ?>
 												<span style="flex: 1;"><?= t('see_paints') ?></span>
 											<?php elseif(in_array($name_alt, $with_accessory)): ?>
 												<span style="flex: 1;"><?= t('see_cargo') ?></span>
@@ -67,16 +67,16 @@
 					<div class="card trailer <?= $key ?>">
 						<div class="card-image">
 							<img src="/assets/img/trailers/<?= $name ?>/<?= $name ?>.jpg">
-							<h5 class="card-title trailer-name text-shadow"><?= t($name) ?></h5>
+							<h5 class="card-title trailer-name text-shadow"><?= str_replace(' - ', '<br>', t($name)) ?></h5>
 						</div>
 						<?php $name_alt = key_exists($name, $diff) ? $diff[$name] : $name;
-							if(key_exists($name_alt, $with_paint_job) || in_array($name_alt, $with_accessory)) : ?>
+							if(key_exists($name_alt, $with_paint_job['ats']) || in_array($name_alt, $with_accessory)) : ?>
 								<div class="card-content">
 									<ul class="collapsible show-skin z-depth-0" data-trailer="<?= $name_alt ?>" data-game="ats">
 										<li>
 											<div class="collapsible-header">
 												<i class="material-icons notranslate">arrow_downward</i>
-												<?php if(key_exists($name_alt, $with_paint_job)) : ?>
+												<?php if(key_exists($name_alt, $with_paint_job['ats'])) : ?>
 													<span style="flex: 1;"><?= t('see_paints') ?></span>
 												<?php elseif(in_array($name_alt, $with_accessory)): ?>
 													<span style="flex: 1;"><?= t('see_cargo') ?></span>
