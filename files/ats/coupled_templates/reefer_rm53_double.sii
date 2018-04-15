@@ -11,6 +11,8 @@ trailer : trailer.reefer_rm_2
 	accessories[]: .reefer_rm_2.trwheel1
 	accessories[]: .reefer_rm_2.paint_job
 	
+	accessories[]: .reefer_rm_2.trlr_cable
+	
 	slave_trailer: .reefer_rm_2.dolly
 }
 
@@ -36,7 +38,10 @@ vehicle_paint_job_accessory: .reefer_rm_2.paint_job
 	%color%
 		data_path: "%paint_job%"
 }
-
+vehicle_addon_accessory: .reefer_rm_2.trlr_cable
+{
+    	data_path: "/def/vehicle/trailer/box_wabash/accessory/stock.sii"
+}
 #########################################
 #
 #	dolly

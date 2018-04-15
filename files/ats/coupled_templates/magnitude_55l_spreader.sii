@@ -10,6 +10,8 @@ trailer : trailer.%trailer%
 	accessories[]: .%trailer%.trwheel0
 	accessories[]: .%trailer%.trwheel1
 	
+	accessories[]: .%trailer%.trlr_cable
+	
 	slave_trailer: trailer.%trailer%.t
 
 }
@@ -31,7 +33,10 @@ vehicle_wheel_accessory: .%trailer%.trwheel1
 		data_path: "%wheel%"
 }
 
-
+vehicle_addon_accessory: .%trailer%.trlr_cables
+{
+    	data_path: "/def/vehicle/trailer/magnitude_55l/accessory/trlr_cables/stock.sii"
+}
 
 #########################################
 #
