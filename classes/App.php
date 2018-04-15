@@ -244,17 +244,20 @@ class App{
 	private function generateCoupledTrailerContent($trailer_name){
 		GLOBAL $heavy_ats_accessory_with_spreader;
 		$content = null;
-		if($this->accessory && $this->accessory->accessory_def === '' && $this->chassis->chassis_name == 'magnitude_55l'){
-			$content = file_get_contents('files/ats/coupled_templates/magnitude_55l_empty.sii');
-		}
-		if($this->accessory && $this->accessory->accessory_def !== ''){
-			$temp = 'magnitude_55l';
-			if(in_array($this->accessory->accessory_def, $heavy_ats_accessory_with_spreader)) $temp .= '_spreader';
-			$content = file_get_contents('files/'.$this->game.'/coupled_templates/'.$temp.'.sii');
-			$content = str_replace(['%cargo%'], $this->accessory->accessory_def, $content);
+		if($this->accessory){
+			if($this->accessory->accessory_def === '' && $this->chassis->chassis_name == 'magnitude_55l'){
+				$content = file_get_contents('files/ats/coupled_templates/magnitude_55l_empty.sii');
+			}
+			if($this->accessory->accessory_def !== ''){
+				$temp = 'magnitude_55l';
+				if(in_array($this->accessory->accessory_def, $heavy_ats_accessory_with_spreader)) $temp .= '_spreader';
+				$content = file_get_contents('files/'.$this->game.'/coupled_templates/'.$temp.'.sii');
+				$content = str_replace(['%cargo%'], $this->accessory->accessory_def, $content);
+			}
+		}else{
+			$content = file_get_contents('files/'.$this->game.'/coupled_templates/'.$this->chassis->chassis_name.'.sii');
 		}
 		if($this->paintJob){
-			$content = file_get_contents('files/'.$this->game.'/coupled_templates/'.$this->chassis->chassis_name.'.sii');
 			$content = str_replace(['%color%'], $this->paintJob->color ? "base_color: (".$this->paintJob->color.")" : '', $content);
 			$content = str_replace(['%paint_job%'], $this->paintJob->paint_def, $content);
 			$content = str_replace(['%paint_job_s%'], str_replace('profiliner', 'proficarrier', $this->paintJob->paint_def), $content);

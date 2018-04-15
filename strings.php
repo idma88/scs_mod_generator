@@ -326,6 +326,10 @@
 		// ats trailers
 		'acid' => 'Acid tank',
 		'acid_long' => 'Acid tank long',
+		'bottom_dump' => 'Bottom dump',
+		'bottom_dump_short' => 'Bottom dump (short)',
+		'bottom_dump_pup_double' => 'Double bottom dump (short)',
+		'bottom_dump_rm_double' => 'Double bottom dump (long)',
 		'box' => 'Box',
 		'box_long' => 'Box long',
 		'box_pup_double' => 'Double box (Short)',
@@ -752,6 +756,10 @@
 		// ats trailers
 		'acid' => 'Цистерна для кислот',
 		'acid_long' => 'Длинная цистерна для кислот',
+		'bottom_dump' => 'Самосвал-хоппер',
+		'bottom_dump_short' => 'Самосвал-хоппер (короткий)',
+		'bottom_dump_pup_double' => 'Двойной самосвал-хоппер (короткий)',
+		'bottom_dump_rm_double' => 'Двойной самосвал-хоппер (длинный)',
 		'box' => 'Цельнометаллический прицеп',
 		'box_long' => 'Длинный цельнометаллический прицеп',
 		'box_pup_double' => 'Двойной цельнометаллический прицеп (Короткий)',

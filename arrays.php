@@ -54,6 +54,10 @@
 		'ats' => [
 			'acid' => '/def/vehicle/trailer/acid/chassis.sii',
 			'acid_long' => '/def/vehicle/trailer/acid_long/chassis.sii',
+			'bottom_dump' => '/def/vehicle/trailer/bottom_dump/chassis.sii',
+			'bottom_dump_short' => '/def/vehicle/trailer/bottom_dump/short_bumper.sii',
+			'bottom_dump_pup_double' => '/def/vehicle/trailer/bottom_dump/short_hook.sii',
+			'bottom_dump_rm_double' => '/def/vehicle/trailer/bottom_dump/hook.sii',
 			'box' => '/def/vehicle/trailer/box/chassis.sii',
 			'box_long' => '/def/vehicle/trailer/box_long/chassis.sii',
 			'box_pup_double' => '/def/vehicle/trailer/box_wabash/chassis.sii',
@@ -179,6 +183,10 @@
 		// ats wheels
 		'acid' => '/def/vehicle/t_wheel/single.sii',
 		'acid_long' => '/def/vehicle/t_wheel/single.sii',
+		'bottom_dump' => '/def/vehicle/t_wheel/single.sii',
+		'bottom_dump_pup_double' => '/def/vehicle/t_wheel/single.sii',
+		'bottom_dump_rm_double' => '/def/vehicle/t_wheel/single.sii',
+		'bottom_dump_short' => '/def/vehicle/t_wheel/single.sii',
 		'box' => '/def/vehicle/t_wheel/single.sii',
 		'box_long' => '/def/vehicle/t_wheel/single.sii',
 		'box_pup_double' => '/def/vehicle/t_wheel/single.sii',
@@ -294,6 +302,10 @@
 		// ats axles
 		'acid' => 2,
 		'acid_long' => 4,
+		'bottom_dump' => 3,
+		'bottom_dump_pup_double' => 1,
+		'bottom_dump_rm_double' => 3,
+		'bottom_dump_short' => 1,
 		'box' => 1,
 		'box_long' => 2,
 		'box_pup_double' => 1,
@@ -1918,6 +1930,8 @@
 	];
 
 	$coupled_trailers = [
+		'bottom_dump_pup_double',
+		'bottom_dump_rm_double',
 		'box_pup_double',
 		'box_rm_double',
 		'box_rm53_double',
