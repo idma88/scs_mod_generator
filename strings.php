@@ -1,7 +1,7 @@
 <?php
 
 	$strings_en = [
-		'title' => 'Trailer Mod Generator',
+		'title' => 'Trailer Mod Generator for ETS2 and ATS',
 		'head_title' => 'trailer mod generator',
 		'ets2mp' => 'ETS2',
 		'atsmp' => 'ATS',
@@ -432,7 +432,7 @@
 
 
 	$strings_ru = [
-		'title' => 'Генератор мода на прицеп',
+		'title' => 'Генератор мода на прицеп для ETS2 и ATS',
 		'head_title' => 'Генератор мода на прицеп',
 		'ets2mp' => 'ETS2',
 		'atsmp' => 'ATS',
