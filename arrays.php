@@ -1435,7 +1435,7 @@
 	];
 
 	$dlc_chassis_list = [
-		'proficarrier' => 'scandinavia',
+//		'proficarrier' => 'scandinavia',
 		'schw_food_cistern' => 'schwarzmuller',
 		'schw_curtain' => 'schwarzmuller',
 		'schw_overweight' => 'schwarzmuller',
@@ -1660,7 +1660,7 @@
 		'/def/vehicle/trailer/krone/proficarrier/company_paint_job/renar.sii' => 'scandinavia',
 		'/def/vehicle/trailer/krone/proficarrier/company_paint_job/sag_tre.sii' => 'scandinavia',
 		'/def/vehicle/trailer/krone/proficarrier/company_paint_job/scania_fac.sii' => 'scandinavia',
-		'/def/vehicle/trailer/krone/proficarrier/company_paint_job/vitas_pwr.sii' => 'scandinavia',
+//		'/def/vehicle/trailer/krone/proficarrier/company_paint_job/vitas_pwr.sii' => 'scandinavia',
 		'/def/vehicle/trailer/krone/proficarrier/company_paint_job/volvo_fac.sii' => 'scandinavia',
 		'/def/vehicle/trailer/krone/proficarrier/company_paint_job/vpc.sii' => 'scandinavia',
 		'/def/vehicle/trailer/krone/profiliner/company_paint_job/acc.sii' => 'italy',
