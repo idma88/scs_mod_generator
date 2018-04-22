@@ -2,7 +2,7 @@
 <footer class="container">
 	<div class="row">
 		<div class="col m6 s12 center">
-			<h4 class="light">1.30.*</h4>
+			<h4 class="light">1.31.*</h4>
 			<p class=""><?= t('supported_ets_version') ?></p>
 		</div>
 		<div class="col m6 s12 center">
@@ -20,7 +20,7 @@
 		<label for="toggle-dark" class="mdc-switch-label"><?= t('dark_theme') ?></label>
 	</div>
 	<div class="version center">
-		<p><?= t('current_version') ?> - 1.3.2</p>
+		<p><?= t('current_version') ?> - 1.3.3</p>
 	</div>
 	<div class="row center">
 		<p><a href="https://volvovtc.com" target="_blank"><?= t('vtc') ?> Volvo Trucks</a></p>
