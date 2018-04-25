@@ -1,4 +1,4 @@
-<?php GLOBAL $chassis_list, $with_paint_job, $with_accessory; ?>
+<?php GLOBAL $chassis_list, $with_paint_job, $with_accessory, $dlc_chassis_list; ?>
 <div class="container">
 	<div class="row">
 		<ul class="tabs">
@@ -22,7 +22,12 @@
 					<div class="card trailer <?= $key ?>">
 						<div class="card-image">
 							<img src="/assets/img/trailers/<?= $name ?>/<?= $name ?>.jpg">
-							<h5 class="card-title trailer-name text-shadow"><?= str_replace(' - ', '<br>', t($name)) ?></h5>
+							<h5 class="card-title trailer-name text-shadow">
+								<?= t($name) ?>
+								<?php if(key_exists($name, $dlc_chassis_list)) : ?>
+									<br><?= t($dlc_chassis_list[$name]) ?>
+								<?php endif ?>
+							</h5>
 						</div>
 						<?php $name_alt = in_array($name, $diff) ? $name . '_default' : $name;
 						if(key_exists($name_alt, $with_paint_job['ets2']) || in_array($name_alt, $with_accessory)) : ?>
