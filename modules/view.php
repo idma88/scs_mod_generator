@@ -43,8 +43,14 @@
 						<select class="browser-default ui search dropdown chassis" id="select-chassis" name="chassis" required>
 							<option selected value=""><?= t('choose_chassis') ?></option>
 							<option value="paintable"><?= t('paintable_chassis') ?></option>
-							<?php foreach($chassis_list[$game] as $name => $chassis): ?>
-								<option value="<?= $name ?>"><?= t($name) ?></option>
+							<?php GLOBAL $dlc_chassis_list;
+								foreach($chassis_list[$game] as $name => $chassis): ?>
+								<option value="<?= $name ?>">
+									<?= t($name) ?>
+									<?php if(key_exists($name, $dlc_chassis_list)) : ?>
+									    - <?= t($dlc_chassis_list[$name]) ?>
+									<?php endif ?>
+								</option>
 							<?php endforeach; ?>
 						</select>
 					</div>

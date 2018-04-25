@@ -57,7 +57,7 @@ class Chassis{
 	}
 
 	public function getAvailableAccessories($lang = null){
-		GLOBAL $accessories;
+		GLOBAL $accessories, $dlc_accessories;
 		$list[] = [
 			'name' => t('choose_accessory'),
 			'value' => '',
@@ -66,8 +66,17 @@ class Chassis{
 		if($this->isWithAccessory()){
 			$chassis = str_replace(['_default', '_black', '_yellow', '_red', '_blue', '_grey'], '', $this->chassis_name);
 			foreach($accessories[$this->game][$chassis] as $def => $name){
+				$name = t($name, $lang);
+				if(key_exists($def, $dlc_accessories)){
+					$name .= ' - ';
+					$dlc = array();
+					foreach(explode(',', $dlc_accessories[$def]) as $item){
+						$dlc[] = t($item, $lang);
+					}
+					$name .= implode(', ', $dlc);
+				};
 				$list[] = [
-					'name' => t($name, $lang),
+					'name' => $name,
 					'value' => $def
 				];
 			}
@@ -78,17 +87,26 @@ class Chassis{
 	}
 
 	public function getAvailablePaints($lang = null){
-		GLOBAL $paints;
+		GLOBAL $paints, $dlc_paints;
 		if($this->isWithPaintJob()){
-			$chassis = str_replace(['_1', '_1_4', '_4', '_4_3', 'rm_double', 'rm53_double', 'pup_double', 'pup_triple'], '', $this->chassis_name);
+			$chassis = str_replace(['_1_4', '_1', '_4_3', '_4', 'rm_double', 'rm53_double', 'pup_double', 'pup_triple'], '', $this->chassis_name);
 			$list[] = [
 				'name' => t('all_companies'),
 				'value' => 'all',
 				'selected' => true
 			];
 			foreach($paints[$this->game][$chassis] as $def){
+				$name = t(PaintJob::getTrailerLookByDef($def), $lang);
+				if(key_exists($def, $dlc_paints)){
+					$name .= ' - ';
+					$dlc = array();
+					foreach(explode(',', $dlc_paints[$def]) as $item){
+						$dlc[] = t($item, $lang);
+					}
+					$name .= implode(', ', $dlc);
+				};
 				$list[] = [
-					'name' => t(PaintJob::getTrailerLookByDef($def), $lang),
+					'name' => $name,
 					'value' => $def
 				];
 			}
@@ -99,7 +117,7 @@ class Chassis{
 	}
 
 	public function getAllCompanies($lang){
-		GLOBAL $companies;
+		GLOBAL $companies, $companies_dlc;
 		$list[] = [
 			'name' => t('choose_paint'),
 			'value' => '',
@@ -109,8 +127,17 @@ class Chassis{
 			'name' => t('default', $lang),
 			'value' => 'default'];
 		foreach($companies[$this->game] as $company){
+			$name = t($company, $lang);
+			if(key_exists($company, $companies_dlc)){
+				$name .= ' - ';
+				$dlc = array();
+				foreach(explode(',', $companies_dlc[$company]) as $item){
+					$dlc[] = t($item, $lang);
+				}
+				$name .= implode(', ', $dlc);
+			};
 			$list[] = [
-				'name' => t($company, $lang),
+				'name' => $name,
 				'value' => $company
 			];
 		}
