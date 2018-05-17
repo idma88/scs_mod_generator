@@ -45,8 +45,7 @@
 							<option value="paintable"><?= I18n::t('paintable_chassis') ?></option>
 							<?php GLOBAL $dlc_chassis_list;
 								foreach($chassis_list[$game] as $name => $chassis): ?>
-								<option value="<?= $name ?>">
-									<?= I18n::t($name) ?>
+								<option value="<?= $name ?>"><?= I18n::t($name) ?>
 									<?php if(key_exists($name, $dlc_chassis_list)) : ?>
 									    - <?= I18n::t($dlc_chassis_list[$name]) ?>
 									<?php endif ?>
