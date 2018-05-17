@@ -4,7 +4,6 @@ require_once 'classes/Accessory.php';
 require_once 'classes/PaintJob.php';
 require_once 'classes/I18n.php';
 require_once 'arrays.php';
-require_once 'functions.php';
 
 $game = $_GET['game'] ?? 'ets2';
 

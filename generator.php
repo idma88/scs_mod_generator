@@ -5,7 +5,6 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST'){
 	exit;
 }
 
-include 'functions.php';
 include 'arrays.php';
 include 'classes/kint/Kint.class.php';
 include 'classes/App.php';

@@ -59,7 +59,26 @@ class App{
 	}
 
 	private function removeOutDirectory(){
-		!is_dir($this->outDir) ? : rrmdir($this->outDir);
+		!is_dir($this->outDir) ? : $this->rrmdir($this->outDir);
+	}
+
+	private function rrmdir($src) {
+		if(is_dir($src)){
+			$dir = opendir($src);
+			while(false !== ( $file = readdir($dir)) ) {
+				if (( $file != '.' ) && ( $file != '..' )) {
+					$full = $src . '/' . $file;
+					if ( is_dir($full) ) {
+						$this->rrmdir($full);
+					}
+					else {
+						unlink($full);
+					}
+				}
+			}
+			closedir($dir);
+			rmdir($src);
+		}
 	}
 
 	private function copyTrailerFiles(){
