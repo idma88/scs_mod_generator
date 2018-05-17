@@ -1,4 +1,3 @@
-</main>
 <footer class="container">
 	<div class="row">
 		<div class="col m6 s12 center">
@@ -32,5 +31,3 @@
 <script type="text/javascript" src="assets/semanticui/semanticui.min.js"></script>
 <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
 <script type="text/javascript" src="assets/js/script-v1.2.1.min.js"></script>
-</body>
-</html>

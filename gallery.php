@@ -30,8 +30,4 @@ if(isset($_POST['ajax']) && $_POST['chassis']){
 	die();
 }
 
-include_once 'modules/header.php';
-
-include_once 'modules/gallery_view.php';
-
-include_once 'modules/footer.php';
+include_once 'views/layout.php';

@@ -76,8 +76,4 @@ if(isset($_POST['ajax']) && $chassis = $_POST['chassis']){
 	die();
 }
 
-require_once 'modules/header.php';
-
-require_once 'modules/view.php';
-
-require_once 'modules/footer.php';
+require_once 'views/layout.php';
