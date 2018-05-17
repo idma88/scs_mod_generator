@@ -2,8 +2,8 @@
   "general": {
     "title": "Генератор мода на прицеп для ETS2 и ATS",
     "head_title": "Генератор мода на прицеп",
-    "ets2mp": "ETS2",
-    "atsmp": "ATS",
+    "ets2": "ETS2",
+    "ats": "ATS",
     "download_mod": "Скачать мод",
     "mod_title": "Название мода",
     "pick_chassis": "Выберите шасси из списка ниже (обязательно)",
