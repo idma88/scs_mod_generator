@@ -1,6 +1,4 @@
-<?php require_once 'functions.php';
-
-$game = $_GET['game'] ?? 'ets2';
+<?php $game = $_GET['game'] ?? 'ets2';
 $_SERVER['SCRIPT_NAME'] !== '/gallery.php' ? : $game = null; ?>
 
 <div class="navbar-fixed">
