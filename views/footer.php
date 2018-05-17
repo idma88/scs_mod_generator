@@ -19,7 +19,7 @@
 		<label for="toggle-dark" class="mdc-switch-label"><?= I18n::t('dark_theme') ?></label>
 	</div>
 	<div class="version center">
-		<p><?= I18n::t('current_version') ?> - 1.3.7</p>
+		<p><?= I18n::t('current_version') ?> - 1.3.8</p>
 	</div>
 	<div class="row center">
 		<p><a href="https://volvovtc.com" target="_blank"><?= I18n::t('vtc') ?> Volvo Trucks</a></p>
