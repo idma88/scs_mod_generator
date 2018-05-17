@@ -8,17 +8,17 @@ class Logger{
 		$user_data = $this->getBrowser();
 		$log_data = $log = file_get_contents($this->file);
 
-		$log = date('d-m-Y H:i')." $mod_name\n
-			Title:\t\t$_POST[title]\n
-			Chassis:\t$_POST[chassis]\n".
-			"Accessory:\t$_POST[accessory]\n
-			Paint:\t\t$_POST[paint]\n
-			Weight:\t\t$_POST[weight]\n
-			Color:\t\t".$_POST['color']['scs']['r'].", ".$_POST['color']['scs']['g'].", ".$_POST['color']['scs']['b']."\n".
+		$log = date('d-m-Y H:i')." $mod_name\n".
+			"Title:\t\t".trim($_POST['title'])."\n".
+			"Chassis:\t$_POST[chassis]\n".
+			"Accessory:\t$_POST[accessory]\n".
+			"Paint:\t\t$_POST[paint]\n".
+			"Weight:\t\t$_POST[weight]\n".
+			"Color:\t\t".$_POST['color']['scs']['r'].", ".$_POST['color']['scs']['g'].", ".$_POST['color']['scs']['b']."\n".
 			"Wheels: \t$_POST[wheels]\n".
-			"Target:\t\t$_POST[target]\n
-			User:\t\t".$user_data['platform']." ".$user_data['name']." ".$user_data['version']."\n
-			\n";
+			"Target:\t\t$_POST[target]\n".
+			"User:\t\t".$user_data['platform']." ".$user_data['name']." ".$user_data['version']."\n".
+			"\n\n";
 
 		file_put_contents($this->file, $log.$log_data);
 	}
