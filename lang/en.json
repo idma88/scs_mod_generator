@@ -29,7 +29,6 @@
     "beta_notification": "Works in beta-mode, there may be some bugs.",
     "ie_notification": "You are using old browser, service may works unstable.",
     "how_to_modal": "How to use this tool?",
-    "instruction_modal": "bunch of text",
     "close_modal": "I got it",
     "instruction_modal_1": "Choose name for future mod (not required, otherwise generated from the chassis name).",
     "instruction_modal_2": "Pick a chassis from dropdown list (required). You can use search.",
@@ -86,6 +85,7 @@
     "coolliner": "Krone Cool Liner",
     "fridge": "Krone Fridge",
     "profiliner": "Krone Profi Liner",
+    "profiliner_2017": "Krone Profi Liner 2017",
     "proficarrier": "Double Krone Profi Liner",
     "livestock": "Livestock",
     "log_trailer": "Log trailer",
@@ -233,6 +233,7 @@
   },
 
   "ets2 companies/paints": {
+    "default_2017": "Default",
     "default": "Colored",
     "bcp": "BCP",
     "drekkar": "Drekkar Trans",
@@ -322,7 +323,8 @@
     "w_steel_single": "Steel Single - Auto kick in MP",
     "w_1": "1 - Auto kick in MP",
     "w_2": "2 - Auto kick in MP",
-    "w_3": "3 - Auto kick in MP"
+    "w_3": "3 - Auto kick in MP",
+    "w_385_65": "385, 65 - Auto kick in MP"
   },
 
   "ats trailers": {

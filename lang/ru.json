@@ -87,6 +87,7 @@
     "coolliner": "Рефрижератор",
     "fridge": "Изотермический полуприцеп",
     "profiliner": "Шторный полуприцеп",
+    "profiliner_2017": "Krone Profi Liner 2017",
     "proficarrier": "Двойной шторный полуприцеп",
     "livestock": "Скотовоз",
     "log_trailer": "Сортиментовоз (Лесовоз)",
@@ -236,6 +237,7 @@
   },
 
   "ets2 companies/paints": {
+    "default_2017": "Стандартный",
     "default": "Цветной",
     "bcp": "BCP",
     "drekkar": "Drekkar Trans",
@@ -325,7 +327,8 @@
     "w_steel_single": "Steel Single - Авто кик в МП",
     "w_1": "1 - Авто кик в МП",
     "w_2": "2 - Авто кик в МП",
-    "w_3": "3 - Авто кик в МП"
+    "w_3": "3 - Авто кик в МП",
+    "w_385_65": "385, 65 - Авто кик в МП"
   },
 
   "ats trailers": {

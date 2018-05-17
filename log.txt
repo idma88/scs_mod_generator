@@ -1,0 +1,36 @@
+17-05-2018 20:30 1526581831_Krone_Profi_Liner_2017
+Title:		Krone Profi Liner 2017
+Chassis:	profiliner_2017
+Accessory:	
+Paint:		/def/vehicle/trailer/krone/profiliner_2017/company_paint_job/default_2017.sii
+Weight:		
+Color:		1, 1, 1
+Wheels: 	
+Target:		ets2
+User:		windows Google Chrome 66.0.3359.181
+
+
+17-05-2018 20:26 1526581594_Krone_Profi_Liner_2017
+Title:		Krone Profi Liner 2017
+Chassis:	profiliner_2017
+Accessory:	
+Paint:		/def/vehicle/trailer/krone/profiliner/company_paint_job/default.sii
+Weight:		
+Color:		0.7648, 0.7924, 0.0432
+Wheels: 	
+Target:		ets2
+User:		windows Google Chrome 66.0.3359.181
+
+
+17-05-2018 20:09 1526580579_Krone_Profi_Liner_2017
+Title:		Krone Profi Liner 2017
+Chassis:	profiliner_2017
+Accessory:	
+Paint:		/def/vehicle/trailer/krone/profiliner_2017/company_paint_job/default_2017.sii
+Weight:		
+Color:		1, 1, 1
+Wheels: 	
+Target:		ets2
+User:		windows Google Chrome 66.0.3359.181
+
+
