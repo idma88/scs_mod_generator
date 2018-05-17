@@ -1,11 +1,15 @@
 <?php
 require_once 'arrays.php';
-require_once 'strings.php';
 
 function t($name, $lang = null){
-	GLOBAL $strings_en, $strings_ru;
 	$lang ? : $lang = getUserLanguage();
-	return ${'strings_'.$lang}[$name];
+	$strings = json_decode(file_get_contents('lang/'.$lang.'.json'), true);
+	foreach($strings as $group){
+		if(array_key_exists($name, $group)){
+			return $group[$name];
+		}
+	}
+	return $name;
 }
 
 function getUserLanguage(){
