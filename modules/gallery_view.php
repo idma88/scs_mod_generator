@@ -6,7 +6,7 @@
 			<li class="tab col s6"><a href="#ats" class="waves-effect">American Truck Simulator</a></li>
 		</ul>
 		<div id="ets2" class="game">
-			<h4 class="light"><?= t('ets_trailer_guide') ?></h4>
+			<h4 class="light"><?= I18n::t('ets_trailer_guide') ?></h4>
 			<?php $chassis = array();
 			foreach($chassis_list['ets2'] as $key => $value){
 				$chassis[] = str_replace(['_default', '_black', '_yellow', '_red', '_blue', '_grey', '_wall', '_floor', '_glass'], '', $key);
@@ -23,9 +23,9 @@
 						<div class="card-image">
 							<img src="/assets/img/trailers/<?= $name ?>/<?= $name ?>.jpg">
 							<h5 class="card-title trailer-name text-shadow">
-								<?= t($name) ?>
+								<?= I18n::t($name) ?>
 								<?php if(key_exists($name, $dlc_chassis_list)) : ?>
-									<br><?= t($dlc_chassis_list[$name]) ?>
+									<br><?= I18n::t($dlc_chassis_list[$name]) ?>
 								<?php endif ?>
 							</h5>
 						</div>
@@ -37,9 +37,9 @@
 										<div class="collapsible-header">
 											<i class="material-icons notranslate">arrow_downward</i>
 											<?php if(key_exists($name_alt, $with_paint_job['ets2'])) : ?>
-												<span style="flex: 1;"><?= t('see_paints') ?></span>
+												<span style="flex: 1;"><?= I18n::t('see_paints') ?></span>
 											<?php elseif(in_array($name_alt, $with_accessory)): ?>
-												<span style="flex: 1;"><?= t('see_cargo') ?></span>
+												<span style="flex: 1;"><?= I18n::t('see_cargo') ?></span>
 											<?php endif ?>
 										</div>
 										<div class="collapsible-body"></div>
@@ -55,7 +55,7 @@
 			<?php endforeach ?>
 		</div>
 		<div id="ats" class="game">
-			<h4 class="light"><?= t('ats_trailer_guide') ?></h4>
+			<h4 class="light"><?= I18n::t('ats_trailer_guide') ?></h4>
 			<?php $chassis = array();
 			foreach($chassis_list['ats'] as $key => $value){
 				$chassis[] = str_replace(['_default', '_black', '_yellow', '_red', '_blue', '_grey', '_1', '_4', '_3'], '', $key);
@@ -72,7 +72,7 @@
 					<div class="card trailer <?= $key ?>">
 						<div class="card-image">
 							<img src="/assets/img/trailers/<?= $name ?>/<?= $name ?>.jpg">
-							<h5 class="card-title trailer-name text-shadow"><?= str_replace(' - ', '<br>', t($name)) ?></h5>
+							<h5 class="card-title trailer-name text-shadow"><?= str_replace(' - ', '<br>', I18n::t($name)) ?></h5>
 						</div>
 						<?php $name_alt = key_exists($name, $diff) ? $diff[$name] : $name;
 							if(key_exists($name_alt, $with_paint_job['ats']) || in_array($name_alt, $with_accessory)) : ?>
@@ -82,9 +82,9 @@
 											<div class="collapsible-header">
 												<i class="material-icons notranslate">arrow_downward</i>
 												<?php if(key_exists($name_alt, $with_paint_job['ats'])) : ?>
-													<span style="flex: 1;"><?= t('see_paints') ?></span>
+													<span style="flex: 1;"><?= I18n::t('see_paints') ?></span>
 												<?php elseif(in_array($name_alt, $with_accessory)): ?>
-													<span style="flex: 1;"><?= t('see_cargo') ?></span>
+													<span style="flex: 1;"><?= I18n::t('see_cargo') ?></span>
 												<?php endif ?>
 											</div>
 											<div class="collapsible-body"></div>

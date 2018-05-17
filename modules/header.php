@@ -21,7 +21,7 @@
 		gtag('config', 'UA-99570317-2');
 	</script>
 
-	<title><?= t('title') ?></title>
+	<title><?= I18n::t('title') ?></title>
 </head>
 <body<?php if(isset($_COOKIE['dark_theme']) && $_COOKIE['dark_theme'] == 'true'): ?> class="mdc-theme--dark"<?php endif ?>>
 <?php require_once 'navbar.php'; ?>

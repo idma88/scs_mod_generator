@@ -2,6 +2,7 @@
 require_once 'classes/Chassis.php';
 require_once 'classes/Accessory.php';
 require_once 'classes/PaintJob.php';
+require_once 'classes/I18n.php';
 require_once 'arrays.php';
 require_once 'functions.php';
 
@@ -16,14 +17,14 @@ if(isset($_POST['ajax']) && $chassis = $_POST['chassis']){
 			$chassis = null;
 			$data['accessory'] = [
 				'echo' => Accessory::getAllAccessoriesDefs($game),
-				'first' => t('choose_accessory')
+				'first' => I18n::t('choose_accessory')
 			];
 		}
 		if($_POST['select'] == 'paint'){
 			$chassis = null;
 			$data['paint'] = [
 				'echo' => PaintJob::getAllPaintsDefs($game),
-				'first' => t('all_companies')
+				'first' => I18n::t('all_companies')
 			];
 		}
 		echo json_encode(['result' => $data, 'status' => 'OK']);
@@ -63,7 +64,7 @@ if(isset($_POST['ajax']) && $chassis = $_POST['chassis']){
 	if($chassis->isWithAccessory()){
 		$data['accessory'] = [
 			'echo' => $chassis->getAvailableAccessories($lang),
-			'first' => t('choose_accessory', $lang)
+			'first' => I18n::t('choose_accessory', $lang)
 		];
 	}
 	if($chassis->isWithPaintJob()){

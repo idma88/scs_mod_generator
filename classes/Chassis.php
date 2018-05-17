@@ -59,19 +59,19 @@ class Chassis{
 	public function getAvailableAccessories($lang = null){
 		GLOBAL $accessories, $dlc_accessories;
 		$list[] = [
-			'name' => t('choose_accessory'),
+			'name' => I18n::t('choose_accessory'),
 			'value' => '',
 			'selected' => true
 		];
 		if($this->isWithAccessory()){
 			$chassis = str_replace(['_default', '_black', '_yellow', '_red', '_blue', '_grey'], '', $this->chassis_name);
 			foreach($accessories[$this->game][$chassis] as $def => $name){
-				$name = t($name, $lang);
+				$name = I18n::t($name, $lang);
 				if(key_exists($def, $dlc_accessories)){
 					$name .= ' - ';
 					$dlc = array();
 					foreach(explode(',', $dlc_accessories[$def]) as $item){
-						$dlc[] = t($item, $lang);
+						$dlc[] = I18n::t($item, $lang);
 					}
 					$name .= implode(', ', $dlc);
 				};
@@ -91,17 +91,17 @@ class Chassis{
 		if($this->isWithPaintJob()){
 			$chassis = str_replace(['_1_4', '_1', '_4_3', '_4', 'rm_double', 'rm53_double', 'pup_double', 'pup_triple'], '', $this->chassis_name);
 			$list[] = [
-				'name' => t('all_companies'),
+				'name' => I18n::t('all_companies'),
 				'value' => 'all',
 				'selected' => true
 			];
 			foreach($paints[$this->game][$chassis] as $def){
-				$name = t(PaintJob::getTrailerLookByDef($def), $lang);
+				$name = I18n::t(PaintJob::getTrailerLookByDef($def), $lang);
 				if(key_exists($def, $dlc_paints)){
 					$name .= ' - ';
 					$dlc = array();
 					foreach(explode(',', $dlc_paints[$def]) as $item){
-						$dlc[] = t($item, $lang);
+						$dlc[] = I18n::t($item, $lang);
 					}
 					$name .= implode(', ', $dlc);
 				};
@@ -119,20 +119,20 @@ class Chassis{
 	public function getAllCompanies($lang){
 		GLOBAL $companies, $companies_dlc;
 		$list[] = [
-			'name' => t('choose_paint'),
+			'name' => I18n::t('choose_paint'),
 			'value' => '',
 			'selected' => true
 		];
 		$list[] = [
-			'name' => t('default', $lang),
+			'name' => I18n::t('default', $lang),
 			'value' => 'default'];
 		foreach($companies[$this->game] as $company){
-			$name = t($company, $lang);
+			$name = I18n::t($company, $lang);
 			if(key_exists($company, $companies_dlc)){
 				$name .= ' - ';
 				$dlc = array();
 				foreach(explode(',', $companies_dlc[$company]) as $item){
-					$dlc[] = t($item, $lang);
+					$dlc[] = I18n::t($item, $lang);
 				}
 				$name .= implode(', ', $dlc);
 			};

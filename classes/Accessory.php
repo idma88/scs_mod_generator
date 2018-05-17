@@ -24,7 +24,7 @@ class Accessory{
 	public static function getAllAccessoriesDefs($game){
 		GLOBAL $accessories;
 		$list[] = [
-			'name' => t('choose_accessory'),
+			'name' => I18n::t('choose_accessory'),
 			'value' => '',
 			'selected' => true
 		];

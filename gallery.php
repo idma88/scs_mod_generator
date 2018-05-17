@@ -2,6 +2,7 @@
 require_once 'arrays.php';
 require_once 'functions.php';
 require_once 'classes/Chassis.php';
+require_once 'classes/I18n.php';
 require 'classes/PaintJob.php';
 
 // ajax handler
