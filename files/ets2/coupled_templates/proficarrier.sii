@@ -6,7 +6,7 @@ trailer : trailer.%trailer%
 	accessories[]: .%trailer%.trwheel1
 	accessories[]: .%trailer%.trwheel2
 	
-	accessories[]: .%trailer%.trlr_cable
+	accessories[]: .%trailer%.trlr_cables
 
 	slave_trailer: trailer.%trailer%.s
 }
@@ -39,7 +39,7 @@ vehicle_paint_job_accessory: .%trailer%.paint_job
 		data_path: "%paint_job%"
 }
 
-vehicle_addon_accessory: .%trailer%.trlr_cable
+vehicle_addon_accessory: .%trailer%.trlr_cables
 {
     	data_path: "/def/vehicle/trailer/krone/profiliner/accessory/stock.sii"
 }
