@@ -152,10 +152,11 @@
 									</div>
 								</div>
 								<div class="mdc-text-field weight">
-									<input type="text" id="weight" class="browser-default mdc-text-field__input" name="weight">
+									<input type="text" id="weight" class="browser-default mdc-text-field__input" name="weight" disabled>
 									<label for="weight" class="mdc-text-field__label"><?= I18n::t('trailer_weight') ?></label>
 									<div class="mdc-text-field__bottom-line"></div>
 								</div>
+								<div class="red-text text-darken-3"><?= I18n::t('feature_disabled') ?></div>
 								<div class="wheels input-field" style="display: none;">
 									<select class="icons" name="wheels">
 										<option value="" selected><?= I18n::t('w_default') ?></option>
