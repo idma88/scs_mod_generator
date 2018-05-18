@@ -54,7 +54,8 @@
     "w_default": "Default",
     "dark_theme": "Dark theme",
     "upload_image": "Upload image",
-    "include_dlc": "Also, include DLC content"
+    "include_dlc": "Also, include DLC content",
+    "feature_disabled": "This feature is temporary disabled"
   },
 
   "dlc list":{"scandinavia": "DLC Scandinavia",

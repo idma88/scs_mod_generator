@@ -54,7 +54,8 @@
     "w_default": "Стандартно",
     "dark_theme": "Тёмная тема",
     "upload_image": "Выбрать файл",
-    "include_dlc": "Так же, включить контент из DLC"
+    "include_dlc": "Так же, включить контент из DLC",
+    "feature_disabled": "Данная функция временно отключена"
   },
 
   "dlc list": {
