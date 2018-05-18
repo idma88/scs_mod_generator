@@ -34,7 +34,7 @@ class PaintJob{
 	private function getTrailerLook($paint){
 		if(!$this->paint_def) return $paint;
 		$array = explode('/', $this->paint_def);
-		return str_replace('.sii', '', $array[count($array) - 1]);
+		return str_replace(['.sii', '_2017'], '', $array[count($array) - 1]);
 	}
 
 	public static function getTrailerLookByDef($def){
