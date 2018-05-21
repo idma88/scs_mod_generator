@@ -54,7 +54,10 @@
     "w_default": "Стандартно",
     "dark_theme": "Тёмная тема",
     "upload_image": "Выбрать файл",
-    "include_dlc": "Так же, включить контент из DLC"
+    "include_dlc": "Так же, включить контент из DLC",
+    "choose_language" : "Выберите язык",
+    "help_translate" : "Вы можете помочь перевести сайт на свой язык",
+    "close": "Закрыть"
   },
 
   "dlc list": {

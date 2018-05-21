@@ -19,7 +19,7 @@
 		<label for="toggle-dark" class="mdc-switch-label"><?= I18n::t('dark_theme') ?></label>
 	</div>
 	<div class="version center">
-		<p><?= I18n::t('current_version') ?> - 1.3.9</p>
+		<p><?= I18n::t('current_version') ?> - 1.4.0</p>
 	</div>
 	<div class="row center">
 		<p><a href="https://volvovtc.com" target="_blank"><?= I18n::t('vtc') ?> Volvo Trucks</a></p>
@@ -30,4 +30,4 @@
 <script type="text/javascript" src="assets/mdc/js/material-components-web.min.js"></script>
 <script type="text/javascript" src="assets/semanticui/semanticui.min.js"></script>
 <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
-<script type="text/javascript" src="assets/js/script-v1.2.1.min.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>

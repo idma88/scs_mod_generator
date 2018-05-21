@@ -54,7 +54,10 @@
     "w_default": "Default",
     "dark_theme": "Dark theme",
     "upload_image": "Upload image",
-    "include_dlc": "Also, include DLC content"
+    "include_dlc": "Also, include DLC content",
+    "choose_language" : "Choose language",
+    "help_translate" : "You can help translating web-site to your language",
+    "close": "Close"
   },
 
   "dlc list":{"scandinavia": "DLC Scandinavia",

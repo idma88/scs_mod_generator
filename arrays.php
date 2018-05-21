@@ -2122,3 +2122,26 @@
             'heavy_ats'
         ]
     ];
+
+	$languages = [
+//        'cs' => 'Čeština',
+        'de' => 'Deutsch',
+//        'el' => 'Ελληνικά',
+	    'en' => 'English',
+//        'es' => 'Español',
+//        'fi' => 'Suomi',
+//        'fr' => 'Français',
+//        'it' => 'Italiano',
+//        'ja' => '日本語',
+//        'ko' => '한국어',
+//        'nl' => 'Nederlands',
+//        'nn' => 'Nynorsk',
+//        'pl' => 'Polski',
+//        'pt' => 'Português',
+//        'ro' => 'Română',
+	    'ru' => 'Русский',
+//        'sv' => 'Svenska',
+//	    'tr' => 'Türkçe',
+        'uk' => 'Українська',
+//	    'zh' => '繁體中文',
+    ];
