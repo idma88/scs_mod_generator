@@ -20,7 +20,7 @@
 			<h6 class="center"><?= I18n::t('help_translate') ?><br>
 				<a href="http://mods-generator.oneskyapp.com"
 				   target="_blank"
-				   class="grey-text text-darken-1">http://mods-generator.oneskyapp.com</a>
+				   class="grey-text text-darken-1" style="text-decoration: underline;">http://mods-generator.oneskyapp.com</a>
 			</h6>
 		</section>
 		<footer class="mdc-dialog__footer">
