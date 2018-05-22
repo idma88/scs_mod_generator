@@ -5,11 +5,19 @@ $(document).ready(function(){
 		mdc.ripple.MDCRipple.attachTo(btn);
 	}
 
-	var modal = document.querySelector('#mdc-dialog-default');
-	if(modal !== null){
-		var dialog = new mdc.dialog.MDCDialog(modal);
-		$('.modal-trigger').click(function(){
-			dialog.show();
+	var how_to_modal = document.querySelector('#mdc-dialog-how-to');
+	if(how_to_modal !== null){
+		var how_to_dialog = new mdc.dialog.MDCDialog(how_to_modal);
+		$('#how-to').click(function(){
+            how_to_dialog.show();
+		});
+	}
+
+	var lang_modal = document.querySelector('#mdc-dialog-lang');
+	if(lang_modal !== null){
+		var lang_dialog = new mdc.dialog.MDCDialog(lang_modal);
+		$('#lang-sw').click(function(){
+            lang_dialog.show();
 		});
 	}
 
@@ -80,7 +88,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$('#lang-btn').click(function(){
+	$('.lang-btn').click(function(){
 		setCookie('lang', $(this).data('lang'), {
 			expires : 3600 * 24 * 365
 		})

@@ -35,6 +35,31 @@ body.mdc-theme--dark{
 nav ul a{
 	font-weight: 500;
 }
+.lang-btn{
+	white-space: nowrap;
+	font-size: 17px;
+}
+.lang-btn.active{
+	font-weight: bold;
+}
+.lang-btn.active img{
+	opacity: 1;
+}
+.lang-btn img{
+	max-width: 30px;
+	margin: 0 10px;
+	opacity: .6;
+	transition: opacity .3s ease;
+}
+.lang-btn:hover img{
+	opacity: 1;
+}
+.lang-col:nth-child(even) a{
+	flex-flow: row-reverse;
+}
+.mdc-theme--dark .lang-btn{
+	color: var(--mdc-theme-text-primary-on-primary);
+}
 select{
 	border: 0;
 	color: #eee;

@@ -55,7 +55,9 @@
     "dark_theme": "Тёмная тема",
     "upload_image": "Выбрать файл",
     "include_dlc": "Так же, включить контент из DLC",
-    "feature_disabled": "Данная функция временно отключена"
+    "choose_language" : "Выберите язык",
+    "help_translate" : "Вы можете помочь перевести сайт на свой язык",
+    "close": "Закрыть"
   },
 
   "dlc list": {
