@@ -8,7 +8,7 @@ $_SERVER['SCRIPT_NAME'] !== '/gallery.php' ? : $game = null; ?>
 			<ul id="nav-mobile" class="right">
 				<li<?php if($game == 'ets2'): ?> class="active"<?php endif ?>><a href="/"><?= I18n::t('ets2') ?></a></li>
 				<li<?php if($game == 'ats'): ?> class="active"<?php endif ?>><a href="/?game=ats"><?= I18n::t('ats') ?></a></li>
-				<li><a href="#lang" id="lang-sw"><i class="material-icons notranslate left">language</i></a></li>
+				<li><a href="#lang" id="lang-sw"><i class="material-icons notranslate">language</i></a></li>
 			</ul>
 		</div>
 	</nav>
