@@ -11,6 +11,7 @@
 		}else{
 			include_once 'index.php';
 		} ?>
+		<?php include_once 'lang_modal.php' ?>
 	</main>
 	<?php include_once 'footer.php'; ?>
 </body>
