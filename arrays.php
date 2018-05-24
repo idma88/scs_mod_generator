@@ -934,6 +934,7 @@
 			],
 			'profiliner_2017' => [
 				'/def/vehicle/trailer/krone/profiliner_2017/company_paint_job/default_2017.sii',
+				'/def/vehicle/trailer/krone/profiliner/company_paint_job/default.sii',
 			],
 			'profiliner' => [
 				'/def/vehicle/trailer/krone/profiliner/company_paint_job/default.sii',
