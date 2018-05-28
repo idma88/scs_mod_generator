@@ -5,7 +5,7 @@
 <link type="text/css" rel="stylesheet" href="assets/mdc/css/material-components-web.min.css" media="screen,projection"/>
 <link type="text/css" rel="stylesheet" href="assets/semanticui/semanticui.min.css" media="screen,projection"/>
 <link type="text/css" rel="stylesheet" href="assets/semanticui/semantic-custom.min.css" media="screen,projection"/>
-<link type="text/css" rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection"/>
+<link type="text/css" rel="stylesheet" href="assets/materialize/css/materialize.min.css?2805" media="screen,projection"/>
 <link type="text/css" rel="stylesheet" href="assets/css/style-v1.4.3.min.css" media="screen,projection"/>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99570317-2"></script>
