@@ -44,11 +44,8 @@ $(document).ready(function(){
 		position : 'left',
 		exitDelay : 200
 	});
-
-	$('.wheels select').select();
-
+	$('.wheels select').formSelect();
 	$('.tabs').tabs();
-
 	$('.collapsible').collapsible();
 
 	$('.show-skin').collapsible({
