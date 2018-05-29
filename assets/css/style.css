@@ -105,6 +105,14 @@ nav ul a{
 .lang-col:nth-child(even) a{
 	flex-flow: row-reverse;
 }
+@media (max-width: 600px){
+	.lang-col a,
+	.lang-col:nth-child(even) a{
+		flex-flow: row;
+		justify-content: center;
+	}
+}
+
 .mdc-theme--dark .lang-btn{
 	color: var(--mdc-theme-text-primary-on-primary);
 }
