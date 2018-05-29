@@ -191,15 +191,23 @@
 				<button class="mdc-button mdc-button--raised mdc-ripple left-med-and-up" type="submit" onclick="return confirm('<?= I18n::t('are_you_sure') ?>')">
 					<i class="material-icons mdc-button__icon notranslate">send</i><?= I18n::t('proceed') ?>
 				</button>
-				<a href="/gallery.php<?php if($game == 'ats'): ?>#ats<?php endif ?>" class="gallery-btn right-med-and-up mdc-button mdc-ripple">
+				<a href="/gallery.php<?php if($game == 'ats'): ?>#ats<?php endif ?>"
+				   class="gallery-btn right-med-and-up mdc-button mdc-ripple">
 					<i class="material-icons mdc-button__icon notranslate">photo_library</i><?= I18n::t('trailers_gallery') ?>
 				</a>
 			</div>
 		</form>
 	</section>
-<!--	<section class="card-panel grey-text">-->
-<!--		<span class="card-title"><i class="material-icons left notranslate">info</i>--><?//= I18n::t('beta_notification') ?><!--</span>-->
-<!--	</section>-->
+	<section class="card-panel grey-text">
+		<span class="card-title">
+			<i class="material-icons left notranslate">info</i>
+<!--			--><?//= I18n::t('beta_notification') ?>
+			<?= I18n::t('help_translate') ?>
+			<a href="http://mods-generator.oneskyapp.com"
+			   target="_blank"
+			   class="grey-text text-darken-1" style="text-decoration: underline; white-space: nowrap;">http://mods-generator.oneskyapp.com</a>
+		</span>
+	</section>
 </div>
 <div class="fixed-action-btn tooltipped" data-tooltip="<?= I18n::t('how_to') ?>">
 	<a class="mdc-fab mdc-ripple orange darken-3 modal-trigger" href="#how" id="how-to">
