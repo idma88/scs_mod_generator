@@ -1,9 +1,9 @@
 {
     "general": {
-        "choose_language": "Choose language",
-        "help_translate": "You can help translating web-site to your language",
-        "close": "Close",
-        "feature_disabled": "This feature is temporary disabled",
+        "choose_language": "W\u00e4hle eine Sprache",
+        "help_translate": "Du kannst uns helfen, die Webseite in andere Sprachen zu \u00fcbersetzen.",
+        "close": "Schlie\u00dfen",
+        "feature_disabled": "Diese Funktion ist tempor\u00e4r deaktiviert.",
         "title": "Trailer Mod Generator f\u00fcr ETS2 und ATS",
         "head_title": "trailer mod generator",
         "ets2": "ETS2",
