@@ -3,7 +3,7 @@
 class PaintJob{
 
 	public $paint_def;
-	public $look;
+	public $look = 'default';
 	public $dlc = array();
 	public $allCompanies = false;
 	public $color = '1, 1, 1';
@@ -32,6 +32,7 @@ class PaintJob{
 	}
 
 	private function getTrailerLook($paint){
+	    if(!$paint) return $this->look;
 		if(!$this->paint_def) return $paint;
 		$array = explode('/', $this->paint_def);
 		return str_replace(['.sii', '_2017'], '', $array[count($array) - 1]);
