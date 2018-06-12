@@ -2147,7 +2147,7 @@
 //        'ko' => '한국어',
 //        'nl' => 'Nederlands',
 //        'nn' => 'Nynorsk',
-//        'pl' => 'Polski',
+        'pl' => 'Polski',
 //        'pt' => 'Português',
 //        'ro' => 'Română',
 	    'ru' => 'Русский',
