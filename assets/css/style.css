@@ -306,6 +306,10 @@ ol{
 	border-bottom: #546e7a solid 1px;
 }
 .wheels .select-wrapper li{
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
 	height: 70px;
 }
 .mdc-theme--dark .wheels .dropdown-content{
@@ -315,8 +319,7 @@ ol{
 	background-color: #515151;
 }
 .wheels .dropdown-content li>a, .dropdown-content li>span{
-	line-height: 61px;
-	padding: 5px 16px;
+	flex: 1;
 	color: var(--mdc-theme-text-primary-on-primary-light);
 }
 .mdc-theme--dark .wheels .dropdown-content li>a,
