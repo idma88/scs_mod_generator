@@ -60,17 +60,8 @@
         "upload_image": "Bild hochladen",
         "include_dlc": "F\u00fcge die DLC Inhalte hinzu"
     },
-    "dlc list": {
-        "scandinavia": "DLC Scandinavia",
-        "france": "DLC Vive la France!",
-        "italy": "DLC Italia",
-        "schwarzmuller": "DLC Schwarzm\u00fcller Trailer Pack",
-        "high": "DLC High Power Cargo Pack",
-        "heavy": "DLC Heavy Cargo Pack",
-        "heavy_ats": "DLC Heavy Cargo Pack",
-        "special": "DLC Spezial Transport - !Nicht im MP unterst\u00fctzt!"
-    },
     "ets2 trailers": {
+        "opentop": "Offenen",
         "aero_dynamic": "K\u00fchlgutauflieger",
         "brick_trailer": "Auflieger mit Kran (Ziegelsteine)",
         "explo_brick_trailer": "Auflieger mit Kran (Explosive Stoffe)",
@@ -124,6 +115,16 @@
         "goldhofer_stz_long": "Satteltieflader mit Tiefbett (Lang)",
         "willig_cistern": "Kraftstofftankauflieger (Var. 2)",
         "van_transporter": "Kleintransporter"
+    },
+    "dlc list": {
+        "scandinavia": "DLC Scandinavia",
+        "france": "DLC Vive la France!",
+        "italy": "DLC Italia",
+        "schwarzmuller": "DLC Schwarzm\u00fcller Trailer Pack",
+        "high": "DLC High Power Cargo Pack",
+        "heavy": "DLC Heavy Cargo Pack",
+        "heavy_ats": "DLC Heavy Cargo Pack",
+        "special": "DLC Spezial Transport - !Nicht im MP unterst\u00fctzt!"
     },
     "ets2 accessories": {
         "cargo_cars_it": "Autos",
