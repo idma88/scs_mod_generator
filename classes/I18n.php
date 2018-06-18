@@ -29,6 +29,7 @@ class I18n{
 				'fr' => ['fr'],
 				'es' => ['es', 'pt'],
 				'pt' => ['pt', 'es'],
+                'tr' => ['tr', 'ro', 'mk']
 			];
 			foreach(array_unique($user_langs) as $lang){
 				if(key_exists($lang, $languages)) return $lang;
