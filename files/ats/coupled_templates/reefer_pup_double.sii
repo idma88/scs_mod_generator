@@ -10,7 +10,7 @@ trailer : trailer.reefer_pup_2
 	accessories[]: .reefer_pup_2.trwheel0
 	accessories[]: .reefer_pup_2.paint_job
 	
-	accessories[]: .reefer_pup_2.trlr_cable
+	accessories[]: .reefer_pup_2.trlr_cables
 	
 	slave_trailer: .reefer_pup_2.dolly
 }
@@ -31,9 +31,9 @@ vehicle_paint_job_accessory: .reefer_pup_2.paint_job
 	%color%
 		data_path: "%paint_job%"
 }
-vehicle_addon_accessory: .reefer_pup_2.trlr_cable
+vehicle_addon_accessory: .reefer_pup_2.trlr_cables
 {
-    	data_path: "/def/vehicle/trailer/box_wabash/accessory/stock.sii"
+    	data_path: "/def/vehicle/trailer/reefer_wabash/accessory/trlr_cables/stock.sii"
 }
 #########################################
 #
@@ -45,6 +45,8 @@ trailer : .reefer_pup_2.dolly
 {
 	accessories[]: .reefer_pup_2.dolly.tchassis
 	accessories[]: .reefer_pup_2.dolly.trwheel0
+	
+	accessories[]: .reefer_pup_2.dolly.trlr_cables
 	
 	slave_trailer: .reefer_pup_2.second
 }
@@ -58,6 +60,10 @@ vehicle_wheel_accessory: .reefer_pup_2.dolly.trwheel0
 {
 	offset: 0
 		data_path: "%wheel%"
+}
+vehicle_addon_accessory: .reefer_pup_2.dolly.trlr_cables
+{
+    	data_path: "/def/vehicle/trailer/convertor_dolly/accessory/trlr_cables/stock.sii"
 }
 
 #########################################

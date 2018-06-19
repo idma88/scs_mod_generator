@@ -4,7 +4,7 @@ trailer : trailer.%trailer%
 {
 	accessories[]: .%trailer%.tchassis
 	accessories[]: .%trailer%.trwheel0
-	accessories[]: .%trailer%.trlr_cable
+	accessories[]: .%trailer%.trlr_cables
 	
 	slave_trailer: .%trailer%.dolly
 }
@@ -19,9 +19,9 @@ vehicle_wheel_accessory: .%trailer%.trwheel0
 	offset: 0
     	data_path: "%wheel%"
 }
-vehicle_addon_accessory: .%trailer%.trlr_cable
+vehicle_addon_accessory: .%trailer%.trlr_cables
 {
-    	data_path: "%wheel%"
+    	data_path: "/def/vehicle/trailer/bottom_dump/accessory/trlr_cables/stock.sii"
 }
 
 # xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx dolly xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
