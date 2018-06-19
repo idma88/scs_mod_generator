@@ -17,7 +17,7 @@ class App{
 		$this->chassis = $chassis;
 		$this->accessory = $accessory;
 		$this->paintJob = $paintJob;
-		$this->dlc = $this->getDLCArray([$this->chassis->dlc, $this->accessory->dlc, $this->paintJob->dlc]);
+		$this->dlc = $this->getDLCArray();
 		$this->game = $_POST['target'];
 		$this->outDir .= time();
 	}
@@ -41,16 +41,16 @@ class App{
 		$this->removeOutDirectory();
 	}
 
-	private function getDLCArray($dlc){
+	private function getDLCArray(){
 		$array = $this->dlc;
+		$array = array_merge($array, $this->chassis->dlc);
+		if($this->accessory) $array = array_merge($array, $this->accessory->dlc);
+		if($this->paintJob) $array = array_merge($array, $this->paintJob->dlc);
 		if(isset($_POST['dlc']) && is_array($_POST['dlc'])){
 		    foreach($_POST['dlc'] as $key => $value){
 		        array_push($array, $key);
             }
         }
-		foreach($dlc as $item){
-			if($item) $array = array_merge($array, $item);
-		}
 		return array_unique($array);
 	}
 
