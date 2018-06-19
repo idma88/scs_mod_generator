@@ -13,6 +13,7 @@ include 'classes/Accessory.php';
 include 'classes/PaintJob.php';
 include 'classes/Image.php';
 include 'classes/Logger.php';
+include 'classes/I18n.php';
 
 // POST validation
 if(!isset($_POST['chassis']) || $_POST['chassis'] == ''){

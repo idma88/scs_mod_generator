@@ -18,6 +18,9 @@ class Logger{
 			"Wheels: \t$_POST[wheels]\n".
 			"Target:\t\t$_POST[target]\n".
 			"User:\t\t".$user_data['platform']." ".$user_data['name']." ".$user_data['version']."\n".
+			"CookieLang:\t$_COOKIE[lang]\n".
+			"AcceptLang:\t$_SERVER[HTTP_ACCEPT_LANGUAGE]\n".
+			"UsedLang:\t".I18n::getUserLanguage()."\n".
 			"\n\n";
 
 		file_put_contents($this->file, $log.$log_data);
