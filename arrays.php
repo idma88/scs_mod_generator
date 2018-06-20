@@ -110,7 +110,7 @@
 	$available_wheels = [
 		'ets2' => [
 			'/def/vehicle/t_wheel/single.sii' => 'w_single',
-			'/def/vehicle/r_wheel/385_65.sii' => 'w_385_65',
+			'/def/vehicle/t_wheel/385_65.sii' => 'w_385_65',
 			'/def/vehicle/t_wheel/385_65_r22_5.sii' => 'w_385_65_r22_5',
 			'/def/vehicle/t_wheel/435_50_r19_5.sii' => 'w_435_50_r19_5',
 			'/def/vehicle/t_wheel/cartrans.sii' => 'w_cartrans',
