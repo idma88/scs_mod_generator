@@ -187,7 +187,8 @@
 			</div>
 			<div class="card-action row center-on-small-only">
 				<input type="hidden" name="target" value="<?= $game ?>">
-				<button class="mdc-button mdc-button--raised mdc-ripple left-med-and-up" type="submit" onclick="return confirm('<?= I18n::t('are_you_sure') ?>')">
+				<button class="mdc-button mdc-button--raised mdc-ripple left-med-and-up" id="generate-btn" type="submit"
+						onclick="return confirm('<?= I18n::t('are_you_sure') ?>')" disabled>
 					<i class="material-icons mdc-button__icon notranslate">send</i><?= I18n::t('proceed') ?>
 				</button>
 				<a href="/gallery.php<?php if($game == 'ats'): ?>#ats<?php endif ?>"

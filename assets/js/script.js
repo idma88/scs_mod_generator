@@ -102,7 +102,9 @@ $(document).ready(function(){
 			$('.colors').hide();
 			$('#all_accessories, #all_paints').prop('checked', false);
             $('[id^=dlc_]').prop('checked', false).prop('disabled', false);
+			$('#generate-btn').attr('disabled', true);
 			if(value !== ''){
+				$('#generate-btn').attr('disabled', false);
 				if(value !== 'schw_overweight' && value.indexOf('goldhofer') === -1){
 					$('.wheels.input-field').show();
 				}else{
