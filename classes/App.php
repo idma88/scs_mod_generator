@@ -32,7 +32,7 @@ class App{
 			$this->copyCompanyFiles();
 			$this->replaceCompanyFiles();
 		}
-		if($this->chassis->weight && is_numeric($this->chassis->weight)){
+		if($this->chassis->weight !== false && is_numeric($this->chassis->weight)){
 			$this->copyCargoFiles();
 			$this->replaceCargoFiles();
 		}
