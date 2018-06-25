@@ -2145,7 +2145,7 @@
 //        'it' => 'Italiano',
 //        'ja' => '日本語',
 //        'ko' => '한국어',
-//        'nl' => 'Nederlands',
+        'nl' => 'Nederlands',
 //        'nn' => 'Nynorsk',
         'pl' => 'Polski',
 //        'pt' => 'Português',
@@ -2154,5 +2154,5 @@
 //        'sv' => 'Svenska',
 	    'tr' => 'Türkçe',
         'uk' => 'Українська',
-//	    'zh' => '繁體中文',
+	    'zh' => '繁體中文',
     ];
