@@ -14,13 +14,21 @@ class I18n{
 
 	public static function t($name, $lang = null){
 		$lang ? : $lang = self::getUserLanguage();
+		if($string = self::findString($name, $lang)){
+			return $string;
+		}else{
+			return self::findString($name, 'en');
+		}
+	}
+
+	private static function findString($name, $lang){
 		$strings = json_decode(file_get_contents('lang/'.$lang.'.json'), true);
 		foreach($strings as $group){
 			if(array_key_exists($name, $group)){
 				return $group[$name];
 			}
 		}
-		return $name;
+		return false;
 	}
 
 	public static function getUserLanguage(){
