@@ -201,7 +201,6 @@
 	<section class="card-panel grey-text">
 		<span class="card-title">
 			<i class="material-icons left notranslate">info</i>
-<!--			--><?//= I18n::t('beta_notification') ?>
 			<?= I18n::t('help_translate') ?>
 			<a href="http://mods-generator.oneskyapp.com"
 			   target="_blank"
@@ -228,6 +227,18 @@
 				<li><?= I18n::t('instruction_modal_4') ?></li>
 				<li><?= I18n::t('instruction_modal_5') ?></li>
 				<li><?= I18n::t('instruction_modal_6') ?></li>
+			</ol>
+		</section>
+		<header class="mdc-dialog__header">
+			<h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title"><?= I18n::t('how_to_install_mod') ?></h2>
+		</header>
+		<section id="my-mdc-dialog-description" class="mdc-dialog__body">
+			<ol>
+				<li><?= I18n::t('instruction_modal_7') ?></li>
+				<li><?= I18n::t('instruction_modal_8') ?></li>
+				<li><?= I18n::t('instruction_modal_9') ?></li>
+				<li><?= I18n::t('instruction_modal_10') ?></li>
+				<li><?= I18n::t('instruction_modal_11') ?></li>
 			</ol>
 		</section>
 		<footer class="mdc-dialog__footer">
