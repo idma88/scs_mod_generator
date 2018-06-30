@@ -17,7 +17,7 @@ class I18n{
 		if($string = self::findString($name, $lang)){
 			return $string;
 		}else{
-			return self::findString($name, 'en');
+			return self::findString($name, self::$defaultLang);
 		}
 	}
 
