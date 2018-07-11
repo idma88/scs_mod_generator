@@ -2149,10 +2149,10 @@
 //        'nn' => 'Nynorsk',
         'pl' => 'Polski',
 //        'pt' => 'Português',
-//        'ro' => 'Română',
+        'ro' => 'Română',
 	    'ru' => 'Русский',
 //        'sv' => 'Svenska',
 	    'tr' => 'Türkçe',
         'uk' => 'Українська',
-	    'zh' => '繁體中文',
+	    'zh' => '简体中文',
     ];
