@@ -33,6 +33,7 @@
         "beta_notification": "Dzia\u0142a w trybie beta, mog\u0105 pojawi\u0107 si\u0119 b\u0142\u0119dy.",
         "ie_notification": "U\u017cywasz starej przegl\u0105darki, us\u0142uga mo\u017ce dzia\u0142a\u0107 niestabilnie.",
         "how_to_modal": "Jak korzysta\u0107 z tego narz\u0119dzia?",
+        "how_to_install_mod": "Jak zainstalowa\u0107 modyfikacje?",
         "close_modal": "Mam to",
         "instruction_modal_1": "Wybierz nazw\u0119 dla przysz\u0142ej modyfikacji (niewymagane, w przeciwnym razie generowane z nazwy podwozia).",
         "instruction_modal_2": "Wybierz podwozie z listy (wymagane). Mo\u017cesz u\u017cy\u0107 wyszukiwania.",
@@ -40,6 +41,11 @@
         "instruction_modal_4": "Ponadto, je\u015bli wybierzesz kolor sk\u00f3rki, mo\u017cesz okre\u015bli\u0107 dok\u0142adny kolor, kt\u00f3ry chcesz.",
         "instruction_modal_5": "W ustawieniach zaawansowanych mo\u017cna zmieni\u0107 obraz modyfikacji (dla Mened\u017cera modyfikacji) i wag\u0119 \u0142adunku (opcjonalnie).",
         "instruction_modal_6": "Kliknij przycisk \"Generuj\". Mod zostanie wygenerowany i zobaczysz przycisk do pobrania.",
+        "instruction_modal_7": "Pobierz modyfikacje i zapisz j\u0105 w folderze \"Dokumenty\\Euro Truck Simulator 2\\mod\"",
+        "instruction_modal_8": "Uruchom gr\u0119. Zanim wybierzesz profil w\u0142\u0105cz Menad\u017cer Modyfikacji",
+        "instruction_modal_9": "Zaznacz pobrany mod, sprawd\u017a, czy znajduje si\u0119 na li\u015bcie po prawej stronie",
+        "instruction_modal_10": "Zapisz zmiany i opu\u015b\u0107 Menad\u017cer Modyfikacji",
+        "instruction_modal_11": "Wybierz sw\u00f3j profil i baw si\u0119 dobrze!",
         "ats_trailer_guide": "Galeria naczep American Truck Simulator",
         "ets_trailer_guide": "Galeria naczep Euro Truck Simulator 2",
         "see_paints": "Dost\u0119pne malowania",
@@ -60,8 +66,17 @@
         "upload_image": "Wstaw obraz",
         "include_dlc": "Wybierz DLC"
     },
+    "dlc list": {
+        "scandinavia": "DLC Scandinavia",
+        "france": "DLC Vive la France!",
+        "italy": "DLC Italia",
+        "schwarzmuller": "DLC Schwarzm\u00fcller Trailer Pack",
+        "high": "DLC High Power Cargo Pack",
+        "heavy": "DLC Heavy Cargo Pack",
+        "heavy_ats": "DLC Heavy Cargo Pack",
+        "special": "DLC Special Transport - !BRAK WSPARCIA MP!"
+    },
     "ets2 trailers": {
-        "opentop": "Opentop",
         "aero_dynamic": "Aero dynamic",
         "brick_trailer": "Brick trailer",
         "explo_brick_trailer": "Explo Brick trailer",
@@ -84,6 +99,7 @@
         "proficarrier": "Double Krone Profi Liner",
         "livestock": "Livestock",
         "log_trailer": "Log trailer",
+        "opentop": "Opentop",
         "overweight": "Overweight",
         "overweight_default": "Overweight (Domy\u015blna)",
         "overweight_black": "Overweight (Czarna)",
@@ -115,16 +131,6 @@
         "goldhofer_stz_long": "Semi Lowloader with Drop Deck (D\u0142uga)",
         "willig_cistern": "Willig Fuel cistern",
         "van_transporter": "Van transporter"
-    },
-    "dlc list": {
-        "scandinavia": "DLC Scandinavia",
-        "france": "DLC Vive la France!",
-        "italy": "DLC Italia",
-        "schwarzmuller": "DLC Schwarzm\u00fcller Trailer Pack",
-        "high": "DLC High Power Cargo Pack",
-        "heavy": "DLC Heavy Cargo Pack",
-        "heavy_ats": "DLC Heavy Cargo Pack",
-        "special": "DLC Special Transport - !BRAK WSPARCIA MP!"
     },
     "ets2 accessories": {
         "cargo_cars_it": "Cars",
