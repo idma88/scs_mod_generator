@@ -83,6 +83,20 @@ nav ul a{
 	font-size: 1.2em;
 	font-weight: 500;
 }
+nav .brand-logo{
+
+}
+nav .brand-logo::before{
+	content: '';
+	position: absolute;
+	left: -21px;
+	display: block;
+	height: 64px;
+	width: 45px;
+	background: url(../img/logo.png) no-repeat;
+	background-size: contain;
+	background-position-y: 82%;
+}
 .lang-btn{
 	white-space: nowrap;
 	font-size: 17px;
