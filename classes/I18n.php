@@ -1,5 +1,5 @@
 <?php
-
+include 'classes/kint/Kint.class.php';
 class I18n{
 
 	private static $defaultLang = 'en';
@@ -34,15 +34,8 @@ class I18n{
 	public static function getUserLanguage(){
 		GLOBAL $languages;
 		if(!isset($_COOKIE['lang'])){
-			$user_langs = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
-			$user_langs = array_filter($user_langs, function($v){
-				return stripos($v, ';') || strlen($v) === 2;
-			});
-			foreach($user_langs as $key => $value){
-				$user_langs[$key] = substr($value, 0, 2);
-			}
-
-			foreach(array_unique($user_langs) as $lang){
+            $user_langs = self::getUserAcceptLanguage();
+			foreach($user_langs as $lang){
 				if(key_exists($lang, $languages)) return $lang;
 			}
 			$lang = self::$defaultLang;
@@ -57,5 +50,16 @@ class I18n{
 		}
 		return $lang;
 	}
+
+    public static function getUserAcceptLanguage($get_first = false){
+        $user_langs = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+        $user_langs = array_filter($user_langs, function($v){
+            return stripos($v, ';') || strlen($v) === 2;
+        });
+        foreach($user_langs as $key => $value){
+            $user_langs[$key] = substr($value, 0, 2);
+        }
+        return $get_first ? array_shift($user_langs) : array_unique($user_langs);
+    }
 
 }
