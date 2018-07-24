@@ -95,7 +95,6 @@
         "coolliner": "Krone Cool Liner",
         "fridge": "Krone Fridge",
         "profiliner": "Krone Profi Liner",
-        "profiliner_2017": "Krone Profi Liner 2017",
         "proficarrier": "Double Krone Profi Liner",
         "livestock": "Livestock",
         "log_trailer": "Log trailer",
@@ -243,7 +242,6 @@
         "iveco_daily": "Vans"
     },
     "ets2 companies\/paints": {
-        "default_2017": "Default",
         "default": "Colored",
         "bcp": "BCP",
         "drekkar": "Drekkar Trans",
@@ -333,7 +331,6 @@
         "w_1": "1 - Auto kick in MP",
         "w_2": "2 - Auto kick in MP",
         "w_3": "3 - Auto kick in MP",
-        "w_385_65": "385, 65"
     },
     "ats trailers": {
         "acid": "Acid tank",
