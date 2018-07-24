@@ -58,7 +58,10 @@
 			<h4 class="light"><?= I18n::t('ats_trailer_guide') ?></h4>
 			<?php $chassis = array();
 			foreach($chassis_list['ats'] as $key => $value){
-				$chassis[] = str_replace(['_default', '_black', '_yellow', '_red', '_blue', '_grey', '_1', '_4', '_3'], '', $key);
+			    if(stripos($key, 'magnitude_55l') === false){
+                    $key = str_replace(['_default', '_black', '_yellow', '_red', '_blue', '_grey', '_1', '_4', '_3'], '', $key);
+                }
+				$chassis[] = $key;
 			}
 			$diff = [
 				'lowboy' => 'lowboy_red',
@@ -72,7 +75,12 @@
 					<div class="card trailer <?= $key ?>">
 						<div class="card-image">
 							<img src="/assets/img/trailers/<?= $name ?>/<?= $name ?>.jpg">
-							<h5 class="card-title trailer-name text-shadow"><?= str_replace(' - ', '<br>', I18n::t($name)) ?></h5>
+							<h5 class="card-title trailer-name text-shadow">
+                                <?= I18n::t($name) ?>
+                                <?php if(key_exists($name, $dlc_chassis_list)) : ?>
+                                    <br><?= I18n::t($dlc_chassis_list[$name]) ?>
+                                <?php endif ?>
+                            </h5>
 						</div>
 						<?php $name_alt = key_exists($name, $diff) ? $diff[$name] : $name;
 							if(key_exists($name_alt, $with_paint_job['ats']) || in_array($name_alt, $with_accessory)) : ?>
