@@ -19,7 +19,6 @@
 			'coolliner' => '/def/vehicle/trailer/krone/coolliner/chassis.sii',
 			'fridge' => '/def/vehicle/trailer/krone/fridge/chassis.sii',
 			'profiliner' => '/def/vehicle/trailer/krone/profiliner/chassis.sii',
-//			'profiliner_2017' => '/def/vehicle/trailer/krone/profiliner_2017/chassis_2017.sii',
 			'proficarrier' => '/def/vehicle/trailer/krone/proficarrier/chassis.sii',
 			'livestock' => '/def/vehicle/trailer/livestock/chassis.sii',
 			'log_trailer' => '/def/vehicle/trailer/log_trailer/chassis.sii',
@@ -95,7 +94,10 @@
 			'log' => '/def/vehicle/trailer/log/chassis.sii',
 			'lowboy_red' => '/def/vehicle/trailer/lowboy/chassis_r.sii',
 			'lowboy_yellow' => '/def/vehicle/trailer/lowboy/chassis_y.sii',
-			'magnitude_55l' => '/def/vehicle/trailer/magnitude_55l/chassis_jeep.sii',
+			'magnitude_55l_1_2' => '/def/vehicle/trailer/magnitude_55l/chassis_jeep.sii',
+			'magnitude_55l_1_2_3' => '/def/vehicle/trailer/magnitude_55l/chassis_jeep.sii',
+			'magnitude_55l_2' => '/def/vehicle/trailer/magnitude_55l/chassis_trailer_3.sii',
+			'magnitude_55l_2_3' => '/def/vehicle/trailer/magnitude_55l/chassis_trailer_2_spreader.sii',
 			'mbt' => '/def/vehicle/trailer/mbt1_barrier/chassis.sii',
 			'reefer' => '/def/vehicle/trailer/reefer/chassis.sii',
 			'reefer_pup_double' => '/def/vehicle/trailer/reefer_wabash/chassis.sii',
@@ -110,7 +112,6 @@
 	$available_wheels = [
 		'ets2' => [
 			'/def/vehicle/t_wheel/single.sii' => 'w_single',
-//			'/def/vehicle/t_wheel/385_65.sii' => 'w_385_65',
 			'/def/vehicle/t_wheel/385_65_r22_5.sii' => 'w_385_65_r22_5',
 			'/def/vehicle/t_wheel/435_50_r19_5.sii' => 'w_435_50_r19_5',
 			'/def/vehicle/t_wheel/cartrans.sii' => 'w_cartrans',
@@ -151,7 +152,6 @@
 		'coolliner' => '/def/vehicle/t_wheel/single.sii',
 		'fridge' => '/def/vehicle/t_wheel/385_65_r22_5.sii',
 		'profiliner' => '/def/vehicle/t_wheel/385_65_r22_5.sii',
-//		'profiliner_2017' => '/def/vehicle/t_wheel/385_65.sii',
 		'proficarrier' => '/def/vehicle/t_wheel/385_65_r22_5.sii',
 		'livestock' => '/def/vehicle/t_wheel/single.sii',
 		'log_trailer' => '/def/vehicle/t_wheel/single.sii',
@@ -235,7 +235,10 @@
 		'reefer_pup_triple' => '/def/vehicle/t_wheel/single.sii',
 		'reefer3000r' => '/def/vehicle/t_wheel/single.sii',
 		'reefer3000r_long' => '/def/vehicle/t_wheel/single.sii',
-		'magnitude_55l' => '/def/vehicle/t_wheel/single.sii',
+		'magnitude_55l_1_2' => '/def/vehicle/t_wheel/single.sii',
+        'magnitude_55l_1_2_3' => '/def/vehicle/t_wheel/single.sii',
+        'magnitude_55l_2' => '/def/vehicle/t_wheel/single.sii',
+        'magnitude_55l_2_3' => '/def/vehicle/t_wheel/single.sii',
 	];
 
 	$chassis_one_wheel_support = [
@@ -272,7 +275,6 @@
 		'coolliner' => 3,
 		'fridge' => 3,
 		'profiliner' => 3,
-//		'profiliner_2017' => 3,
 		'proficarrier' => 3,
 		'livestock' => 3,
 		'log_trailer' => 3,
@@ -356,7 +358,10 @@
 		'reefer_pup_triple' => 1,
 		'reefer3000r' => 2,
 		'reefer3000r_long' => 2,
-		'magnitude_55l' => 2,
+        'magnitude_55l_1_2' => 2,
+        'magnitude_55l_1_2_3' => 2,
+        'magnitude_55l_2' => 3,
+        'magnitude_55l_2_3' => 2,
 	];
 
 	$with_accessory = [
@@ -402,7 +407,10 @@
 		'log',
 		'lowboy_red',
 		'lowboy_yellow',
-		'magnitude_55l'
+        'magnitude_55l_1_2',
+        'magnitude_55l_1_2_3',
+        'magnitude_55l_2',
+        'magnitude_55l_2_3',
 	];
 
 	$with_paint_job = [
@@ -415,7 +423,6 @@
             'coolliner' => '/def/vehicle/trailer/krone/coolliner/company_paint_job/default.sii',
             'fridge' => '/def/vehicle/trailer/krone/fridge/company_paint_job/default.sii',
             'profiliner' => '/def/vehicle/trailer/krone/profiliner/company_paint_job/default.sii',
-//            'profiliner_2017' => '/def/vehicle/trailer/krone/profiliner_2017/company_paint_job/default_2017.sii',
             'proficarrier' => '/def/vehicle/trailer/krone/proficarrier/company_paint_job/default.sii',
             'livestock' => '/def/vehicle/trailer/livestock/company_paint_job/default.sii',
             'schmitz_universal' => '/def/vehicle/trailer/schmitz/universal/company_paint_job/default.sii',
@@ -689,17 +696,46 @@
 				'/def/vehicle/trailer/lowboy/cargo_roller.sii' => 'cargo_roller',
 				'/def/vehicle/trailer/lowboy/cargo_tractor.sii' => 'cargo_tractor'
 			],
-			'magnitude_55l' => [
+			'magnitude_55l_1_2' => [
 				'/def/vehicle/trailer/magnitude_55l/cargo_case_ih_600_q.sii' => 'cargo_case_ih_600_q',
 				'/def/vehicle/trailer/magnitude_55l/cargo_cat_627h.sii' => 'cargo_cat_627h',
 				'/def/vehicle/trailer/magnitude_55l/cargo_coil.sii' => 'cargo_coil',
-				'/def/vehicle/trailer/magnitude_55l/cargo_kalmar_rt240.sii' => 'cargo_kalmar_rt240',
 				'/def/vehicle/trailer/magnitude_55l/cargo_kalmar_rt240_short.sii' => 'cargo_kalmar_rt240_short',
 				'/def/vehicle/trailer/magnitude_55l/cargo_komatsu_d155ax_5.sii' => 'cargo_komatsu_d155ax_5',
 				'/def/vehicle/trailer/magnitude_55l/cargo_terex_challenger_3160.sii' => 'cargo_terex_challenger_3160',
 				'/def/vehicle/trailer/magnitude_55l/cargo_transformer.sii' => 'cargo_transformer',
 				'/def/vehicle/trailer/magnitude_55l/cargo_wirtgen_w250i.sii' => 'cargo_wirtgen_w250i'
-			]
+			],
+            'magnitude_55l_1_2_3' => [
+                '/def/vehicle/trailer/magnitude_55l/cargo_case_ih_600_q.sii' => 'cargo_case_ih_600_q',
+                '/def/vehicle/trailer/magnitude_55l/cargo_cat_627h.sii' => 'cargo_cat_627h',
+                '/def/vehicle/trailer/magnitude_55l/cargo_coil.sii' => 'cargo_coil',
+                '/def/vehicle/trailer/magnitude_55l/cargo_kalmar_rt240.sii' => 'cargo_kalmar_rt240',
+                '/def/vehicle/trailer/magnitude_55l/cargo_kalmar_rt240_short.sii' => 'cargo_kalmar_rt240_short',
+                '/def/vehicle/trailer/magnitude_55l/cargo_komatsu_d155ax_5.sii' => 'cargo_komatsu_d155ax_5',
+                '/def/vehicle/trailer/magnitude_55l/cargo_terex_challenger_3160.sii' => 'cargo_terex_challenger_3160',
+                '/def/vehicle/trailer/magnitude_55l/cargo_transformer.sii' => 'cargo_transformer',
+                '/def/vehicle/trailer/magnitude_55l/cargo_wirtgen_w250i.sii' => 'cargo_wirtgen_w250i'
+            ],
+            'magnitude_55l_2' => [
+                '/def/vehicle/trailer/magnitude_55l/cargo_case_ih_600_q.sii' => 'cargo_case_ih_600_q',
+                '/def/vehicle/trailer/magnitude_55l/cargo_cat_627h.sii' => 'cargo_cat_627h',
+                '/def/vehicle/trailer/magnitude_55l/cargo_coil.sii' => 'cargo_coil',
+                '/def/vehicle/trailer/magnitude_55l/cargo_kalmar_rt240_short.sii' => 'cargo_kalmar_rt240_short',
+                '/def/vehicle/trailer/magnitude_55l/cargo_komatsu_d155ax_5.sii' => 'cargo_komatsu_d155ax_5',
+                '/def/vehicle/trailer/magnitude_55l/cargo_terex_challenger_3160.sii' => 'cargo_terex_challenger_3160',
+                '/def/vehicle/trailer/magnitude_55l/cargo_transformer.sii' => 'cargo_transformer',
+            ],
+            'magnitude_55l_2_3' => [
+                '/def/vehicle/trailer/magnitude_55l/cargo_case_ih_600_q.sii' => 'cargo_case_ih_600_q',
+                '/def/vehicle/trailer/magnitude_55l/cargo_cat_627h.sii' => 'cargo_cat_627h',
+                '/def/vehicle/trailer/magnitude_55l/cargo_coil.sii' => 'cargo_coil',
+                '/def/vehicle/trailer/magnitude_55l/cargo_kalmar_rt240.sii' => 'cargo_kalmar_rt240',
+                '/def/vehicle/trailer/magnitude_55l/cargo_kalmar_rt240_short.sii' => 'cargo_kalmar_rt240_short',
+                '/def/vehicle/trailer/magnitude_55l/cargo_komatsu_d155ax_5.sii' => 'cargo_komatsu_d155ax_5',
+                '/def/vehicle/trailer/magnitude_55l/cargo_terex_challenger_3160.sii' => 'cargo_terex_challenger_3160',
+                '/def/vehicle/trailer/magnitude_55l/cargo_transformer.sii' => 'cargo_transformer',
+            ],
 		]
 	];
 
@@ -942,10 +978,6 @@
 				'/def/vehicle/trailer/krone/fridge/company_paint_job/wgcc.sii',
 				'/def/vehicle/trailer/krone/fridge/company_paint_job/wilnet_trans.sii',
 			],
-//			'profiliner_2017' => [
-//				'/def/vehicle/trailer/krone/profiliner_2017/company_paint_job/default_2017.sii',
-//				'/def/vehicle/trailer/krone/profiliner/company_paint_job/default.sii',
-//			],
 			'profiliner' => [
 				'/def/vehicle/trailer/krone/profiliner/company_paint_job/default.sii',
 				'/def/vehicle/trailer/krone/profiliner/company_paint_job/acc.sii',
@@ -1472,7 +1504,10 @@
 		'goldhofer_stz_yellow' => 'heavy',
 		'goldhofer_stz_long' => 'special',
 		'van_transporter' => 'italy',
-		'magnitude_55l' => 'heavy_ats'
+        'magnitude_55l_1_2' => 'heavy_ats',
+        'magnitude_55l_1_2_3' => 'heavy_ats',
+        'magnitude_55l_2' => 'heavy_ats',
+        'magnitude_55l_2_3' => 'heavy_ats',
 	];
 
 	$dlc_accessories = [
@@ -1960,13 +1995,9 @@
 		'reefer_rm53_double',
 		'reefer_pup_triple',
 		'proficarrier',
-		'magnitude_55l'
-	];
-
-	$heavy_ats_accessory_with_spreader = [
-		'/def/vehicle/trailer/magnitude_55l/cargo_kalmar_rt240.sii',
-		'/def/vehicle/trailer/magnitude_55l/cargo_transformer.sii',
-		'/def/vehicle/trailer/magnitude_55l/cargo_wirtgen_w250i.sii'
+        'magnitude_55l_1_2',
+        'magnitude_55l_1_2_3',
+        'magnitude_55l_2_3',
 	];
 
 	$error_codes = [

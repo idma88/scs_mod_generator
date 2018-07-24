@@ -390,7 +390,10 @@
         "reefer_pup_triple": "Triple reefer (Short)",
         "reefer3000r": "Reefer 3000R",
         "reefer3000r_long": "Reefer 3000R long",
-        "magnitude_55l": "Lowboy 55L"
+        "magnitude_55l_1_2": "Lowboy 55L (Jeep + Trailer)",
+        "magnitude_55l_1_2_3": "Lowboy 55L (Jeep + Trailer + Spreader)",
+        "magnitude_55l_2_3": "Lowboy 55L (Trailer + Spreader)",
+        "magnitude_55l_2": "Lowboy 55L (Trailer Only)"
     },
     "ats accessories": {
         "cargo_magnum": "Cars (Dodges)",
