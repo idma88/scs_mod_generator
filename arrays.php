@@ -1203,6 +1203,7 @@
 			],
 			'schw_curtain' => [
 				'/def/vehicle/trailer/schw_curtain/company_paint_job/default.sii',
+                '/def/vehicle/trailer/schw_curtain/custom_paint_job/schw_logo.sii',
 				'/def/vehicle/trailer/schw_curtain/company_paint_job/acc.sii',
 				'/def/vehicle/trailer/schw_curtain/company_paint_job/aci.sii',
 				'/def/vehicle/trailer/schw_curtain/company_paint_job/agronord.sii',
@@ -1280,6 +1281,7 @@
 			],
 			'schw_reefer' => [
 				'/def/vehicle/trailer/schw_reefer/company_paint_job/default.sii',
+                '/def/vehicle/trailer/schw_reefer/custom_paint_job/schw_logo.sii',
 				'/def/vehicle/trailer/schw_reefer/company_paint_job/acc.sii',
 				'/def/vehicle/trailer/schw_reefer/company_paint_job/aci.sii',
 				'/def/vehicle/trailer/schw_reefer/company_paint_job/aria_food.sii',

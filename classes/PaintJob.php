@@ -35,7 +35,8 @@ class PaintJob{
 	    if(!$paint) return $this->look;
 		if(!$this->paint_def) return $paint;
 		$array = explode('/', $this->paint_def);
-		return str_replace(['.sii', '_2017'], '', $array[count($array) - 1]);
+		$look = str_replace(['.sii'], '', $array[count($array) - 1]);
+		return $look == 'schw_logo' ? 'empty' : $look;
 	}
 
 	public static function getTrailerLookByDef($def){
