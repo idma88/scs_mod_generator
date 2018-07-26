@@ -1,5 +1,5 @@
 <?php
-include 'classes/kint/Kint.class.php';
+
 class I18n{
 
 	private static $defaultLang = 'en';
@@ -17,7 +17,10 @@ class I18n{
 		if($string = self::findString($name, $lang)){
 			return $string;
 		}else{
-			return self::findString($name, self::$defaultLang);
+		    if($string = self::findString($name, self::$defaultLang)){
+                return $string;
+            }
+			return $name;
 		}
 	}
 
