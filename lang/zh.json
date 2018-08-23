@@ -95,7 +95,6 @@
         "coolliner": "Krone\u51b7\u85cf\u8f66",
         "fridge": "Krone\u4fdd\u6e29\u8f66",
         "profiliner": "Krone\u4fa7\u5e18\u8f66",
-        "profiliner_2017": "Krone\u4fa7\u5e18\u8f662017\u6b3e",
         "proficarrier": "\u53cc\u8d27\u67dcKrone\u4fa7\u5e18\u8f66",
         "livestock": "\u52a8\u7269\u8fd0\u8f93\u8f66",
         "log_trailer": "\u539f\u6728\u62d6\u8f66",
@@ -137,7 +136,7 @@
         "cargo_france_cars": "\u8f7f\u8f66",
         "cargo_octavia": "\u8f7f\u8f66",
         "cargo_octavia_2": "\u8f7f\u8f66\uff08\u7b2c\u4e8c\u79cd\uff09",
-        "cargo_octavia_3": "\u8f7f\u8f66\uff08\u8f7f\u8f66\u7b2c\u4e09\u79cd\uff09",
+        "cargo_octavia_3": "\u8f7f\u8f66\uff08\u7b2c\u4e09\u79cd\uff09",
         "cargo_volvo": "\u8f7f\u8f66",
         "mixer": "\u6c34\u6ce5\u6405\u62cc\u7f50",
         "empty_tank": "\u7a7a\u50a8\u6db2\u7f50",
@@ -243,7 +242,7 @@
         "iveco_daily": "\u8d27\u8f66"
     },
     "ets2 companies\/paints": {
-        "default_2017": "\u9ed8\u8ba4",
+        "schw_logo": "Schwarzm\u00fcller\u5546\u6807",
         "default": "\u5f69\u8272",
         "bcp": "BCP",
         "drekkar": "Drekkar Trans",
@@ -332,8 +331,7 @@
         "w_steel_single": "\u5355\u8f6e\u8f6c\u5411\u6865 -\u8054\u673a\u81ea\u52a8\u8e22\u51fa\u670d\u52a1\u5668",
         "w_1": "1-\u8054\u673a\u81ea\u52a8\u8e22\u51fa\u670d\u52a1\u5668",
         "w_2": "2-\u8054\u673a\u81ea\u52a8\u8e22\u51fa\u670d\u52a1\u5668",
-        "w_3": "3-\u8054\u673a\u81ea\u52a8\u8e22\u51fa\u670d\u52a1\u5668",
-        "w_385_65": "385\/65"
+        "w_3": "3-\u8054\u673a\u81ea\u52a8\u8e22\u51fa\u670d\u52a1\u5668"
     },
     "ats trailers": {
         "acid": "\u9178\u69fd",
@@ -390,6 +388,10 @@
         "reefer_pup_triple": "\u4e09\u8054\u51b7\u85cf\u8f66\uff08\u77ed\uff09",
         "reefer3000r": "\u51b7\u85cf\u8f66 3000R",
         "reefer3000r_long": "\u51b7\u85cf\u8f66 3000R\uff08\u957f\uff09",
+        "magnitude_55l_1_2": "\u4f4e\u5e73\u677f\u62d6\u8f66 55L\uff08\u524d\u526f\u6302+\u4e3b\u6302\uff09",
+        "magnitude_55l_1_2_3": "\u4f4e\u5e73\u677f\u62d6\u8f66 55L\uff08\u524d\u526f\u6302+\u4e3b\u6302+\u540e\u526f\u6302\uff09",
+        "magnitude_55l_2_3": "\u4f4e\u5e73\u677f\u62d6\u8f66 55L\uff08\u4e3b\u6302+\u540e\u526f\u6302\uff09",
+        "magnitude_55l_2": "\u4f4e\u5e73\u677f\u62d6\u8f66 55L\uff08\u4e3b\u6302\uff09",
         "magnitude_55l": "\u4f4e\u5e73\u677f\u62d6\u8f66 55L"
     },
     "ats accessories": {

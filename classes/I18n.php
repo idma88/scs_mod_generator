@@ -9,7 +9,8 @@ class I18n{
 		'fr' => ['fr'],
 		'es' => ['es', 'pt'],
 		'pt' => ['pt', 'es'],
-		'tr' => ['tr', 'ro', 'mk']
+		'tr' => ['tr', 'ro', 'mk'],
+		'hr' => ['hr', 'bs', 'sr'],
 	];
 
 	public static function t($name, $lang = null){

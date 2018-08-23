@@ -64,7 +64,8 @@
         "w_default": "Default",
         "dark_theme": "Dark theme",
         "upload_image": "Upload image",
-        "include_dlc": "Also, include DLC content"
+        "include_dlc": "Also, include DLC content",
+        "new_beta": "Check out new beta Trailer Mod Generator version for <b style=\"font-weight: bold;\">1.32</b> ETS2 and ATS"
     },
     "dlc list": {
         "scandinavia": "DLC Scandinavia",
