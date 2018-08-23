@@ -1,4 +1,10 @@
 <div class="container">
+    <section class="card-panel">
+        <p class="light">
+            <i class="material-icons left notranslate">new_releases</i><?= I18n::t('new_beta') ?> -
+                <a href="https://beta.generator.volvovtc.com/" target="_blank" class="orange-text">https://beta.generator.volvovtc.com/</a>
+        </p>
+    </section>
 	<?php if(isset($_GET['d'])) : ?>
 		<section class="row">
 			<div class="download-row">
